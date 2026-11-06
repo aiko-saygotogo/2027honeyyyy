@@ -1,0 +1,1555 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>波蘭德國蜜月 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet">
+<style>
+/* Layout：沿用「北九州慢活家族之旅」繪本風——奶油紙底、3px 墨色粗框、粉彩色塊、圓角膠囊分頁；上方固定導覽列切換各分頁 */
+:root{
+  --paper:#FFFCF6; --ink:#3E3A39; --ink-soft:#6B6563; --rule:#E9E0D2;
+  --coral:#F2A497; --yellow:#F6D27A; --water:#A8D3E6; --green:#B9DAA5;
+  --cream:#FFF3D6; --mint:#F2F8EE; --sky:#EAF5FA; --blush:#FFF1EE;
+  /* 地圖與既有元件用的深色版 */
+  --bg:var(--paper); --muted:var(--ink-soft); --line:var(--rule);
+  --pl:#D9705F; --de:#4F8FB0; --beer:#D29A2E; --ok:#5E9A4C; --warn:#C47A1C;
+  --font:"Huninn","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+  --stroke:3px solid var(--ink); --stroke2:2px solid var(--ink);
+  --r-lg:28px; --r-md:20px; --r-sm:999px;
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{background:var(--paper);scroll-padding-top:90px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--paper)}
+a{color:inherit}
+:focus-visible{outline:3px dashed var(--ink);outline-offset:3px;border-radius:8px}
+h1,h2,h3,h4{font-weight:400;margin:0;text-wrap:balance}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums}
+.muted{color:var(--ink-soft)}
+.small{font-size:14px}
+.label{font-size:13px;letter-spacing:.08em;color:var(--ink-soft)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:var(--stroke);margin-left:calc(-1 * max(16px,env(safe-area-inset-left,0px)));margin-right:calc(-1 * max(16px,env(safe-area-inset-right,0px)))}
+.nav-in{max-width:960px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px max(16px,env(safe-area-inset-right,0px)) 10px max(16px,env(safe-area-inset-left,0px))}
+.brand{display:flex;align-items:center;gap:8px;font-size:17px;text-decoration:none;white-space:nowrap;flex:0 0 auto}
+.brand svg{width:34px;height:34px;flex:0 0 auto}
+.links{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-left:auto;padding:2px}
+.links::-webkit-scrollbar{display:none}
+.links a{flex:0 0 auto;text-decoration:none;padding:6px 14px;border:var(--stroke);border-radius:var(--r-sm);background:var(--paper);font-size:15px;line-height:1.3;min-height:40px;display:flex;align-items:center}
+.links a:hover{background:var(--cream)}
+.links a[aria-current="page"]{background:var(--yellow);box-shadow:0 3px 0 var(--ink);transform:translateY(-2px)}
+@media (max-width:620px){.brand span{display:none}}
+
+main{max-width:960px;margin:0 auto;padding-block:24px 48px}
+.page{display:flex;flex-direction:column;gap:36px}
+.page[hidden]{display:none!important}
+section{display:flex;flex-direction:column;gap:16px;min-width:0}
+h2{font-size:26px;line-height:1.3;display:flex;align-items:center;gap:10px}
+h2 .dot{width:18px;height:18px;border:var(--stroke);border-radius:50%;flex:0 0 auto}
+h3{font-size:20px;line-height:1.4}
+.lead{font-size:15px;color:var(--ink-soft);max-width:44em}
+.box{border:var(--stroke);border-radius:var(--r-lg);background:var(--paper)}
+
+/* hero */
+.hero{overflow:hidden}
+.hero-art{display:block;width:100%;height:auto;border-bottom:var(--stroke);background:var(--sky)}
+.hero-txt{padding:20px 20px 24px;display:flex;flex-direction:column;gap:14px;text-align:center;align-items:center}
+.hero h1{font-size:clamp(30px,7vw,46px);line-height:1.2;letter-spacing:2px}
+.hero .sub{font-size:17px;color:var(--ink-soft)}
+.cd{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.cd-cell{min-width:72px;padding:8px 10px;border:var(--stroke);border-radius:var(--r-md);background:var(--yellow);display:flex;flex-direction:column;align-items:center;line-height:1.2}
+.cd-cell:nth-child(2){background:var(--coral)} .cd-cell:nth-child(3){background:var(--water)} .cd-cell:nth-child(4){background:var(--green)}
+.cd-num{font-size:30px;font-variant-numeric:tabular-nums}
+.cd-lab{font-size:13px}
+.motifs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.motif{display:inline-flex;align-items:center;gap:6px;padding:3px 12px 3px 6px;border:var(--stroke2);border-radius:var(--r-sm);font-size:14px}
+.motif svg{width:22px;height:22px;flex:none}
+.intro{max-width:34em;font-size:15px;line-height:1.9;text-align:left}
+
+/* home: route + stats + shortcuts */
+.route{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+@media (max-width:720px){.route{grid-template-columns:1fr}}
+.leg{padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.leg .pill{align-self:flex-start}
+.leg p{font-size:15px}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:620px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{border:var(--stroke2);border-radius:var(--r-md);padding:12px 14px;display:flex;flex-direction:column;gap:2px}
+.stat:nth-child(1){background:var(--cream)} .stat:nth-child(2){background:var(--mint)} .stat:nth-child(3){background:var(--sky)} .stat:nth-child(4){background:var(--blush)}
+.stat b{font-weight:400;font-size:26px;line-height:1.2}
+.shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+@media (max-width:620px){.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.sc{display:flex;align-items:center;gap:10px;padding:12px 14px;border:var(--stroke);border-radius:var(--r-md);text-decoration:none;background:var(--paper);min-height:64px}
+.sc:hover{background:var(--cream)}
+.sc i{width:16px;height:16px;border:var(--stroke2);border-radius:50%;flex:none}
+.sc small{display:block;font-size:13px;color:var(--ink-soft)}
+
+/* pills & tags */
+.pill{display:inline-flex;align-items:center;padding:1px 12px;border:var(--stroke2);border-radius:var(--r-sm);font-size:14px;line-height:1.5;white-space:nowrap;background:var(--paper);color:var(--ink)}
+.s-done{background:var(--green)} .s-todo{background:var(--yellow)} .s-wait{background:var(--paper)} .s-new{background:var(--coral)} .s-chk{background:var(--water)}
+.tg{font-size:12px;padding:0 9px;border:var(--stroke2);border-radius:var(--r-sm);line-height:1.6;color:var(--ink);background:var(--paper)}
+.tg-ig{background:var(--coral)} .tg-free{background:var(--green)} .tg-paid{background:var(--paper)} .tg-book{background:var(--yellow)} .tg-exp{background:var(--water)} .tg-car{background:var(--blush)} .tg-cook{background:var(--mint)}
+.tg-shop{background:var(--yellow)}
+.city{display:inline-block;font-size:13px;padding:0 10px;border:var(--stroke2);border-radius:var(--r-sm);color:var(--ink)}
+.c-pl{background:var(--coral)} .c-de{background:var(--water)} .c-tw{background:var(--green)} .c-air{background:var(--yellow)}
+
+/* tracking */
+.track-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+@media (max-width:680px){.track-grid{grid-template-columns:1fr}}
+.card{border:var(--stroke);border-radius:var(--r-md);background:var(--paper);padding:16px 18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.card .cat{display:flex;align-items:center;gap:8px;min-width:0}
+.card .cat svg{width:22px;height:22px;flex:none}
+.card h3{font-size:17px}
+.card .meta{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--ink-soft)}
+.card .links{display:flex;flex-wrap:wrap;gap:6px;font-size:14px}
+.card .links a{padding:2px 12px;border:var(--stroke2);border-radius:var(--r-sm);text-decoration:none;background:var(--sky)}
+.card .links a:hover{background:var(--yellow)}
+.empty{border:2px dashed var(--ink);border-radius:var(--r-md);padding:18px;color:var(--ink-soft);font-size:15px;background:var(--cream)}
+
+/* tables */
+.tbl{overflow-x:auto;border:var(--stroke);border-radius:var(--r-md);background:var(--paper)}
+.tbl.fit table{min-width:0;font-size:14px}.tbl.fit th,.tbl.fit td{padding:10px 8px}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:15px}
+th,td{text-align:left;padding:10px 14px;border-bottom:2px dashed var(--rule);vertical-align:top}
+th{font-weight:400;color:var(--ink-soft);font-size:13px;letter-spacing:.06em;background:var(--cream);border-bottom:var(--stroke2)}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;white-space:nowrap}
+tr.pick td{background:var(--mint)}
+.tot td{background:var(--sky)}
+tr.grp td{background:var(--cream);font-size:13px;letter-spacing:.06em;color:var(--ink-soft);padding-block:6px;border-bottom:var(--stroke2)}
+td a{text-decoration-color:var(--water);text-decoration-thickness:2px;text-underline-offset:3px}
+
+/* lodging */
+.lodge{display:flex;flex-direction:column;gap:12px}
+.lodge-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.booked-box{border:var(--stroke);border-radius:var(--r-md);padding:14px 18px;background:var(--mint);display:flex;flex-direction:column;gap:6px}
+.booked-box .row{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:15px}
+.tag{display:inline-flex;align-items:center;gap:4px;font-size:13px;padding:0 10px;border:var(--stroke2);border-radius:var(--r-sm);background:var(--paper)}
+.tag svg{width:14px;height:14px}
+.tag.booked{background:var(--green)}
+.note{font-size:14px;padding:8px 14px;border:2px dashed var(--ink);border-radius:14px;background:var(--cream)}
+.warn{color:var(--ink)}
+.note.warn{background:var(--blush)}
+
+/* day picker (同北九州 tabs) */
+.modebar{display:inline-flex;border:var(--stroke);border-radius:var(--r-sm);padding:3px;gap:3px;align-self:flex-start;background:var(--paper)}
+.mbtn{font:inherit;font-size:15px;border:0;background:transparent;color:var(--ink);padding:6px 16px;border-radius:var(--r-sm);cursor:pointer;min-height:40px}
+.mbtn[aria-pressed="true"]{background:var(--coral)}
+.daystrip{display:flex;gap:8px;overflow-x:auto;padding:6px 2px 12px;scrollbar-width:thin}
+.dchip{font:inherit;flex:0 0 auto;display:flex;flex-direction:column;align-items:center;gap:2px;min-width:70px;padding:6px 8px;border:var(--stroke);border-radius:var(--r-md);background:var(--paper);color:var(--ink);cursor:pointer;line-height:1.25}
+.dchip:hover{background:var(--cream)}
+.dchip[aria-pressed="true"]{background:var(--yellow);transform:translateY(-3px);box-shadow:0 3px 0 var(--ink)}
+.dc-d{font-size:17px}
+.dc-w{font-size:12px}
+.dc-c{font-size:12px;padding:0 8px;border:var(--stroke2);border-radius:var(--r-sm);color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--ink-soft)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%;display:inline-block;border:2px solid var(--ink)}
+.t-home{background:var(--ok)} .t-st{background:var(--de)} .t-sight{background:var(--muted)} .t-event{background:var(--pl)} .t-air{background:var(--ink)} .t-beer{background:var(--beer)}
+.ln{width:24px;height:0;display:inline-block}
+.l-rail{border-top:3px solid var(--de)} .l-walk{border-top:3px dotted var(--ok)} .l-car{border-top:3px dashed var(--beer)} .l-air{border-top:2px dashed var(--ink)}
+
+.dayview{border:var(--stroke);border-radius:var(--r-lg);background:var(--paper);padding:18px 18px 22px;display:flex;flex-direction:column;gap:14px}
+.dayview.boing{animation:boing .55s cubic-bezier(.3,1.4,.5,1)}
+.dv-head{display:flex;align-items:center;gap:14px}
+.dv-head svg.dv-ic{width:96px;height:72px;flex:0 0 auto}
+.dv-head .ht{display:flex;flex-direction:column;gap:4px;min-width:0}
+.dv-head h3{font-size:22px;line-height:1.35}
+.dv-head .meta{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:15px;color:var(--ink-soft)}
+@media (max-width:520px){.dv-head svg.dv-ic{width:64px;height:48px}}
+.dv-tr{font-size:14px;padding:8px 14px;border:2px dashed var(--ink);border-radius:14px;background:var(--sky)}
+.dv-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:20px}
+.dv-grid.nomap{grid-template-columns:minmax(0,1fr)}
+@media (max-width:820px){.dv-grid{grid-template-columns:minmax(0,1fr)}}
+.dv-main,.dv-maps{display:flex;flex-direction:column;gap:14px;min-width:0}
+.note:empty{display:none}
+
+/* timeline（北九州虛線） */
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;border-left:3px dashed var(--ink)}
+.tl>li{position:relative;padding:0 0 18px 40px}
+.tl>li:last-child{padding-bottom:0}
+.tl>li::before{content:"";position:absolute;left:2px;top:4px;width:21px;height:21px;border:var(--stroke);border-radius:50%;background:var(--paper)}
+.tl>li:has(.tg-ig)::before{background:var(--coral)}
+.tl-t{display:block;font-size:14px;color:var(--ink-soft);line-height:1.4}
+.tl-b{display:flex;flex-direction:column;gap:4px;min-width:0}
+.tl-h{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:17px;line-height:1.45}
+.tl-h strong{font-weight:400}
+.tl-h a{text-decoration-color:var(--water);text-decoration-thickness:3px;text-underline-offset:4px}
+.tl-h a:hover{background:var(--cream)}
+.tl-b p{font-size:15px}
+.price{font-size:14px;color:var(--ink-soft);margin-left:auto;padding-left:6px}
+.tips{margin:0;padding:12px 16px 12px 34px;border:2px dashed var(--ink);border-radius:var(--r-md);background:var(--mint);font-size:15px;display:flex;flex-direction:column;gap:4px}
+.gbtns{display:flex;flex-wrap:wrap;gap:8px}
+.gbtn{display:inline-flex;align-items:center;gap:6px;font-size:14px;padding:4px 14px;border:var(--stroke2);border-radius:var(--r-sm);background:var(--water);color:var(--ink);text-decoration:none;min-height:36px}
+.gbtn:hover{background:var(--yellow)}
+.gbtn svg{width:13px;height:13px}
+
+/* meals */
+.meals{border:var(--stroke2);border-radius:var(--r-md);padding:14px 16px;background:var(--cream)}
+.meals h4{margin:0 0 10px;font-size:18px}
+.meals ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.meals li{display:grid;grid-template-columns:4em 1fr;gap:8px}
+.meals p{margin:2px 0 0;font-size:14px}
+.ml-m{font-size:13px;padding:0 8px;border:var(--stroke2);border-radius:var(--r-sm);background:var(--paper);align-self:start;text-align:center}
+
+/* maps */
+.mapbox{min-width:0;display:flex;flex-direction:column;gap:6px}
+.mapbox svg.map{width:100%;height:auto;display:block;border:var(--stroke);border-radius:var(--r-md);background:var(--sky)}
+.mapbox .cap{font-size:13px;color:var(--ink-soft)}
+.map text{font-family:var(--font);font-size:11px;fill:var(--ink);paint-order:stroke;stroke:var(--sky);stroke-width:3px;stroke-linejoin:round}
+.map .grid{stroke:#D6E9F1;stroke-width:1}
+.map .r-rail{stroke:var(--de);stroke-width:3;fill:none}
+.map .r-walk{stroke:var(--ok);stroke-width:2.5;stroke-dasharray:2 5;stroke-linecap:round;fill:none}
+.map .r-car{stroke:var(--beer);stroke-width:2.5;stroke-dasharray:7 5;fill:none}
+.map .r-air{stroke:var(--ink);stroke-width:2;stroke-dasharray:8 5;fill:none;opacity:.7}
+.map .scale{stroke:var(--ink-soft);stroke-width:1.5}
+.map .scale-t{font-size:10px;fill:var(--ink-soft)}
+
+footer.foot{max-width:960px;margin:0 auto;text-align:center;font-size:13px;color:var(--ink-soft);padding-block:0 32px;display:flex;flex-direction:column;gap:4px}
+
+.check{padding:18px 18px 20px}
+.progress{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15px}
+.bar{flex:1;height:18px;border:var(--stroke);border-radius:var(--r-sm);overflow:hidden;background:var(--paper)}
+.bar i{display:block;height:100%;background:var(--green);border-right:3px solid var(--ink);width:0;transition:width .4s ease}
+.pk-grp{margin-top:20px}.pk-grp:first-child{margin-top:4px}
+.pk-grp h3{display:flex;align-items:center;gap:8px;margin:0 0 10px;font-size:18px}
+.pk-grp h3 small{margin-left:auto;font-size:14px;color:var(--ink-soft)}
+.pk-grp h3 i{width:14px;height:14px;border:2px solid var(--ink);border-radius:50%;flex:0 0 auto}
+.todo{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.todo label{display:flex;align-items:center;gap:12px;padding:8px 12px;border:2px solid var(--ink);border-radius:16px;cursor:pointer;min-height:48px}
+.todo input{appearance:none;-webkit-appearance:none;width:26px;height:26px;flex:0 0 auto;margin:0;border:var(--stroke);border-radius:9px;background:var(--paper);display:grid;place-content:center;cursor:pointer}
+.todo input::after{content:"";width:12px;height:7px;border-left:3px solid var(--ink);border-bottom:3px solid var(--ink);transform:rotate(-45deg) translate(1px,-1px) scale(0);transition:transform .15s ease}
+.todo input:checked{background:var(--green)}
+.todo input:checked::after{transform:rotate(-45deg) translate(1px,-1px) scale(1)}
+.todo input:checked + span{text-decoration:line-through;text-decoration-thickness:2px;color:var(--ink-soft)}
+.todo small{display:block;font-size:13px;color:var(--ink-soft)}
+.reset{margin-top:14px;font:inherit;font-size:14px;color:var(--ink);background:var(--paper);border:2px solid var(--ink);border-radius:var(--r-sm);padding:6px 16px;min-height:40px;cursor:pointer}
+/* motion */
+@keyframes drift{from{transform:translateX(-14px)}to{transform:translateX(14px)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@keyframes ride{0%,100%{transform:translateX(0)}50%{transform:translateX(12px)}}
+@keyframes wave{0%,100%{transform:translateX(0)}50%{transform:translateX(-8px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes boing{0%{transform:scale(.97) translateY(10px)}45%{transform:scale(1.01) translateY(-5px)}70%{transform:translateY(2px)}100%{transform:none}}
+.a-drift{animation:drift 7s ease-in-out infinite alternate}
+.a-drift2{animation:drift 9s ease-in-out infinite alternate-reverse}
+.a-bob{animation:bob 4s ease-in-out infinite;transform-box:fill-box}
+.a-ride{animation:ride 5s ease-in-out infinite}
+.a-wave{animation:wave 4s ease-in-out infinite}
+.a-spin{animation:spin 8s linear infinite;transform-box:fill-box;transform-origin:center}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.dchip[aria-pressed="true"],.links a[aria-current="page"]{transform:none}}
+</style>
+</head>
+<body>
+
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="none" stroke="var(--pl)" stroke-width="1.6"/><path d="M12 2c-2 4-2 9 0 10s7 1 10-1M12 12c-3 1-7 4-8 8M12 12c2 3 3 7 2 10" fill="none" stroke="var(--pl)" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-piano" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="2" fill="none" stroke="var(--ink)" stroke-width="1.6"/><path d="M7.5 5v14M12 5v14M16.5 5v14" stroke="var(--ink)" stroke-width="1.2"/><rect x="5.6" y="5" width="3.6" height="8" fill="var(--ink)"/><rect x="14.8" y="5" width="3.6" height="8" fill="var(--ink)"/><rect x="10.2" y="5" width="3.6" height="8" fill="var(--ink)" opacity="0"/></symbol>
+    <symbol id="i-beer" viewBox="0 0 24 24"><path d="M5 7h10v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z" fill="var(--beer)" opacity=".85"/><path d="M5 7h10v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2zM15 10h2.5a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H15" fill="none" stroke="var(--ink)" stroke-width="1.5"/><path d="M4.5 7.5c0-2 1.5-3.5 3.5-3.2.8-1.4 3.4-1.6 4.4 0 1.8-.3 3.1 1 3.1 3" fill="var(--paper)" stroke="var(--ink)" stroke-width="1.4"/></symbol>
+    <symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="3" fill="none" stroke="var(--de)" stroke-width="1.6"/><path d="M5 10h14M8 21l2-4M16 21l-2-4" stroke="var(--de)" stroke-width="1.6" stroke-linecap="round"/><circle cx="9" cy="13.5" r="1" fill="var(--de)"/><circle cx="15" cy="13.5" r="1" fill="var(--de)"/></symbol>
+    <symbol id="i-plane" viewBox="0 0 24 24"><path d="M2.5 13.5l8-2.5L14 3.5c.4-1 2-1 2 .2l-1 7.3 6 2c.8.3.8 1.4 0 1.7l-6 1.4.9 4.4-1.7.9-3-4.2-6.7 1.6z" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 18V7M3 14h18v4M21 14v-2.5a3 3 0 0 0-3-3h-7v5.5" fill="none" stroke="var(--ok)" stroke-width="1.6" stroke-linecap="round"/><circle cx="7" cy="11" r="1.8" fill="none" stroke="var(--ok)" stroke-width="1.6"/></symbol>
+  </defs>
+</svg>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#home" data-go="home" aria-label="回到首頁">
+      <svg viewBox="0 0 40 40" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" aria-hidden="true"><path d="M8 22 a12 12 0 0 1 24 0 z" fill="#F6D27A"/><path d="M6 22 h28 v6 a4 4 0 0 1-4 4 H10 a4 4 0 0 1-4-4z" fill="#F2A497"/><path d="M14 22 v10 M20 22 v10 M26 22 v10" stroke-width="2"/><path d="M20 10 v-5 l5 2" /></svg>
+      <span>波蘭德國蜜月 2027</span>
+    </a>
+    <nav class="links" aria-label="分頁">
+      <a href="#home" data-go="home">首頁</a>
+      <a href="#days" data-go="days">每日行程</a>
+      <a href="#track" data-go="track">追蹤</a>
+      <a href="#move" data-go="move">交通</a>
+      <a href="#stay" data-go="stay">住宿</a>
+      <a href="#car" data-go="car">租車</a>
+      <a href="#pack" data-go="pack">行李</a>
+      <a href="#fly" data-go="fly">機票</a>
+      <a href="#buy" data-go="buy">預購</a>
+      <a href="#docs" data-go="docs">證件</a>
+      <a href="#money" data-go="money">預算</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="page" data-page="home">
+  <section class="hero box" aria-labelledby="t-hero">
+    <svg class="hero-art" viewBox="0 0 360 230" role="img" aria-label="插圖：華沙文化科學宮、柏林布蘭登堡門、新天鵝堡、阿爾卑斯湖景、啤酒杯與排球" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <g class="a-bob"><circle cx="322" cy="38" r="16" fill="#F6D27A"/></g>
+      <g class="a-drift"><path d="M36 46 c-2-12 14-18 22-10 c4-10 22-8 22 4 c10-2 14 12 4 14 h-44 c-8 0-10-8-4-8z" fill="#FFFCF6"/></g>
+      <g class="a-drift2"><path d="M214 30 c-2-10 12-14 18-7 c4-8 18-6 18 4 c8-1 10 10 3 11 h-36 c-6 0-8-7-3-8z" fill="#FFFCF6"/></g>
+      <!-- volleyball -->
+      <g class="a-bob"><circle cx="150" cy="44" r="13" fill="#FFFCF6"/><path d="M150 31 c-5 8-5 18 0 26 M138 40 c8 2 16 8 20 15 M162 38 c-8 4-14 10-17 18" stroke-width="2.4"/></g>
+      <!-- Alps -->
+      <path d="M196 150 L246 84 L272 112 L306 70 L364 150 z" fill="#B9DAA5"/>
+      <path d="M236 97 l10-13 l8 10 l-8 4z M296 83 l10-13 l12 16 l-12 2z" fill="#FFFCF6" stroke-width="2.4"/>
+      <!-- Neuschwanstein -->
+      <path d="M160 150 Q212 108 262 150 z" fill="#B9DAA5"/>
+      <rect x="196" y="104" width="34" height="26" fill="#FFFCF6"/>
+      <rect x="186" y="96" width="12" height="34" fill="#FFFCF6"/>
+      <rect x="228" y="100" width="12" height="30" fill="#FFFCF6"/>
+      <path d="M184 97 l8-16 l8 16z M226 101 l8-14 l8 14z M205 105 l8-14 l8 14z" fill="#A8D3E6"/>
+      <path d="M210 130 v-10 a3 3 0 0 1 6 0 v10" />
+      <!-- Palace of Culture -->
+      <rect x="22" y="112" width="58" height="38" fill="#FFFCF6"/>
+      <rect x="32" y="88" width="38" height="24" fill="#FFFCF6"/>
+      <rect x="42" y="66" width="18" height="22" fill="#F2A497"/>
+      <path d="M51 66 v-26" />
+      <path d="M32 124 h6 M48 124 h6 M64 124 h6 M40 100 h6 M56 100 h6" stroke-width="2.4"/>
+      <!-- Brandenburg Gate -->
+      <rect x="96" y="104" width="64" height="10" fill="#F6D27A"/>
+      <path d="M112 104 l16-8 l16 8" fill="#F6D27A"/>
+      <path d="M102 114 v36 M116 114 v36 M140 114 v36 M154 114 v36" stroke-width="5"/>
+      <!-- beer mug -->
+      <g class="a-bob"><path d="M300 118 h26 v28 a4 4 0 0 1-4 4 h-18 a4 4 0 0 1-4-4z" fill="#F6D27A"/><path d="M326 124 h6 a4 4 0 0 1 4 4 v8 a4 4 0 0 1-4 4 h-6"/><path d="M298 120 c0-6 6-8 10-5 c3-5 11-5 13 0 c5-2 9 2 7 7z" fill="#FFFCF6"/></g>
+      <!-- piano ground -->
+      <rect x="-4" y="150" width="368" height="22" fill="#FFFCF6"/>
+      <path d="M-4 150 h368 M-4 172 h368"/>
+      <path d="M14 150 v22 M38 150 v22 M62 150 v22 M86 150 v22 M110 150 v22 M134 150 v22 M158 150 v22 M182 150 v22 M206 150 v22 M230 150 v22 M254 150 v22 M278 150 v22 M302 150 v22 M326 150 v22 M350 150 v22" stroke-width="2"/>
+      <path d="M22 150 h8 v12 h-8z M46 150 h8 v12 h-8z M94 150 h8 v12 h-8z M118 150 h8 v12 h-8z M142 150 h8 v12 h-8z M190 150 h8 v12 h-8z M214 150 h8 v12 h-8z M262 150 h8 v12 h-8z M286 150 h8 v12 h-8z M310 150 h8 v12 h-8z" fill="#3E3A39" stroke-width="2"/>
+      <!-- lake -->
+      <rect x="-4" y="172" width="368" height="62" fill="#A8D3E6" stroke="none"/>
+      <g class="a-wave"><path d="M20 196 c10-6 20 6 30 0 M120 210 c10-6 20 6 30 0 M230 194 c10-6 20 6 30 0 M300 214 c10-6 20 6 30 0"/></g>
+      <g class="a-ride"><path d="M160 192 h44 l-8 10 h-28z" fill="#F2A497"/><path d="M174 192 v-12 h14 v12" fill="#FFFCF6"/></g>
+    </svg>
+    <div class="hero-txt">
+      <p class="sub">2027.9.10（五）– 9.26（日）・17 天・住宿 14 晚</p>
+      <h1 id="t-hero">波蘭德國蜜月</h1>
+      <p class="sub">華沙・柏林・慕尼黑・巴伐利亞・哈修塔特</p>
+      <div class="motifs">
+        <span class="motif" style="background:var(--blush)"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2"/><path d="M12 2c-3 5-3 13 0 20M3 9c6 1 12 5 15 11M21 8c-6 2-11 6-13 12" fill="none" stroke="#3E3A39" stroke-width="1.6"/></svg>男排世錦賽・日本隊</span>
+        <span class="motif" style="background:var(--sky)"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="19" height="13" rx="2" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2"/><path d="M8 6v13M12.5 6v13M17 6v13" stroke="#3E3A39" stroke-width="1.4"/><rect x="6.4" y="6" width="3" height="7" fill="#3E3A39"/><rect x="15.4" y="6" width="3" height="7" fill="#3E3A39"/></svg>蕭邦露天音樂會</span>
+        <span class="motif" style="background:var(--cream)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h10v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2z" fill="#F6D27A" stroke="#3E3A39" stroke-width="2"/><path d="M15 11h3a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-3" fill="none" stroke="#3E3A39" stroke-width="2"/></svg>Oktoberfest</span>
+      </div>
+      <div aria-live="polite">
+        <p class="small" id="cd-note">距離出發還有</p>
+        <div class="cd" id="cd-cells" style="margin-top:8px">
+          <div class="cd-cell"><span class="cd-num" id="cd-d">--</span><span class="cd-lab">天</span></div>
+          <div class="cd-cell"><span class="cd-num" id="cd-h">--</span><span class="cd-lab">時</span></div>
+          <div class="cd-cell"><span class="cd-num" id="cd-m">--</span><span class="cd-lab">分</span></div>
+          <div class="cd-cell"><span class="cd-num" id="cd-s">--</span><span class="cd-lab">秒</span></div>
+        </div>
+        <span id="countdown" hidden>—</span>
+      </div>
+      <p class="intro">在華沙瓦津基公園的玫瑰花圃旁聽蕭邦，替日本男排加油；搭火車到柏林，跟著中文導覽員走過圍牆遺址；最後一路南下巴伐利亞，啤酒節、新天鵝堡、《進擊的巨人》的城牆小鎮，再越過國界，在哈修塔特的湖邊迎接清晨。</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-route">
+    <h2 id="t-route"><span class="dot" style="background:var(--yellow)"></span>旅程路線</h2>
+    <div class="route">
+      <article class="leg box"><span class="pill" style="background:var(--coral)">9/11–9/16・華沙 4 晚＋弗羅茲瓦夫 1 晚</span><h3>華沙＋弗羅茲瓦夫</h3><p>蕭邦露天音樂會、芬蘭木屋村、普拉加老街、牛奶吧；9/14 克拉科夫《地。》朝聖、9/15 弗羅茲瓦夫點燈人</p></article>
+      <article class="leg box"><span class="pill" style="background:var(--water)">9/16–9/17・1 晚</span><h3>柏林</h3><p>國會大廈屋頂夕陽、布蘭登堡門、圍牆中文導覽</p></article>
+      <article class="leg box"><span class="pill" style="background:var(--green)">9/17–9/25・8 晚</span><h3>巴伐利亞＋奧地利</h3><p>弗賴辛 5 晚、哈利波特飯店 1 晚、哈修塔特 2 晚：楚格峰、啤酒節、新天鵝堡、諾德林根、國王湖、哈修塔特、達赫斯坦</p></article>
+    </div>
+    <div class="stats">
+      <div class="stat"><span class="label">請假天數</span><b class="num">9–11 天</b><span class="small muted">含 9/27 休息日</span></div>
+      <div class="stat"><span class="label">住宿已訂</span><b class="num" id="stat-booked">—</b><span class="small muted">/ 14 晚</span></div>
+      <div class="stat"><span class="label">追蹤中項目</span><b class="num" id="stat-track">—</b><span class="small muted">每週一更新</span></div>
+      <div class="stat"><span class="label">每人預算（估）</span><b class="num" id="stat-pp">—</b><span class="small muted">上限 15–16 萬</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-sc">
+    <h2 id="t-sc"><span class="dot" style="background:var(--water)"></span>快速前往</h2>
+    <div class="shortcuts">
+      <a class="sc" href="#days" data-go="days"><i style="background:var(--yellow)"></i><span>每日行程<small>點日期看當天安排、地圖、三餐</small></span></a>
+      <a class="sc" href="#track" data-go="track"><i style="background:var(--coral)"></i><span>追蹤進度<small>排球、蕭邦、火車開賣</small></span></a>
+      <a class="sc" href="#move" data-go="move"><i style="background:var(--water)"></i><span>交通與購票<small>車票、自駕須知</small></span></a>
+      <a class="sc" href="#stay" data-go="stay"><i style="background:var(--green)"></i><span>住宿<small>已訂與候選、免費取消</small></span></a>
+      <a class="sc" href="#car" data-go="car"><i style="background:var(--coral)"></i><span>租車<small>9/20–9/24 慕尼黑機場取還</small></span></a>
+      <a class="sc" href="#pack" data-go="pack"><i style="background:var(--yellow)"></i><span>行李清單<small>證件、衣物、電器，可勾選</small></span></a>
+      <a class="sc" href="#fly" data-go="fly"><i style="background:var(--water)"></i><span>機票<small>已訂阿聯酋・航班與轉機</small></span></a>
+      <a class="sc" href="#buy" data-go="buy"><i style="background:var(--coral)"></i><span>預購票券<small>哪些要先買、現場買的風險</small></span></a>
+      <a class="sc" href="#docs" data-go="docs"><i style="background:var(--green)"></i><span>護照與入出境<small>申根、EES、ETIAS、邊境檢查</small></span></a>
+      <a class="sc" href="#money" data-go="money"><i style="background:var(--coral)"></i><span>預算<small>住宿、門票、餐費總覽</small></span></a>
+    </div>
+  </section>
+</div>
+
+<div class="page" data-page="days" hidden>
+<section id="plan">
+  <h2><span class="dot" style="background:var(--yellow)"></span>每日行程</h2>
+  <p class="lead">點日期看當天行程。只有 9/20–9/24 自駕（標「自駕」的日期），其他天都搭大眾運輸。標 <span class="tg tg-ig">IG</span> 的是推薦拍照點。價格多為 2026 年官方價，2027 年可能調整；點地名開啟 Google 地圖。</p>
+  <div class="daystrip" id="daystrip" role="group" aria-label="選擇日期"></div>
+  <div class="legend small">
+    <span><i class="dot t-home"></i>住處</span><span><i class="dot t-st"></i>車站</span><span><i class="dot t-sight"></i>景點</span><span><i class="dot t-event"></i>活動</span><span><i class="dot t-beer"></i>啤酒</span><span><i class="dot t-air"></i>機場</span>
+    <span><i class="ln l-rail"></i>火車／地鐵</span><span><i class="ln l-walk"></i>步行</span><span><i class="ln l-car"></i>開車／公車／計程車</span>
+  </div>
+  <article id="dayview" class="dayview" aria-live="polite"></article>
+</section>
+</div>
+<div class="page" data-page="track" hidden>
+<section id="tracking">
+  <h2><span class="dot" style="background:var(--coral)"></span>追蹤進度</h2>
+  <p class="lead">由 Claude 的排程每週一 09:17 查核；華沙→柏林火車另於 2027/3/20 檢查開賣。最後更新：<span id="last-update" class="num">—</span></p>
+  <div id="track-list" class="track-grid">
+    <div class="empty" style="grid-column:1/-1">追蹤資料載入中。這裡會列出排球抽籤、售票、蕭邦檔期、火車開賣、機票與住宿的最新狀態。</div>
+  </div>
+</section>
+</div>
+<div class="page" data-page="move" hidden>
+<section id="transport">
+  <h2><span class="dot" style="background:var(--water)"></span>交通與購票</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>城市／路段</th><th>建議票種</th><th>價格</th><th>怎麼買</th></tr></thead>
+    <tbody>
+      <tr><td>華沙市區 9/11–9/16</td><td>9/11 傍晚與 9/12 各用單程票或 24 小時票；9/13–9/15 多半搭城際火車，市區只需單程票</td><td class="num">24h 15 PLN／72h 36 PLN／75 分鐘 4.40 PLN</td><td>Jakdojade、mobiWAWA App，上車掃 QR 啟用；站內售票機可刷感應信用卡</td></tr>
+      <tr><td>機場 → 住處</td><td>計程車（帶行李）</td><td class="num">35–50 PLN</td><td>iTaxi、MPT、Ele Taxi 或 Bolt／Uber</td></tr>
+      <tr><td>華沙 → 弗羅茲瓦夫 9/15</td><td>PKP Intercity EIC＋訂位</td><td class="num">票價待查</td><td>intercity.pl 或 PKP Intercity App；約 3 小時 35–45 分</td></tr>
+      <tr><td>弗羅茲瓦夫 → 柏林 9/16</td><td>PKP Intercity 直達 IC（Odra／Wawel／Galicja）</td><td class="num">票價待查</td><td>intercity.pl 或 int.bahn.de；國際線約半年前開賣，追蹤排程會查</td></tr>
+      <tr><td>柏林 → 慕尼黑 9/17</td><td>DB Sparpreis</td><td class="num">€49.99 起</td><td>已開賣；Sparpreis 綁車次，出發前一天前可退（收 €10）</td></tr>
+      <tr class="pick"><td>德國 9/16–9/25 市區與區域交通</td><td>Deutschlandticket（9 月份）</td><td class="num">€66.80／人</td><td>DB Navigator 訂閱，<strong>9/10 前退訂</strong>就只付 9 月；台灣信用卡能否付款待確認，備案 mo.pla App。不含 ICE／EC</td></tr>
+      <tr><td>柏林博物館</td><td>Museumspass 3 日，或 WelcomeCard Museum Island 72h ABC</td><td class="num">€32／€67</td><td>官網購買；WelcomeCard 含交通但不含波茨坦宮殿</td></tr>
+      <tr><td>慕尼黑（沒買月票時）</td><td>Zone M 個人日票／M-5 團體日票</td><td class="num">€10.80／€33.90（2027）</td><td>MVV App；Bayern-Ticket 兩人 €44（平日 9:00 後）適合新天鵝堡</td></tr>
+      <tr><td>弗賴辛 → 機場 9/25</td><td>635 號公車或計程車</td><td class="num">月票涵蓋</td><td>約 20 分；班距看 MVV App</td></tr>
+    </tbody>
+  </table></div>
+
+  <p class="note">自駕只在 9/20–9/24，租車公司、證件與路上規則見「租車」分頁。</p>
+  
+</section>
+</div>
+<div class="page" data-page="stay" hidden>
+<section id="lodging">
+  <h2><span class="dot" style="background:var(--green)"></span>住宿</h2>
+  <p class="lead">價格為兩人一間、整段住宿含稅總價（Booking／Airbnb，2026/10/21 查詢），皆可免費取消。</p>
+
+  <div class="lodge">
+    <div class="lodge-head"><h3>華沙 9/11–9/15・4 晚</h3><span class="pill s-done" id="pill-warsaw">已預訂</span></div>
+    <div id="booked-warsaw"></div>
+    <div class="tbl"><table>
+      <thead><tr><th>住處附近超市</th><th>距離</th><th>營業時間（Google，2026/10）</th><th>適合</th></tr></thead>
+      <tbody>
+        <tr class="pick"><td><a href="https://www.google.com/maps/search/?api=1&query=Biedronka%2C%20Grzybowska%2032%2C%20Warszawa" target="_blank" rel="noopener">Biedronka（Grzybowska 32）</a></td><td>步行約 4 分</td><td class="num">週一至六 06:00–23:30・週日休</td><td>主力採買：蛋、肉、麵包、牛奶、蔬果</td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Biedronka%2C%20Pereca%2013%2C%20Warszawa" target="_blank" rel="noopener">Biedronka（Pereca 13）</a></td><td>步行約 2 分</td><td class="num">週一至六 06:00–23:00・週日休</td><td>最近，但店小、評價普通</td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=%C5%BBabka%2C%20Walic%C3%B3w%2011%2C%20Warszawa" target="_blank" rel="noopener">Żabka</a></td><td>住處同棟</td><td class="num">週一至六 06:00–23:00・週日 10:00–21:00</td><td>週日補貨、飲料、熱食</td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Lewiatan%2C%20%C5%BBelazna%2059A%2C%20Warszawa" target="_blank" rel="noopener">Lewiatan</a></td><td>步行約 2 分</td><td class="num">週一至六 06:00–22:00・週日 09:00–22:00</td><td>週日也開的小雜貨店</td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Carrefour%20Market%2C%20Z%C5%82ota%2059%2C%20Warszawa" target="_blank" rel="noopener">Carrefour Market（Złota 59）</a></td><td>步行約 15 分</td><td class="num">週一至六 06:00–22:00・週日休</td><td>中央車站旁購物中心內，品項最多</td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Hala%20Mirowska%20Warszawa" target="_blank" rel="noopener">米羅夫斯卡市場</a></td><td>步行約 5–8 分</td><td class="num">週六開到 18:00・週日休</td><td>攤位買新鮮肉、蛋、蔬菜、花</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note">營業時間是 2026 年 Google 資料，出發前再確認。Biedronka 會員折扣要波蘭手機號碼才能辦，觀光客付原價即可。</p>
+  </div>
+
+  <div class="lodge">
+    <div class="lodge-head"><h3>弗羅茲瓦夫 9/15–9/16・1 晚</h3><span class="pill s-todo" id="pill-wroclaw">待預訂</span></div>
+    <div id="booked-wroclaw"></div>
+    <div id="cand-wroclaw" class="lodge">
+    <p class="note">看點燈人的那晚。價格是 momondo 2026/10 顯示的單晚參考價（兩人一間），不是 2027/9/15 的報價；訂房時選可免費取消。</p>
+    <div class="tbl"><table>
+      <thead><tr><th>候選</th><th>位置</th><th class="r">參考價／晚</th><th class="r">評分</th><th>特色</th></tr></thead>
+      <tbody>
+        <tr class="pick"><td><a href="https://www.google.com/maps/search/?api=1&query=The%20Bridge%20Wroclaw%20MGallery%20Plac%20Katedralny%208" target="_blank" rel="noopener">The Bridge Wrocław – MGallery</a><br><span class="small muted">推薦</span></td><td>大教堂島 Plac Katedralny 8</td><td class="r num">€96</td><td class="r">9.3</td><td>就在點燈人的街區，傍晚和清晨出門就能看</td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=B%26B%20HOTEL%20Wroclaw%20Old%20Town%20Rynek%209-11" target="_blank" rel="noopener">B&amp;B HOTEL Wrocław Old Town</a></td><td>市集廣場 Rynek 9-11</td><td class="r num">€60</td><td class="r">9.4</td><td>在市集廣場上，走到大教堂島約 15 分</td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Wyndham%20Wroclaw%20Old%20Town" target="_blank" rel="noopener">Wyndham Wrocław Old Town</a></td><td>老城 Świętego Mikołaja 67</td><td class="r num">€72</td><td class="r">9.0</td><td></td></tr>
+        <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Hotel%20im%20Jana%20Pawla%20II%20Wroclaw" target="_blank" rel="noopener">Hotel im. Jana Pawła II</a></td><td>大教堂島 Św. Idziego 2</td><td class="r num">€60</td><td class="r">8.9</td><td>也在大教堂島上，價格較低</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small muted">即時查價：<a href="https://www.booking.com/searchresults.zh-tw.html?ss=Wroclaw&checkin=2027-09-15&checkout=2027-09-16&group_adults=2&no_rooms=1&selected_currency=TWD&nflt=fc%3D2" target="_blank" rel="noopener">Booking 弗羅茲瓦夫（已帶日期、可免費取消）</a></p>
+    </div>
+  </div>
+
+  <div class="lodge">
+    <div class="lodge-head"><h3>柏林 9/16–9/17・1 晚</h3><span class="pill s-todo" id="pill-berlin">待預訂</span></div>
+    <div id="booked-berlin"></div>
+    <div id="cand-berlin" class="lodge">
+    <p class="note">表內為原本 4 晚（9/16–9/20）的報價，改成 1 晚後需重查；只住一晚，選中央車站旁的飯店最方便寄放行李。</p>
+    <div class="tbl"><table>
+      <thead><tr><th>候選</th><th class="r">總價</th><th class="r">每晚</th><th>位置與設施</th><th>免費取消</th></tr></thead>
+      <tbody>
+        <tr class="pick"><td><a href="https://www.booking.com/hotel/de/romy-by-amano.zh-tw.html" target="_blank" rel="noopener">Hotel ROMY by AMANO</a><br><span class="small muted">推薦・飯店</span></td><td class="r num">20,938</td><td class="r num">5,235</td><td>柏林中央車站 300 m，火車進出都在這站</td><td class="num">9/13 前・入住前付款</td></tr>
+        <tr><td><a href="https://www.booking.com/hotel/de/ibis-berlin-hauptbahnhof.zh-tw.html" target="_blank" rel="noopener">ibis 柏林中央車站</a></td><td class="r num">22,106</td><td class="r num">5,527</td><td>中央車站 300 m</td><td class="num">9/15 前・入住時付款</td></tr>
+        <tr><td><a href="https://www.airbnb.com.tw/rooms/29616716" target="_blank" rel="noopener">米特區舒適的公寓</a><br><span class="small muted">Airbnb</span></td><td class="r num">14,174</td><td class="r num">3,544</td><td>米特區，有廚房；4.72（394）。離車站距離待確認</td><td class="num">9/11 前</td></tr>
+        <tr><td><a href="https://www.booking.com/hotel/de/adina-apartment-berlin-hauptbahnhof.zh-tw.html" target="_blank" rel="noopener">阿迪納公寓式酒店</a></td><td class="r num">26,015</td><td class="r num">6,504</td><td>中央車站 850 m，簡易廚房</td><td class="num">9/8 前</td></tr>
+      </tbody>
+    </table></div></div>
+  </div>
+
+  <div class="lodge">
+    <div class="lodge-head"><h3>弗賴辛 9/17–9/25・三段共 5 晚</h3><span class="pill s-todo" id="pill-munich">待預訂・建議盡早</span></div>
+    <div id="booked-munich"></div>
+    <div class="tbl"><table>
+      <thead><tr><th>候選</th><th class="r">總價</th><th class="r">每晚</th><th>交通與設施</th><th>免費取消</th></tr></thead>
+      <tbody>
+        <tr class="pick"><td><a href="https://www.booking.com/hotel/de/boutique-apartment-in-freisingen.zh-tw.html" target="_blank" rel="noopener">Boutique Apartment in Freising</a><br><span class="small muted">推薦・弗賴辛</span></td><td class="r num">23,319</td><td class="r num">4,664</td><td>RE 25–27 分到慕尼黑中央車站；近機場；有廚房</td><td class="num">9/14 前</td></tr>
+        <tr><td><a href="https://www.booking.com/hotel/de/ibisaugsburgbeimkoenigsplatz.zh-tw.html" target="_blank" rel="noopener">ibis Augsburg beim Königsplatz</a><br><span class="small muted">奧格斯堡</span></td><td class="r num">25,522</td><td class="r num">5,104</td><td>車站 500 m；ICE 約 30 分，€17.99 起</td><td class="num">9/19 前・入住時付款</td></tr>
+        <tr><td><a href="https://www.booking.com/hotel/de/steinhauser-s-ferienwohnungen.zh-tw.html" target="_blank" rel="noopener">Steinhauser 兩房公寓</a><br><span class="small muted">奧格斯堡老城</span></td><td class="r num">20,197</td><td class="r num">4,039</td><td>52 m²，有廚房</td><td class="num warn">8/20 前・入住前付款</td></tr>
+        <tr><td><a href="https://www.airbnb.com.tw/rooms/1796583" target="_blank" rel="noopener">Planegg 舒適的大型公寓</a><br><span class="small muted">Airbnb</span></td><td class="r num">31,130</td><td class="r num">6,226</td><td>走 5 分到 S6，20 分進市區</td><td class="num">9/15 前</td></tr>
+        <tr><td><a href="https://www.airbnb.com.tw/rooms/854235953353169711" target="_blank" rel="noopener">Haar 舒適的度假公寓</a><br><span class="small muted">Airbnb</span></td><td class="r num">26,662</td><td class="r num">5,332</td><td>56 m²，微波爐、洗碗機；4.95</td><td class="num">9/19 前</td></tr>
+        <tr><td><a href="https://www.booking.com/hotel/de/motel-one-munchen-city-sud.zh-tw.html" target="_blank" rel="noopener">Motel One Campus</a><br><span class="small muted">對照：慕尼黑市區</span></td><td class="r num">51,167</td><td class="r num">10,233</td><td>地鐵 U2 450 m</td><td class="num">9/5 前</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note warn">第一段 9/17–9/20（3 晚）已訂 Boutique Apartment in Freising。還要訂：9/21–9/22（1 晚）、9/24–9/25（1 晚），建議訂同一間，方便寄放行李；9/20–9/24 有租車，大行李也可以放在後車廂。下表為 2026/10 查到的原始報價，給另外兩晚比較用。</p>
+    <p class="note">Deutschlandticket 2027 年每人每月 €66.80、可按月取消，涵蓋柏林與慕尼黑市區交通、弗賴辛／奧格斯堡區域火車、慕尼黑機場 S-Bahn（不含 ICE）。</p>
+  </div>
+  <div class="lodge">
+    <div class="lodge-head"><h3>哈修塔特 9/22–9/24・2 晚</h3><span class="pill s-todo" id="pill-hallstatt">待預訂</span></div>
+    <div id="booked-hallstatt"></div>
+    <div id="cand-hallstatt" class="lodge">
+    <p class="note">住奧伯特勞恩，早上開車 5 分鐘或搭火車 1 站到哈修塔特車站，再搭渡輪約 10 分鐘進鎮（成人 €4，班次以 hallstattschifffahrt.at 為準）。9 月從奧伯特勞恩直達鎮上的遊船第一班 11:25，太晚，適合當回程（鎮上 15:00 出發，單程 €12）。也可開車 7 分鐘到鎮外 P1／P2 停車場。達赫斯坦纜車山下站就在奧伯特勞恩。</p>
+    <p class="note">下表是比價網站（KAYAK、momondo）2026/10 顯示的單晚參考價，查詢日期是 2026 年 10 月中下旬、兩人一間，<strong>不是 2027/9/22 的報價</strong>，9 月旺季可能更貴。訂房網站連不上，免費取消條款依房型而定，訂房時請選「可免費取消」。台幣以歐元 36.91 換算。</p>
+    <div class="tbl"><table>
+      <thead><tr><th>候選</th><th>位置</th><th class="r">參考價／晚</th><th class="r">2 晚（NT$）</th><th class="r">評分</th><th>特色</th></tr></thead>
+      <tbody>
+        <tr class="pick"><td><a href="https://dachstein.salzkammergut.at/oesterreich-unterkunft/detail/100092/hotel-haus-am-see.html" target="_blank" rel="noopener">Hotel Haus am See</a></td><td>奧伯特勞恩湖畔</td><td class="r num">€115–122</td><td class="r num">≈ 8,489–9,006</td><td class="r">8.0</td><td>湖景房多附陽台、自助入住；官方標示每人每晚 €49 起＋觀光稅 €4</td></tr>
+        <tr><td><a href="https://www.at.kayak.com/Obertraun-Hotels.46769.hotel.ksp" target="_blank" rel="noopener">Haus Bergblick</a></td><td>奧伯特勞恩</td><td class="r num">€122</td><td class="r num">≈ 9,006</td><td class="r">8.7</td><td>民宿型，細節待確認</td></tr>
+        <tr><td><a href="https://www.hallstatt.net/unterkunftsverzeichnis/gasthoefe-und-hotels/obertraun/appartment-hotel-seerose/" target="_blank" rel="noopener">Apartment House Seerose</a></td><td>奧伯特勞恩</td><td class="r num">€103</td><td class="r num">≈ 7,603</td><td class="r">7.1</td><td>公寓式，可自煮</td></tr>
+        <tr><td><a href="https://www.at.kayak.com/Obertraun-Hotels-Dormio-Resort-Obertraun.466075.ksp" target="_blank" rel="noopener">Dormio Resort Obertraun</a></td><td>奧伯特勞恩</td><td class="r num">€90–114</td><td class="r num">≈ 6,644–8,415</td><td class="r">8.6–8.9</td><td>度假村小屋，房型大小差很多，選兩人房型</td></tr>
+        <tr><td><a href="https://www.salzkammergut.at/en/oesterreich-unterkunft/detail/102318/seehotel-on-lake-hallstatt.html" target="_blank" rel="noopener">Seehotel am Hallstättersee</a></td><td>奧伯特勞恩湖畔</td><td class="r num">查不到</td><td class="r num">—</td><td class="r">—</td><td>比價網站沒有列出價格</td></tr>
+        <tr><td><a href="https://www.momondo.de/hotels/hallstatt" target="_blank" rel="noopener">Haus Holl Herta</a></td><td>哈修塔特鎮內</td><td class="r num">€121</td><td class="r num">≈ 8,932</td><td class="r">9.5</td><td>小型民宿</td></tr>
+        <tr><td><a href="https://www.momondo.de/hotels/hallstatt" target="_blank" rel="noopener">Gasthof Simony B&B</a></td><td>哈修塔特鎮內</td><td class="r num">€138</td><td class="r num">≈ 10,187</td><td class="r">8.1</td><td>老旅館，含早餐</td></tr>
+        <tr><td><a href="https://www.momondo.de/hotels/hallstatt" target="_blank" rel="noopener">Pension Sarstein</a></td><td>哈修塔特鎮內</td><td class="r num">€171–172</td><td class="r num">≈ 12,623–12,697</td><td class="r">9.3</td><td>評分高的家庭民宿</td></tr>
+        <tr><td><a href="https://www.momondo.de/hotels/hallstatt" target="_blank" rel="noopener">Pension Leopoldine</a></td><td>哈修塔特鎮內</td><td class="r num">€179</td><td class="r num">≈ 13,214</td><td class="r">9.3</td><td></td></tr>
+        <tr><td><a href="https://www.at.kayak.com/Hallstatt-Hotels-Heritage-Hotel-Hallstatt.383251.ksp" target="_blank" rel="noopener">Heritage Hotel Hallstatt</a></td><td>哈修塔特鎮內</td><td class="r num">€244</td><td class="r num">≈ 18,012</td><td class="r">8.7</td><td>古蹟建築改建；KAYAK 統計 9 月平均約 €336</td></tr>
+        <tr class="pick"><td><a href="https://www.at.kayak.com/Hallstatt-Hotels-Seehotel-Gruener-Baum.391391.ksp" target="_blank" rel="noopener">Seehotel Grüner Baum</a></td><td>市集廣場旁、湖畔</td><td class="r num">€281–297</td><td class="r num">≈ 20,743–21,925</td><td class="r">8.8</td><td>就在明信片觀景點旁；KAYAK 10/17 查詢最低 €416</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small muted">即時查價（已帶入 9/22–9/24、兩人、可免費取消）：<a href="https://www.booking.com/searchresults.zh-tw.html?ss=Obertraun&checkin=2027-09-22&checkout=2027-09-24&group_adults=2&no_rooms=1&selected_currency=TWD&nflt=fc%3D2" target="_blank" rel="noopener">Booking 奧伯特勞恩</a>・<a href="https://www.booking.com/searchresults.zh-tw.html?ss=Hallstatt&checkin=2027-09-22&checkout=2027-09-24&group_adults=2&no_rooms=1&selected_currency=TWD&nflt=fc%3D2" target="_blank" rel="noopener">Booking 哈修塔特</a>・<a href="https://www.airbnb.com.tw/s/Hallstatt/homes?checkin=2027-09-22&checkout=2027-09-24&adults=2&flexible_cancellation=true&currency=TWD" target="_blank" rel="noopener">Airbnb 哈修塔特周邊</a></p>
+    </div>
+  </div>
+</section>
+</div>
+<div class="page" data-page="car" hidden>
+<section id="carpage">
+  <h2><span class="dot" style="background:var(--coral)"></span>租車</h2>
+  <p class="lead">只租一次：9/20（一）早上在慕尼黑機場取車，9/24（五）傍晚在同一處還車，共 5 天。路線是新天鵝堡 → 哈利波特飯店 → 諾德林根 → 國王湖 → 哈修塔特 → 達赫斯坦，有一段進奧地利。</p>
+  <div class="route">
+    <article class="leg box"><span class="pill" style="background:var(--coral)">取車</span><h3>9/20（一）07:30</h3><p>慕尼黑機場 Munich Airport Center（MAC）3 樓的租車櫃台，就在兩座航廈中間</p></article>
+    <article class="leg box"><span class="pill" style="background:var(--water)">還車</span><h3>9/24（五）約 16:30</h3><p>跟著「Rental Car Return」標誌開進還車區，把鑰匙留在車上；滿油還車前先加油</p></article>
+    <article class="leg box"><span class="pill" style="background:var(--green)">估價</span><h3>約 €185（5 天）</h3><p>小型自排車平均約 €37／天估；保險、油錢、停車另計，見「預算」分頁</p></article>
+  </div>
+
+  <h3>慕尼黑機場的租車公司</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>公司</th><th>櫃台營業時間（機場官網）</th><th class="r">KAYAK 起價／天</th><th>適合</th></tr></thead>
+    <tbody>
+      <tr class="pick"><td><a href="https://www.sixt.com/car-rental/germany/munich/munich-airport/" target="_blank" rel="noopener">Sixt</a><br><span class="small muted">推薦</span></td><td>每天 05:00–24:00</td><td class="r num">US$59</td><td>德系車多、櫃台開最早；奧地利在可開範圍內（豪華車與部分車款另有限制）</td></tr>
+      <tr class="pick"><td><a href="https://www.europcar.com/" target="_blank" rel="noopener">Europcar</a><br><span class="small muted">推薦・比價常較便宜</span></td><td>每天 06:30–24:00</td><td class="r num">US$37</td><td>價格比 Sixt 低；跨境條款訂車時確認</td></tr>
+      <tr><td><a href="https://www.enterprise.com/" target="_blank" rel="noopener">Enterprise</a></td><td>每天 07:00–23:00</td><td class="r num">US$43</td><td>KAYAK 評分高</td></tr>
+      <tr><td><a href="https://www.avis.com/" target="_blank" rel="noopener">Avis／Budget</a></td><td>週一至五、日 07:00–23:00・週六 07:00–20:00</td><td class="r num">US$40–52</td><td>9/20 07:00 才開櫃</td></tr>
+      <tr><td><a href="https://www.hertz.com/" target="_blank" rel="noopener">Hertz</a></td><td>週一至五、日 06:00–22:00・週六 08:00–17:00</td><td class="r num">US$40</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">起價是 KAYAK 慕尼黑機場頁面 2026/10 顯示的參考價（小型車平均約 US$43／天，範圍 US$36–52），不是 2027/9 的報價。可以直接在官網訂，或用 Rentalcars、DiscoverCars 等比價網站，選有免費取消的方案，出發前價格下降時再重訂。</p>
+
+  <h3>訂車時要選的條件</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>項目</th><th>建議</th></tr></thead>
+    <tbody>
+      <tr><td>排檔</td><td>德國租車多為手排，一定要選<strong>自排（Automatik）</strong></td></tr>
+      <tr><td>車型</td><td>小型或緊湊型（VW Golf 等級），兩人兩個大行李箱放得下；哈修塔特、羅騰堡老城路窄，車小比較好停</td></tr>
+      <tr><td>跨境</td><td>訂車時註明開往奧地利。Sixt 條款寫明違反跨境規定時所有保險失效</td></tr>
+      <tr><td>保險</td><td>選含車損（CDW）與竊盜險、自負額降到 0 的方案</td></tr>
+      <tr><td>里程</td><td>無限里程（全程約 1,100 km）</td></tr>
+      <tr><td>油料</td><td>滿油取、滿油還；機場附近先加滿再還車，租車公司代加油價格高</td></tr>
+      <tr><td>付款</td><td>主駕本人名下的信用卡（不收簽帳卡、預付卡）。Sixt 條款寫押金最高可到租金 3 倍，額度要留夠</td></tr>
+      <tr><td>取消</td><td>選可免費取消、到店付款的方案</td></tr>
+      <tr><td>副駕</td><td>兩人輪流開要加登記第二駕駛，未登記的人開車保險不賠</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>證件</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>要帶的</th><th>說明</th></tr></thead>
+    <tbody>
+      <tr><td>台灣駕照正本</td><td>每位駕駛都要帶</td></tr>
+      <tr><td>國際駕照</td><td>德國對觀光客要求國際駕照，或台灣駕照加德文譯本；監理站申請 NT$250、效期 3 年；奧地利也建議帶</td></tr>
+      <tr><td>護照</td><td>取車時核對身分</td></tr>
+      <tr><td>主駕名下信用卡</td><td>刷押金用，卡片名字要和駕照一致</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>路上規則</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>項目</th><th>德國</th><th>奧地利</th></tr></thead>
+    <tbody>
+      <tr><td>酒駕上限</td><td><strong>0.5‰</strong>（9/19 啤酒節隔天早上取車，前一晚少喝）</td><td><strong>0.5‰</strong></td></tr>
+      <tr><td>高速公路</td><td>免費；無速限路段建議 130 km/h</td><td>要買通行證（Vignette），2027 年起只有數位版；10 日 €12.80（2026 年價），ASFINAG 官網或 App 買 1 日／10 日券立即生效，買錯成 2 個月或年票要等 18 天</td></tr>
+      <tr><td>環保貼紙</td><td>慕尼黑市區需綠色環保貼紙，租車通常已貼</td><td>—</td></tr>
+      <tr><td>停車</td><td>新天鵝堡 6 小時 €12；國王湖停車場收費</td><td>哈修塔特鎮內車輛管制，向 Weisses Lamm 確認停車方式</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>每天開多遠</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>日期</th><th>路線</th><th class="r">車程（估）</th></tr></thead>
+    <tbody>
+      <tr><td class="num">9/20</td><td>慕尼黑機場 → 新天鵝堡 → 君茨堡（哈利波特飯店）</td><td class="r num">約 4 小時</td></tr>
+      <tr><td class="num">9/21</td><td>君茨堡 → 諾德林根 → 羅騰堡 → 弗賴辛</td><td class="r num">約 4 小時 15 分</td></tr>
+      <tr><td class="num">9/22</td><td>弗賴辛 → 國王湖 → 藍紹 → 哈修塔特</td><td class="r num">約 4 小時</td></tr>
+      <tr><td class="num">9/23</td><td>不開車，全天步行</td><td class="r num">—</td></tr>
+      <tr><td class="num">9/24</td><td>哈修塔特 → 奧伯特勞恩（達赫斯坦纜車）→ 慕尼黑機場還車</td><td class="r num">約 3 小時 15 分</td></tr>
+    </tbody>
+  </table></div>
+</section>
+</div>
+<div class="page" data-page="pack" hidden>
+<section id="packpage">
+  <h2><span class="dot" style="background:var(--yellow)"></span>行李清單</h2>
+  <p class="lead">9 月的華沙、柏林、慕尼黑早晚約 10°C、白天約 20°C；楚格峰山頂 2,962 m、達赫斯坦和冰洞接近 0°C。勾選會記在這台裝置的瀏覽器裡。</p>
+  <div class="check box">
+    <div class="progress"><div class="bar" aria-hidden="true"><i id="pk-bar"></i></div><span id="pk-count">0 / 0</span></div>
+    <div id="pk-groups"></div>
+    <button class="reset" type="button" id="pk-reset">全部取消勾選</button>
+  </div>
+  <h3>Dirndl（巴伐利亞傳統服裝）去哪買</h3>
+  <p class="lead">9/19 週日啤酒節當天商店休息，要在 9/17（五）傍晚或 9/18（六）楚格峰回程經過中央車站時買好。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>店家</th><th>地點</th><th>價位</th><th>重點</th></tr></thead>
+    <tbody>
+      <tr class="pick"><td><a href="https://www.google.com/maps/search/?api=1&query=Almwelt%20M%C3%BCnchen%20Hauptbahnhof" target="_blank" rel="noopener">Almwelt</a><br><span class="small muted">推薦・最順路</span></td><td>慕尼黑中央車站 S-Bahn 層</td><td>官網未列</td><td>每天 08:00–20:00、週日也開；男女款都有。9/17 抵達車站就能逛</td></tr>
+      <tr class="pick"><td><a href="https://www.google.com/maps/search/?api=1&query=Angermaier%20Trachten%20Rosental%2010%20M%C3%BCnchen" target="_blank" rel="noopener">Angermaier Trachten</a><br><span class="small muted">推薦・價格公道</span></td><td>Rosental 10（穀物市場旁）、Landsberger Str. 101–103</td><td>當地媒體評「價格公道」</td><td>1948 年創立的老店，自有品牌、版型現代；營業時間出發前查</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Fundgruber%20Klenzestra%C3%9Fe%2058%20M%C3%BCnchen" target="_blank" rel="noopener">Fundgruber</a></td><td>Klenzestraße 58</td><td>二手，價格公道</td><td>二手傳統服飾店，人少、常有特別款</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Bavarian%20Outfitters%20Auenstra%C3%9Fe%2031%20M%C3%BCnchen" target="_blank" rel="noopener">Bavarian Outfitters</a></td><td>Auenstraße 31 等 4 處</td><td>租借，市內約 €35–49.90／天起</td><td>只想穿一天可以租；取件隔天歸還，週日 13:00 前</td></tr>
+      <tr><td><a href="https://www.google.com/maps/search/?api=1&query=Ludwig%20Beck%20Marienplatz" target="_blank" rel="noopener">Ludwig Beck 百貨傳統服飾部</a></td><td>瑪利亞廣場 11</td><td>中高價</td><td>500 m² 多品牌，適合一次比較款式</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">預算參考：入門款 Dirndl €40–80、襯衫 €20–60、圍裙 €20–50（2026 年行情）。綁圍裙蝴蝶結的位置有意思：一般說法是綁右邊代表已婚、左邊單身，蜜月就綁右邊。</p>
+
+  <p class="note">申根入境：台灣護照免簽，護照效期建議出發時還有 6 個月以上。歐盟的 ETIAS 旅行授權（€20）尚未上路，歐盟會在啟用前幾個月公布日期；若 2027/9 前啟用，出發前要先上官網申請，已加入「追蹤」分頁。</p>
+</section>
+</div>
+<div class="page" data-page="fly" hidden>
+<section id="flight-booked">
+  <h2><span class="dot" style="background:var(--green)"></span>已訂機票：阿聯酋航空</h2>
+  <p class="lead"><span class="pill s-done">已確認</span> 2 位成人・經濟艙 Saver（優惠票價）・每人托運 25 kg。機票號碼見電子機票。時間皆為當地時間。</p>
+  <div class="tbl fit"><table>
+    <thead><tr><th>航班</th><th>起飛</th><th>抵達</th><th>飛行</th></tr></thead>
+    <tbody>
+      <tr class="grp"><td colspan="4">去程：台北 → 華沙（共 18 小時 25 分）</td></tr>
+<tr><td><b>EK367</b><br><span class="small muted">第 1 段・Airbus A380-800</span></td><td class="num">9/10（五）<br><b>23:50</b> 桃園 T2</td><td class="num">9/11（六）<br><b>04:35</b> 杜拜 T3</td><td class="num">8 小時 45 分<br><span class="small muted">報到 9/10 20:50</span></td></tr>
+<tr class="grp"><td colspan="4">杜拜轉機 3 小時 35 分・04:35 抵達 → 08:10 起飛；同在 T3 不用換航廈，不出關（不需簽證），跟著 Connections 指標走</td></tr>
+<tr><td><b>EK179</b><br><span class="small muted">第 2 段・Boeing 777-300ER</span></td><td class="num">9/11（六）<br><b>08:10</b> 杜拜 T3</td><td class="num">9/11（六）<br><b>12:15</b> 華沙蕭邦 Terminal A</td><td class="num">6 小時 05 分<br><span class="small muted">報到 9/11 05:10</span></td></tr>
+      <tr class="grp"><td colspan="4">回程：慕尼黑 → 台北（共 18 小時 35 分）</td></tr>
+<tr><td><b>EK050</b><br><span class="small muted">第 3 段・Airbus A380-800</span></td><td class="num">9/25（六）<br><b>15:40</b> 慕尼黑 T1</td><td class="num">9/25（六）<br><b>23:40</b> 杜拜 T3</td><td class="num">6 小時 00 分<br><span class="small muted">報到 9/25 11:40</span></td></tr>
+<tr class="grp"><td colspan="4">杜拜轉機 4 小時 05 分・23:40 抵達 → 03:45 起飛（已是 9/26）；同在 T3，不出關，可在貴賓室或休息區小睡</td></tr>
+<tr><td><b>EK366</b><br><span class="small muted">第 4 段・Airbus A380-800</span></td><td class="num">9/26（日）<br><b>03:45</b> 杜拜 T3</td><td class="num">9/26（日）<br><b>16:15</b> 桃園 T2</td><td class="num">8 小時 30 分<br><span class="small muted">報到 9/26 00:45</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl fit"><table>
+    <thead><tr><th>費用（兩人）</th><th class="r">金額</th></tr></thead>
+    <tbody>
+      <tr><td>機票價</td><td class="r num">TWD 34,996</td></tr>
+      <tr><td>航空公司附加費</td><td class="r num">TWD 22,332</td></tr>
+      <tr><td>稅款和費用</td><td class="r num">TWD 10,668</td></tr>
+      <tr class="pick"><td><b>總計</b>（萬事達卡付款）</td><td class="r num"><b>TWD 67,996</b></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">機場時間（電子機票說明）：上表「報到」是電子機票建議的報到時間（起飛前 3 小時）；起飛前 90 分鐘要過完護照查驗；經濟艙起飛前 60 分鐘到登機門。四段機票要依序使用，任一段沒搭後面會被取消。座位還沒選，可在阿聯酋官網「管理預訂」挑選（Saver 票價選位可能收費）；餐點需求也在同一頁設定。</p>
+</section>
+<section id="flights">
+  <h3>訂票前的方案比較（已選 ①）</h3>
+  <p class="lead">2 位成人、經濟艙、含稅。2026/10/21 查詢，僅供參考。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>方案</th><th>航班</th><th class="r">兩人總價</th><th>重點</th></tr></thead>
+    <tbody>
+      <tr class="pick"><td>① C 阿聯酋<br><span class="small muted">推薦</span></td><td>EK367／EK179 → 華沙<br>EK050／EK366 慕尼黑 → 桃園 16:15</td><td class="r num">67,888</td><td>阿聯酋官網報價；托運 25 kg；改票 USD125</td></tr>
+      <tr><td>② C 長榮</td><td>BR65＋BR3464 經維也納 → 華沙<br>BR72 慕尼黑直飛 → 桃園 06:35</td><td class="r num">82,118</td><td>燦星報價；回程直飛、休息最充分；玉山 8 期 0 利率</td></tr>
+      <tr><td>③ C 土耳其</td><td>TK25／TK1265 → 華沙<br>TK1642／TK24，伊斯坦堡轉機 8h50</td><td class="r num">82,328</td><td>回程只趕得上博斯普魯斯導覽，時間很緊</td></tr>
+      <tr><td>A 華沙來回</td><td>阿聯酋＋9/25 LOT 慕尼黑→華沙</td><td class="r num">70,848</td><td>需折返、分開出票</td></tr>
+      <tr><td>B 慕尼黑來回</td><td>國泰＋9/11 慕尼黑→華沙</td><td class="r num">81,860</td><td>抵達當天再轉一段飛機</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">0 利率分期：易遊網（阿聯酋）兩人 71,164，玉山／國泰 3 期、富邦 3 或 5 期；燦星（長榮）玉山 3／6／8 期。</p>
+</section>
+</div>
+<div class="page" data-page="buy" hidden>
+<section id="buypage">
+  <h2><span class="dot" style="background:var(--coral)"></span>建議提前購買的票</h2>
+  <p class="lead">依急迫程度排序。<span class="pill s-new">必買</span> 現場可能買不到或差很多錢；<span class="pill s-todo">建議</span> 早買比較便宜或有位子；<span class="pill s-wait">現場可</span> 不必預購。規則與價格多是 2026 年資料，2027 開賣時再確認。</p>
+  <h3>交通</h3>
+  <div class="tbl fit"><table>
+    <thead><tr><th>項目</th><th>何時、在哪買</th><th>現場買的風險</th></tr></thead>
+    <tbody>
+      <tr class="pick"><td><b><span class="pill s-new">必買</span> 柏林 → 慕尼黑 ICE</b><br><span class="small muted">9/17（五）</span></td><td>DB 國內票最早可提前 12 個月訂；2027 年 9 月的車次可能已經開賣，<a href="https://www.bahn.de/" target="_blank" rel="noopener">bahn.de</a> 或 DB Navigator App 查。買 Sparpreis（限搭指定車次），另加訂位每人 €5.50（2026）</td><td>當天只剩全價 Flexpreis。以法蘭克福–柏林為例，當天買超過 €125，提早買 €17.99 起（seat61）。早鳥價越接近出發越少</td></tr>
+      <tr class="pick"><td><b><span class="pill s-new">必買</span> 華沙 ⇄ 克拉科夫 EIP Pendolino</b><br><span class="small muted">排球日的另一天（預設 9/14）</span></td><td>開賣就買。PKP Intercity 的 EIP／EIC 國內票依時刻表期間開賣（2025/12 起最多可提前 120 天）；<a href="https://www.intercity.pl/en/" target="_blank" rel="noopener">intercity.pl</a> 或 App 購買。2026 年 188 PLN 起</td><td>EIP、EIC 一律強制訂位，熱門時段會滿座；動態票價，最便宜的票可比出發前買便宜 30–40%（PolishTrains）</td></tr>
+      <tr class="pick"><td><b><span class="pill s-new">必買</span> 華沙 → 弗羅茲瓦夫 EIC</b><br><span class="small muted">9/15（三）</span></td><td>同上，跟克拉科夫來回一起買</td><td>同上；早上 08:00 這班若滿座，抵達時間會往後推，影響下午行程</td></tr>
+      <tr class="pick"><td><b><span class="pill s-todo">建議</span> 弗羅茲瓦夫 → 柏林 IC 直達</b><br><span class="small muted">9/16（四）</span></td><td>國際票線上最早可提前 180 天（約 2027/3/20 起），已設 3/20 提醒；PKP Intercity 或 DB 都能買</td><td>每天只有少數直達班次；促銷票限量。國際促銷票不能退，一般國際票退票手續費 10%（24 小時前）～50%</td></tr>
+      <tr><td><b><span class="pill s-todo">建議</span> 排球日城際火車</b><br><span class="small muted">9/13（暫定）</span></td><td>抽籤公布比賽城市後馬上買（國內票，規則同上）</td><td>比賽日球迷多，回程晚班車容易滿座</td></tr>
+      <tr><td><b><span class="pill s-todo">建議</span> 租車</b><br><span class="small muted">9/20–9/24</span></td><td>現在就可以比價預訂（見「租車」分頁），選可免費取消的方案</td><td>慕尼黑機場啤酒節期間需求高，臨櫃價貴很多，自排車可能沒車</td></tr>
+      <tr><td><b><span class="pill s-todo">建議</span> Deutschlandticket</b><br><span class="small muted">9/18 楚格峰、9/19 啤酒節等區域車</span></td><td>出發前在 DB 官網或 App 訂閱 9 月份（月票，2026 年 €63／月），9 月中取消續訂</td><td>不能在車站買單次；沒買的話每趟區域火車單買，兩三趟就超過月票價。不含 ICE／IC 與楚格峰齒軌鐵路</td></tr>
+    </tbody>
+  </table></div>
+  <h3>景點與活動</h3>
+  <div class="tbl fit"><table>
+    <thead><tr><th>項目</th><th>何時、在哪買</th><th>現場買的風險</th></tr></thead>
+    <tbody>
+      <tr class="pick"><td><b><span class="pill s-new">必買</span> 新天鵝堡導覽</b><br><span class="small muted">9/20（一）</span></td><td>只透過官方線上商店 <a href="https://shop.ticket-center-hohenschwangau.de/Shop/Index/en/39901" target="_blank" rel="noopener">Ticket Center Hohenschwangau</a>；2026 年 €21＋每張手續費 €2.50。建議選 11:30 以後的場次（取車後開過去約 2 小時，官方建議提早 1.5–2 小時到村裡）</td><td>只能跟固定時段導覽入內。現場每天 08:00 起少量販售當日票，旺季常在上午就賣完，賣完當天就進不去。小心假冒的代售網站</td></tr>
+      <tr class="pick"><td><b><span class="pill s-new">必登記</span> 國會大廈屋頂（免費）</b><br><span class="small muted">9/16（四）傍晚</span></td><td><a href="https://visite.bundestag.de/BAPWeb/pages/createBookingRequest.jsf?lang=en" target="_blank" rel="noopener">聯邦議院官網</a>線上登記兩人姓名、生日；不能電話登記。當天帶護照正本（不收影本）</td><td><b>2027/8/23–11/19 圓頂關閉</b>，屋頂露台照常開放。沒登記也可以到國會前的訪客服務中心現場登記，但要有空位、且至少提前 2 小時，不保證有</td></tr>
+      <tr class="pick"><td><b><span class="pill s-new">必預約</span> 圍牆基金會中文導覽</b><br><span class="small muted">9/17（五）10:00</span></td><td><a href="https://www.stiftung-berliner-mauer.de/en/form/buchungsanfrage-besucherservice-gbm-en?source_entity_type=node&source_entity_id=246&angebot=1" target="_blank" rel="noopener">圍牆基金會預約表單</a>提出申請</td><td>中文導覽員要事先安排，現場沒有；沒預約只能自己逛戶外展區（免費）</td></tr>
+      <tr><td><b><span class="pill s-wait">待售</span> 男排世錦賽門票</b><br><span class="small muted">9/13 或 9/14</span></td><td>抽籤與售票日期未公布，「追蹤」分頁每週一檢查</td><td>日本隊與波蘭隊的比賽可能很快賣完；轉售票價格高、真假難辨</td></tr>
+      <tr><td><b><span class="pill s-todo">選配</span> Collegium Maius 英文延伸導覽</b><br><span class="small muted">克拉科夫日 13:00</span></td><td>想參加再到 <a href="https://bilety.uj.edu.pl/" target="_blank" rel="noopener">bilety.uj.edu.pl</a> 預約，31 PLN（2026）</td><td>導覽人數有限，可能額滿；不參加也可以免費逛中庭、13:30 後自由參觀主展區（17 PLN）</td></tr>
+      <tr><td><b><span class="pill s-wait">現場</span> 恰爾托雷斯基博物館</b><br><span class="small muted">克拉科夫日（週二免費）</span></td><td>週二免費票只能當天到售票處領、限量</td><td>開館就去；領不到就買付費票（2026 全票 65 PLN）。週一休館</td></tr>
+      <tr><td><b><span class="pill s-wait">現場可</span> 楚格峰、國王湖遊船、哈修塔特鹽礦纜車、達赫斯坦纜車、文化科學宮觀景台</b><br><span class="small muted">9/12、9/18、9/22–9/24</span></td><td>現場買即可，部分有官網售票</td><td>旺季排隊較久，早班比較不擠；山區天氣不好時可能停駛，現場買比較好調整</td></tr>
+      <tr><td><b><span class="pill s-wait">免費</span> 蕭邦露天音樂會、點燈人、免費渡輪</b><br><span class="small muted">9/12、9/15</span></td><td>不用買票</td><td>音樂會要提早佔位；渡輪天候不佳停駛</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">已訂：機票（阿聯酋）、華沙／弗羅茲瓦夫／柏林／弗賴辛／哈修塔特住宿。哈利波特飯店（9/20）與弗賴辛 9/21、9/24 兩晚仍在「追蹤」分頁。</p>
+</section>
+</div>
+<div class="page" data-page="docs" hidden>
+<section id="docspage">
+  <h2><span class="dot" style="background:var(--water)"></span>護照、簽證與入出境</h2>
+  <p class="lead">路線：桃園 → 杜拜轉機 → <b>華沙入境申根</b> → 火車進德國 → 開車進出奧地利 → <b>慕尼黑出境申根</b> → 杜拜轉機 → 桃園。波蘭、德國、奧地利都是申根國，入境和出境各查一次護照，中間的邊境可能抽查。</p>
+  <h3>出發前要準備</h3>
+  <div class="tbl fit"><table>
+    <thead><tr><th>項目</th><th>內容</th></tr></thead>
+    <tbody>
+      <tr><td><b>護照</b></td><td>台灣護照免簽入境申根，條件是護照上有身分證字號。效期要在離開申根（9/25）後還有 3 個月以上，航空公司常要求 6 個月，建議到 <b>2028/3</b> 以後；且須是 10 年內核發。英文姓名要和機票、火車票一致</td></tr>
+      <tr><td><b>免簽天數</b></td><td>任 180 天內最多停留 90 天；這趟 9/11–9/25 共 15 天，沒問題</td></tr>
+      <tr><td><b>ETIAS 旅行授權</b></td><td>還沒上路，沒有正式啟用日，最可能 2027 年；費用預計 €20。歐盟會在啟用前幾個月公布。若 2027/9 前啟用，出發前要上官網申請（啟用初期可能有過渡期）。「追蹤」分頁持續追</td></tr>
+      <tr><td><b>入境可能被問的資料</b></td><td>回程機票（阿聯酋電子機票）、所有住宿訂單、行程表、旅遊保險、信用卡與少量現金。存手機並印一份紙本</td></tr>
+      <tr><td><b>旅遊保險</b></td><td>免簽入境不強制，但建議投保海外醫療（申根醫療費很高）；保單英文版存手機</td></tr>
+      <tr><td><b>自駕證件</b></td><td>9/20–9/24 開德國、奧地利：台灣駕照正本＋國際駕照，德國另備駕照德文譯本（見「租車」分頁）；奧地利高速公路要買數位通行證</td></tr>
+      <tr><td><b>備份</b></td><td>護照資料頁影本與照片（跟正本分開放）、2 張大頭照、外交部急難救助專線 +886-800-085-095；出發前可到外交部「出國登錄」登記行程</td></tr>
+    </tbody>
+  </table></div>
+  <h3>沿路每一關</h3>
+  <div class="tbl fit"><table>
+    <thead><tr><th>日期・地點</th><th>會發生什麼</th><th>要準備</th></tr></thead>
+    <tbody>
+      <tr><td><b>9/10 桃園 T2</b></td><td>出境台灣；行李直掛華沙</td><td>護照；確認行李條寫 WAW</td></tr>
+      <tr><td><b>9/11 杜拜 T3</b>（轉機 3 小時 35 分）</td><td>不出關、不需簽證；轉機要再過一次安檢</td><td>液體限 100 ml；行動電源每人 1 個、100Wh 以下、機上不能使用</td></tr>
+      <tr class="pick"><td><b>9/11 華沙蕭邦機場</b></td><td><b>入境申根</b>，走非歐盟旅客通道。歐盟 EES 系統 2026/4/10 起全面上路，第一次入境要按指紋、拍臉部照片，排隊會比較久</td><td>護照、回程機票、華沙住宿訂單；可能被問旅遊目的與天數</td></tr>
+      <tr><td><b>9/13 或 9/14</b> 波蘭國內火車</td><td>國內線不查護照；車上會查票</td><td>護照仍要隨身</td></tr>
+      <tr><td><b>9/16 弗羅茲瓦夫 → 柏林</b>（火車過德波邊境）</td><td>德國對所有陸地邊境、波蘭對德國邊境都有臨時管制（目前分別到 2027/3/15、3/30，常被延長），邊境警察可能上車抽查</td><td>護照放身上，不要放在大行李裡</td></tr>
+      <tr><td><b>9/16–9/17 柏林</b></td><td>國會大廈、圍牆導覽報到要查證件；DB 實名制車票可能要出示證件</td><td>護照正本（不收影本）</td></tr>
+      <tr><td><b>9/22 德國 → 奧地利</b>（開車）</td><td>出德國方向通常不停車檢查</td><td>護照、駕照、國際駕照；奧地利高速公路通行證</td></tr>
+      <tr><td><b>9/24 奧地利 → 德國</b>（開車）</td><td>德國在德奧邊境有檢查站，可能停車查證件、車流大時要排隊</td><td>護照、駕照、租車合約放在手邊；預留 30 分鐘以上</td></tr>
+      <tr class="pick"><td><b>9/25 慕尼黑 T1</b></td><td><b>出境申根</b>，EES 登記出境（按指紋或拍照）</td><td>起飛前 90 分鐘（14:10）前要過完護照查驗</td></tr>
+      <tr><td><b>9/25–26 杜拜 T3</b>（轉機 4 小時 05 分）</td><td>不出關、不需簽證；再過一次安檢</td><td>02:45 前到登機門</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">在德國、奧地利，外國人要能隨時出示護照，請帶正本在身上，影本只當備份。護照遺失：先到當地警局報案拿證明，再聯絡駐波蘭、駐德國或駐奧地利的台北代表處（電話出發前從外交部領事局網站抄下）。邊境管制與 ETIAS 是 2026/11 的資料，出發前一個月再確認。</p>
+</section>
+</div>
+<div class="page" data-page="money" hidden>
+<section id="budget">
+  <h2><span class="dot" style="background:var(--coral)"></span>預算概覽</h2>
+  <p class="lead">兩人合計，台幣。已訂的用實付金額，其他是估價；歐元以臺灣銀行 2026/10/21 即期賣出 36.91、波蘭幣以 9.18 換算。預算上限每人 NT$150,000–160,000。</p>
+  <h3>大項目</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>類別</th><th class="r">兩人（NT$）</th><th class="r">每人（NT$）</th><th class="r">占比</th></tr></thead>
+    <tbody id="cat-rows"></tbody>
+  </table></div>
+  <h3>細項</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>項目</th><th class="r">兩人金額（NT$）</th><th>狀態</th></tr></thead>
+    <tbody id="budget-detail">
+      <tr class="grp"><td colspan="3">機票</td></tr>
+      <tr data-cat="fly"><td>阿聯酋 桃園⇄華沙／慕尼黑（EK367・EK179・EK050・EK366）</td><td class="r num">67,996</td><td><span class="pill s-done">已購買</span></td></tr>
+      <tr class="grp"><td colspan="3">住宿</td></tr>
+      <tr data-cat="stay"><td>華沙 Mennica Residence 4 晚</td><td class="r num" id="budget-warsaw">≈ 12,633</td><td><span class="pill s-done">已預訂</span></td></tr>
+      <tr data-cat="stay"><td>弗羅茲瓦夫 The Bridge 1 晚</td><td class="r num" id="budget-wroclaw">≈ 7,023</td><td><span class="pill s-done" id="bst-wroclaw">已預訂</span></td></tr>
+      <tr data-cat="stay"><td>柏林 Hotel ROMY 1 晚</td><td class="r num" id="budget-berlin">≈ 6,015</td><td><span class="pill s-done" id="bst-berlin">已預訂</span></td></tr>
+      <tr data-cat="stay"><td>弗賴辛公寓 5 晚<div class="small muted">9/17–9/20 已訂 €269.73（≈ 9,956）＋另兩晚以每晚約 4,664 估</div></td><td class="r num">≈ 19,284</td><td><span class="pill s-wait">3 晚已訂・2 晚待訂</span></td></tr>
+      <tr data-cat="stay"><td>哈利波特飯店 1 晚<div class="small muted">房價未公布，先以兩人 €400／晚粗估</div></td><td class="r num">≈ 14,764</td><td><span class="pill s-todo">粗估・未開放</span></td></tr>
+      <tr data-cat="stay"><td>哈修塔特 Weisses Lamm 2 晚</td><td class="r num" id="budget-hallstatt">≈ 20,153</td><td><span class="pill s-done" id="bst-hallstatt">已預訂</span></td></tr>
+      <tr class="grp"><td colspan="3">交通</td></tr>
+      <tr data-cat="move"><td>城際火車<div class="small muted">華沙→弗羅茲瓦夫、弗羅茲瓦夫→柏林（票價待查，暫用原華沙→柏林 €27.99 估）、柏林→慕尼黑 €49.99 起（每人）</div></td><td class="r num">≈ 6,800</td><td><span class="pill s-wait">未開賣・估</span></td></tr>
+      <tr data-cat="move"><td>Deutschlandticket 9 月份<div class="small muted">每人 €66.80，德國市內與區域火車、公車都能搭</div></td><td class="r num">≈ 4,931</td><td><span class="pill s-wait">估</span></td></tr>
+      <tr data-cat="move"><td>華沙市內交通<div class="small muted">機場計程車約 45 PLN＋每人 24 小時票 15 PLN、72 小時票 36 PLN</div></td><td class="r num">≈ 1,350</td><td><span class="pill s-wait">估</span></td></tr>
+      <tr data-cat="move"><td>租車與停車、通行證（9/20–9/24）</td><td class="r num" id="bud-car">—</td><td><span class="pill s-wait">估</span></td></tr>
+      <tr data-cat="move"><td>油錢<div class="small muted">約 1,100 km、小車每百公里約 6 L、每公升約 €1.75 估</div></td><td class="r num">≈ 4,430</td><td><span class="pill s-wait">估</span></td></tr>
+      <tr class="grp"><td colspan="3">門票與活動</td></tr>
+      <tr data-cat="act"><td>門票與體驗（已知價，見下方明細）</td><td class="r num" id="bud-act">—</td><td><span class="pill s-wait">部分待查</span></td></tr>
+      <tr class="grp"><td colspan="3">餐飲</td></tr>
+      <tr data-cat="food"><td>三餐與超市採買（見下方每日餐費）</td><td class="r num" id="bud-meal">—</td><td><span class="pill s-wait">估</span></td></tr>
+      <tr class="tot"><td>合計（兩人）</td><td class="r num" id="bud-total">—</td><td></td></tr>
+      <tr class="tot"><td>每人</td><td class="r num" id="bud-pp">—</td><td></td></tr>
+    </tbody>
+  </table></div>
+  <p class="small muted">尚未計入：排球門票、哈利波特飯店餐飲、旅遊保險、紀念品、信用卡海外手續費。</p>
+</section>
+<section id="actbudget">
+  <h2><span class="dot" style="background:var(--yellow)"></span>活動與餐費預算</h2>
+  <p class="lead">每人金額；門票多為 2026 年官方價，2027 年可能調整。「待查」與「選配」不計入小計。歐元 36.91、波蘭幣 9.18（依華沙訂房實付金額換算）。</p>
+  <h3>活動門票</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>日期</th><th>項目</th><th class="r">每人</th><th class="r">兩人（NT$）</th><th>狀態</th><th>備註</th></tr></thead>
+    <tbody id="act-rows"></tbody>
+  </table></div>
+  <h3>自駕相關（9/20–9/24）</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>日期</th><th>項目</th><th class="r">每人</th><th class="r">兩人（NT$）</th><th>狀態</th><th>備註</th></tr></thead>
+    <tbody id="car-rows"></tbody>
+  </table></div>
+  <h3>每日餐費（估）</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>日期</th><th>城市</th><th class="r">每人</th><th class="r">兩人（NT$）</th><th>自煮餐數</th></tr></thead>
+    <tbody id="meal-rows"></tbody>
+  </table></div>
+  <ul class="tips small">
+    <li>波蘭週日大部分超市、商店不營業（Żabka 便利商店多半有開），9/11（六）要先買好 9/12 的份。</li>
+    <li>德國週日商店全休，9/18（六）要先採買 9/19 的份；平日超市多營業到 20:00–22:00。</li>
+    <li>德國寶特瓶、玻璃瓶有押瓶費（Pfand，€0.08–0.25），喝完可拿回超市機台退錢。</li>
+    <li>華沙公寓與弗賴辛公寓可自煮（弗賴辛以最後訂的房型設備為準）；柏林、哈利波特飯店、哈修塔特以外食為主。</li>
+  </ul>
+</section>
+</div>
+
+</main>
+
+<footer class="foot">
+  <span>資料來源：阿聯酋航空官網、Skyscanner、Deutsche Bahn、Booking.com、Airbnb、FIVB／PZPS、瓦津基公園、慕尼黑市政府、人事行政總處。</span>
+  <span>最新動態以「追蹤」分頁為準。</span>
+</footer>
+
+<script>
+
+(function(){
+  const P={
+    waw:{n:'華沙蕭邦機場',lat:52.1657,lon:20.9671,t:'air',q:'Warsaw Chopin Airport'},
+    home:{n:'Mennica Residence（住處）',lat:52.2339,lon:20.9921,t:'home',q:'Mennica Residence Deluxe, Waliców 11, Warszawa'},
+    mirowska:{n:'米羅夫斯卡市場',lat:52.2366,lon:20.9965,t:'sight',q:'Hala Mirowska Warszawa'},
+    onz:{n:'Rondo ONZ 站',lat:52.2331,lon:20.9982,t:'st',q:'Rondo ONZ metro station Warszawa'},
+    wcen:{n:'華沙中央車站',lat:52.2289,lon:21.0034,t:'st',q:'Warszawa Centralna'},
+    pkin:{n:'文化科學宮',lat:52.2318,lon:21.0060,t:'sight',q:'Palace of Culture and Science Warsaw'},
+    rising:{n:'華沙起義博物館',lat:52.2324,lon:20.9809,t:'sight',q:'Warsaw Rising Museum'},
+    polin:{n:'POLIN 猶太歷史博物館',lat:52.2495,lon:20.9930,t:'sight',q:'POLIN Museum of the History of Polish Jews'},
+    copern:{n:'哥白尼科學中心',lat:52.2419,lon:21.0287,t:'sight',q:'Copernicus Science Centre Warsaw'},
+    bulwary:{n:'維斯瓦河畔步道',lat:52.2440,lon:21.0250,t:'sight',q:'Bulwary Wiślane Warszawa'},
+    nsw:{n:'Nowy Świat-Uniwersytet 站',lat:52.2370,lon:21.0177,t:'st',q:'Nowy Świat-Uniwersytet metro station'},
+    castle:{n:'皇家城堡・城堡廣場',lat:52.2479,lon:21.0145,t:'sight',q:'Royal Castle Warsaw'},
+    oldtown:{n:'舊城市集廣場・華沙博物館',lat:52.2497,lon:21.0122,t:'sight',q:'Museum of Warsaw, Rynek Starego Miasta'},
+    vodka:{n:'波蘭伏特加博物館',lat:52.2542,lon:21.0441,t:'sight',q:'Polish Vodka Museum Koneser'},
+    chopin:{n:'蕭邦紀念碑（音樂會）',lat:52.2147,lon:21.0281,t:'event',q:'Pomnik Fryderyka Chopina, Łazienki Królewskie'},
+    rossm:{n:'Rossmann（Pl. Mirowski 14）',lat:52.2371,lon:20.9978,t:'st',q:'Rossmann, Plac Mirowski 14, Warszawa'},
+    ziaja:{n:'Ziaja dla Ciebie 品牌店（Złote Tarasy）',lat:52.2301,lon:21.0026,t:'st',q:'Ziaja dla Ciebie, Złota 59, Warszawa'},
+    bied:{n:'Biedronka 超市（Grzybowska 32）',lat:52.2359,lon:20.9949,t:'st',q:'Biedronka, Grzybowska 32, Warszawa'},
+    zabka:{n:'Żabka（住處同棟）',lat:52.23387,lon:20.99232,t:'st',q:'Żabka, Waliców 11, Warszawa'},
+    lewiatan:{n:'Lewiatan 雜貨店',lat:52.2341,lon:20.9909,t:'st',q:'Lewiatan, Żelazna 59A, Warszawa'},
+    carrefour:{n:'Carrefour Market（Złota 59）',lat:52.2296,lon:21.0024,t:'st',q:'Carrefour Market, Złota 59, Warszawa'},
+    wrocbf:{n:'弗羅茲瓦夫中央車站',lat:51.0980,lon:17.0366,t:'st',q:'Wrocław Główny'},
+    rynek:{n:'弗羅茲瓦夫市集廣場',lat:51.1100,lon:17.0320,t:'sight',q:'Rynek Wrocław'},
+    konspira:{n:'Konspira 餐廳',lat:51.1096,lon:17.0302,t:'sight',q:'Konspira Restauracja Wrocław'},
+    mostek:{n:'懺悔者之橋',lat:51.1124,lon:17.0355,t:'sight',q:'Mostek Pokutnic Wrocław'},
+    hala:{n:'Hala Targowa 老市場',lat:51.1124,lon:17.0405,t:'sight',q:'Hala Targowa Wrocław'},
+    wrochome:{n:'The Bridge Wrocław（住處）',lat:51.1140,lon:17.0455,t:'home',q:'The Bridge Wroclaw MGallery, Plac Katedralny 8'},
+    tumski:{n:'圖姆斯基橋・大教堂島',lat:51.1146,lon:17.0418,t:'event',q:'Most Tumski Wrocław'},
+    katedra:{n:'聖約翰大教堂',lat:51.1142,lon:17.0466,t:'sight',q:'Katedra Wrocławska'},
+    empik:{n:'Empik 書店（Nowy Świat）',lat:52.2346,lon:21.0193,t:'sight',q:'Empik Nowy Świat 15/17 Warszawa'},
+    kopwaw:{n:'華沙哥白尼雕像',lat:52.2393,lon:21.0181,t:'sight',q:'Pomnik Mikołaja Kopernika w Warszawie'},
+    krkbf:{n:'克拉科夫中央車站',lat:50.0680,lon:19.9470,t:'st',q:'Kraków Główny'},
+    krkrynek:{n:'克拉科夫中央市集廣場',lat:50.0617,lon:19.9373,t:'sight',q:'Rynek Główny Kraków'},
+    mariacki:{n:'聖瑪利亞教堂',lat:50.0616,lon:19.9393,t:'sight',q:'Bazylika Mariacka Kraków'},
+    cmaius:{n:'Collegium Maius（亞捷隆大學）',lat:50.0614,lon:19.9332,t:'sight',q:'Collegium Maius, Jagiellońska 15, Kraków'},
+    kopkrk:{n:'克拉科夫哥白尼雕像',lat:50.0603,lon:19.9327,t:'sight',q:'Pomnik Mikołaja Kopernika Kraków Planty'},
+    wawel:{n:'瓦維爾城堡',lat:50.0540,lon:19.9354,t:'sight',q:'Wawel Royal Castle'},
+    czart:{n:'恰爾托雷斯基博物館',lat:50.0645,lon:19.9408,t:'sight',q:'Muzeum Książąt Czartoryskich, Pijarska 15, Kraków'},
+    witaminka:{n:'Sklep Witaminka 糖果店',lat:50.0640,lon:19.9418,t:'sight',q:'Sklep Witaminka, Szpitalna 11, Kraków'},
+    atom:{n:'ATOM Comics',lat:50.0661,lon:19.9467,t:'sight',q:'Atom Comics, Lubicz 3/5, Kraków'},
+    torunbf:{n:'托倫中央車站',lat:53.0000,lon:18.6110,t:'st',q:'Toruń Główny'},
+    torunrynek:{n:'托倫老城廣場・哥白尼雕像',lat:53.0103,lon:18.6048,t:'sight',q:'Pomnik Mikołaja Kopernika Toruń'},
+    kophouse:{n:'哥白尼故居',lat:53.0089,lon:18.6033,t:'sight',q:'Dom Mikołaja Kopernika, Kopernika 15, Toruń'},
+    piernik:{n:'活的薑餅博物館',lat:53.0107,lon:18.6083,t:'sight',q:'Żywe Muzeum Piernika Toruń'},
+    jazdow:{n:'芬蘭木屋村 Jazdów',lat:52.2226,lon:21.0292,t:'sight',q:'Osiedle Jazdów Warszawa'},
+    ferry:{n:'免費渡輪碼頭（波尼亞托夫斯基橋）',lat:52.2385,lon:21.0430,t:'st',q:'Prom Pliszka Most Poniatowskiego Warszawa'},
+    rozyc:{n:'Różycki 老市集',lat:52.2530,lon:21.0388,t:'sight',q:'Bazar Różyckiego, Targowa 54, Warszawa'},
+    zabk:{n:'普拉加 Ząbkowska 老街',lat:52.2524,lon:21.0430,t:'sight',q:'Ząbkowska, Warszawa'},
+    bambino:{n:'牛奶吧 Bar Bambino',lat:52.2299,lon:21.0182,t:'sight',q:'Bar Mleczny Bambino, Krucza 21, Warszawa'},
+    isle:{n:'水上宮殿',lat:52.2151,lon:21.0355,t:'sight',q:'Palace on the Isle Łazienki'},
+    koszyki:{n:'Hala Koszyki',lat:52.2224,lon:21.0107,t:'sight',q:'Hala Koszyki Warszawa'},
+    zbaw:{n:'救世主廣場',lat:52.2196,lon:21.0179,t:'sight',q:'Plac Zbawiciela Warszawa'},
+    wilanow:{n:'維拉諾夫宮',lat:52.1650,lon:21.0904,t:'sight',q:'Wilanów Palace'},
+    zelazowa:{n:'蕭邦出生地（熱拉佐瓦沃拉）',lat:52.2574,lon:20.3005,t:'event',q:'Żelazowa Wola Chopin birthplace'},
+    sochaczew:{n:'Sochaczew 車站',lat:52.2276,lon:20.2412,t:'st',q:'Sochaczew railway station'},
+    pierogi:{n:'波蘭餃子料理課',lat:52.2530,lon:21.0000,t:'sight',q:'Stawki 3 Warszawa'},
+    plWaw:{n:'華沙',lat:52.2297,lon:21.0122,t:'home',q:'Warszawa Centralna'},
+    gda:{n:'格但斯克 ERGO Arena',lat:54.4240,lon:18.5680,t:'event',q:'ERGO Arena Gdańsk'},
+    ols:{n:'奧爾什丁 Hala Urania',lat:53.7766,lon:20.4790,t:'event',q:'Hala Urania Olsztyn'},
+    lodz:{n:'羅茲 Atlas Arena',lat:51.7571,lon:19.4300,t:'event',q:'Atlas Arena Łódź'},
+    kat:{n:'卡托維治 Spodek',lat:50.2661,lon:19.0253,t:'event',q:'Spodek Katowice'},
+    krk:{n:'克拉科夫 TAURON Arena',lat:50.0677,lon:19.9913,t:'event',q:'TAURON Arena Kraków'},
+    ber:{n:'柏林',lat:52.5200,lon:13.4050,t:'st',q:'Berlin Hauptbahnhof'},
+    muc:{n:'慕尼黑',lat:48.1372,lon:11.5756,t:'st',q:'München Hauptbahnhof'},
+    bhf:{n:'柏林中央車站',lat:52.5251,lon:13.3694,t:'st',q:'Berlin Hauptbahnhof'},
+    romy:{n:'Hotel ROMY（候選住處）',lat:52.5271,lon:13.3700,t:'home',q:'Hotel ROMY by AMANO Berlin'},
+    hbahnhof:{n:'漢堡車站美術館',lat:52.5284,lon:13.3720,t:'sight',q:'Hamburger Bahnhof Berlin'},
+    reich:{n:'國會大廈（屋頂露台）',lat:52.5186,lon:13.3762,t:'sight',q:'Reichstag Building Berlin'},
+    brand:{n:'布蘭登堡門',lat:52.5163,lon:13.3777,t:'sight',q:'Brandenburger Tor'},
+    holo:{n:'猶太人紀念碑',lat:52.5139,lon:13.3787,t:'sight',q:'Memorial to the Murdered Jews of Europe'},
+    museum:{n:'博物館島',lat:52.5210,lon:13.3970,t:'sight',q:'Museumsinsel Berlin'},
+    dom:{n:'柏林大教堂',lat:52.5191,lon:13.4011,t:'sight',q:'Berliner Dom'},
+    ddr:{n:'東德博物館',lat:52.5193,lon:13.4027,t:'sight',q:'DDR Museum Berlin'},
+    tvt:{n:'柏林電視塔',lat:52.5208,lon:13.4094,t:'sight',q:'Berliner Fernsehturm'},
+    topo:{n:'恐怖地形圖',lat:52.5066,lon:13.3837,t:'sight',q:'Topographie des Terrors'},
+    trabi:{n:'Trabi Safari',lat:52.5076,lon:13.3906,t:'event',q:'Trabi Safari Zimmerstraße 97 Berlin'},
+    m9:{n:'Markthalle Neun',lat:52.5020,lon:13.4318,t:'sight',q:'Markthalle Neun Berlin'},
+    esg:{n:'東邊畫廊',lat:52.5051,lon:13.4396,t:'sight',q:'East Side Gallery Berlin'},
+    oberbaum:{n:'奧伯鮑姆橋',lat:52.5018,lon:13.4456,t:'sight',q:'Oberbaumbrücke Berlin'},
+    mauer:{n:'圍牆公園',lat:52.5430,lon:13.4024,t:'event',q:'Mauerpark Berlin'},
+    wallmem:{n:'柏林圍牆紀念館',lat:52.5350,lon:13.3903,t:'sight',q:'Gedenkstätte Berliner Mauer, Bernauer Str. 111'},
+    thf:{n:'滕珀爾霍夫機場公園',lat:52.4730,lon:13.4040,t:'sight',q:'Tempelhofer Feld'},
+    sans:{n:'無憂宮',lat:52.4043,lon:13.0384,t:'sight',q:'Schloss Sanssouci Potsdam'},
+    npal:{n:'新宮',lat:52.4010,lon:13.0153,t:'sight',q:'Neues Palais Potsdam'},
+    potsHbf:{n:'波茨坦中央車站',lat:52.3916,lon:13.0670,t:'st',q:'Potsdam Hauptbahnhof'},
+    luebb:{n:'呂貝瑙 平底船碼頭',lat:51.8650,lon:13.9640,t:'event',q:'Großer Spreewaldhafen Lübbenau'},
+    lehde:{n:'萊德村',lat:51.8710,lon:13.9880,t:'sight',q:'Lehde Spreewald'},
+    beelitz:{n:'貝利茨樹冠步道',lat:52.2650,lon:12.9330,t:'sight',q:'Baum und Zeit Beelitz-Heilstätten'},
+    mhbf:{n:'慕尼黑中央車站',lat:48.1402,lon:11.5600,t:'st',q:'München Hauptbahnhof'},
+    fbf:{n:'弗賴辛車站',lat:48.3950,lon:11.7437,t:'st',q:'Bahnhof Freising'},
+    fhome:{n:'弗賴辛公寓（住處）',lat:48.4042,lon:11.7510,t:'home',q:'Landshuter Straße 3, 85356 Freising'},
+    domberg:{n:'弗賴辛主教座堂山',lat:48.3994,lon:11.7442,t:'sight',q:'Domberg Freising'},
+    weih:{n:'Weihenstephan 啤酒廠',lat:48.3953,lon:11.7296,t:'beer',q:'Bayerische Staatsbrauerei Weihenstephan'},
+    mucair:{n:'慕尼黑機場',lat:48.3538,lon:11.7861,t:'air',q:'Munich Airport'},
+    wiesn:{n:'特雷莎草坪（啤酒節）',lat:48.1316,lon:11.5496,t:'beer',q:'Theresienwiese München'},
+    bavaria:{n:'巴伐利亞雕像',lat:48.1307,lon:11.5466,t:'sight',q:'Bavaria Statue Munich'},
+    marien:{n:'瑪利亞廣場',lat:48.1374,lon:11.5755,t:'sight',q:'Marienplatz München'},
+    peter:{n:'聖彼得教堂塔',lat:48.1364,lon:11.5757,t:'sight',q:'St. Peter Alter Peter München'},
+    vikt:{n:'穀物市場',lat:48.1351,lon:11.5762,t:'sight',q:'Viktualienmarkt'},
+    asam:{n:'阿薩姆教堂',lat:48.1350,lon:11.5697,t:'sight',q:'Asamkirche München'},
+    nymph:{n:'寧芬堡宮',lat:48.1583,lon:11.5033,t:'sight',q:'Schloss Nymphenburg'},
+    bmw:{n:'BMW Welt',lat:48.1771,lon:11.5562,t:'sight',q:'BMW Welt'},
+    eisbach:{n:'艾斯巴赫衝浪點',lat:48.1436,lon:11.5878,t:'sight',q:'Eisbachwelle München'},
+    eg:{n:'中國塔啤酒花園',lat:48.1527,lon:11.5920,t:'beer',q:'Chinesischer Turm Englischer Garten'},
+    neusch:{n:'新天鵝堡',lat:47.5576,lon:10.7498,t:'sight',q:'Schloss Neuschwanstein'},
+    fuessen:{n:'菲森車站',lat:47.5704,lon:10.6973,t:'st',q:'Füssen Bahnhof'},
+    linder:{n:'林德霍夫宮',lat:47.5713,lon:10.9604,t:'sight',q:'Schloss Linderhof'},
+    zug:{n:'楚格峰',lat:47.4211,lon:10.9853,t:'sight',q:'Zugspitze'},
+    eibsee:{n:'艾布湖',lat:47.4572,lon:10.9739,t:'sight',q:'Eibsee'},
+    gap:{n:'加爾米施車站',lat:47.4910,lon:11.0960,t:'st',q:'Garmisch-Partenkirchen Bahnhof'},
+    teg:{n:'泰根湖',lat:47.7120,lon:11.7580,t:'sight',q:'Tegernsee'},
+    andechs:{n:'安德克斯修道院',lat:47.9746,lon:11.1830,t:'beer',q:'Kloster Andechs'},
+    residenz:{n:'慕尼黑王宮',lat:48.1414,lon:11.5786,t:'sight',q:'Residenz München'},
+    hb:{n:'皇家啤酒屋',lat:48.1376,lon:11.5799,t:'beer',q:'Hofbräuhaus München'},
+    nbg:{n:'紐倫堡中央車站',lat:49.4457,lon:11.0827,t:'st',q:'Nürnberg Hauptbahnhof'},
+    kaiserburg:{n:'紐倫堡皇帝堡',lat:49.4577,lon:11.0759,t:'sight',q:'Kaiserburg Nürnberg'},
+    nbgmarkt:{n:'紐倫堡中央廣場',lat:49.4540,lon:11.0775,t:'sight',q:'Hauptmarkt Nürnberg'},
+    rothenburg:{n:'羅騰堡',lat:49.3772,lon:10.1787,t:'sight',q:'Marktplatz Rothenburg ob der Tauber'},
+    ploenlein:{n:'普倫萊因',lat:49.3746,lon:10.1797,t:'sight',q:'Plönlein Rothenburg'},
+    dinkels:{n:'丁克斯比爾',lat:49.0697,lon:10.3195,t:'sight',q:'Dinkelsbühl Altstadt'},
+    noerd:{n:'諾德林根',lat:48.8513,lon:10.4887,t:'sight',q:'Daniel Turm Nördlingen'},
+    bgd:{n:'貝希特斯加登車站',lat:47.6276,lon:13.0049,t:'st',q:'Berchtesgaden Hauptbahnhof'},
+    koenig:{n:'國王湖碼頭',lat:47.5935,lon:12.9877,t:'sight',q:'Königssee Seelände Schiffsanlegestelle'},
+    bartho:{n:'聖巴爾多祿茂教堂',lat:47.5528,lon:12.9707,t:'sight',q:'St. Bartholomä Königssee'},
+    ramsau:{n:'藍紹教堂',lat:47.6061,lon:12.8988,t:'sight',q:'Pfarrkirche St. Sebastian Ramsau'},
+    zauber:{n:'魔法森林・辛特湖',lat:47.6040,lon:12.8580,t:'sight',q:'Zauberwald Hintersee Ramsau'},
+    hphotel:{n:'哈利波特飯店（樂高樂園）',lat:48.4290,lon:10.2990,t:'home',q:'LEGOLAND Deutschland Resort Günzburg'},
+    guenzbf:{n:'君茨堡車站',lat:48.4553,lon:10.2770,t:'st',q:'Bahnhof Günzburg'},
+    parade:{n:'遊行起點 Max-II 紀念碑',lat:48.1374,lon:11.5893,t:'event',q:'Max-II-Denkmal Maximilianstraße München'},
+    hallstatt:{n:'哈修塔特',lat:47.5622,lon:13.6486,t:'home',q:'Marktplatz Hallstatt'},
+    honig:{n:'Hallstatt Honey and Tea House 蜂蜜店',lat:47.56106,lon:13.64818,t:'st',q:'Hallstatt Honey and Tea House, Seestraße 166, Hallstatt'},
+    adeg:{n:'ADEG MarktGschäftl 超市',lat:47.56148,lon:13.64859,t:'st',q:'MarktGschäftl ADEG, Seestraße 169, Hallstatt'},
+    fiore:{n:'Fiore Caffe 早餐',lat:51.10925,lon:17.02862,t:'food',q:'Fiore Caffe Coffee & Breakfast, Plac Solny 11, Wrocław'},
+    ruehr:{n:'Rührwerk 現烤奶油捲',lat:47.56094,lon:13.64828,t:'food',q:'Rührwerk Hallstatt Ofenfrische Schaumrollen, Seestraße 179, Hallstatt'},
+    hallpost:{n:'明信片觀景點',lat:47.5628,lon:13.6483,t:'sight',q:'Hallstatt Postcard View Viewpoint'},
+    skywalk:{n:'Skywalk 世界遺產觀景台',lat:47.5610,lon:13.6434,t:'sight',q:'Skywalk Hallstatt Welterbeblick'},
+    gap:{n:'加爾米施－帕滕基興車站',lat:47.4919,lon:11.0962,t:'st',q:'Bahnhof Garmisch-Partenkirchen'},
+    zugsp:{n:'楚格峰山頂',lat:47.4211,lon:10.9853,t:'sight',q:'Zugspitze Gipfel'},
+    eibsee:{n:'艾布湖',lat:47.4566,lon:10.9755,t:'sight',q:'Eibsee Grainau'},
+    obhome:{n:'Weisses Lamm（住處）',lat:47.5617,lon:13.6478,t:'home',q:'Weisses Lamm, Dr. F. Mortonweg 166, 4830 Hallstatt'},
+    hallbf:{n:'哈修塔特車站碼頭',lat:47.5622,lon:13.6588,t:'st',q:'Hallstatt Bahnhof'},
+    krippen:{n:'達赫斯坦纜車山下站',lat:47.5470,lon:13.6930,t:'st',q:'Dachstein Krippenstein Talstation Obertraun'},
+    fingers:{n:'5fingers 觀景台',lat:47.5296,lon:13.6930,t:'sight',q:'5fingers Aussichtsplattform Krippenstein'},
+    almwelt:{n:'Almwelt 傳統服飾店（中央車站）',lat:48.1405,lon:11.5600,t:'sight',q:'Almwelt München Hauptbahnhof'},
+    angermaier:{n:'Angermaier Trachten',lat:48.1415,lon:11.5390,t:'sight',q:'Angermaier Trachten, Landsberger Str. 101, München'},
+    salzburg:{n:'薩爾斯堡老城',lat:47.7995,lon:13.0440,t:'sight',q:'Salzburg Altstadt'}
+  };
+  const COLOR={home:'var(--ok)',st:'var(--de)',sight:'var(--muted)',event:'var(--pl)',air:'var(--ink)',beer:'var(--beer)'};
+  const gq=k=>'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(P[k].q);
+  const gr=(a,b,mode)=>'https://www.google.com/maps/dir/?api=1&origin='+encodeURIComponent(P[a].q)+'&destination='+encodeURIComponent(P[b].q)+'&travelmode='+(mode||'transit');
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  function niceKm(v){const s=[0.2,0.5,1,2,5,10,20,50,100,200,500];return s.reduce((p,c)=>c<=v?c:p,s[0]);}
+  function drawMap(spec){
+    const W=560,H=380,pad=36;
+    const keys=spec.pts;
+    const latc=keys.reduce((s,k)=>s+P[k].lat,0)/keys.length;
+    const kx=111.32*Math.cos(latc*Math.PI/180), ky=110.57;
+    const xy=keys.map(k=>[P[k].lon*kx,-P[k].lat*ky]);
+    const minx=Math.min(...xy.map(p=>p[0])),maxx=Math.max(...xy.map(p=>p[0]));
+    const miny=Math.min(...xy.map(p=>p[1])),maxy=Math.max(...xy.map(p=>p[1]));
+    const iw=W-2*pad-150, ih=H-2*pad;
+    const s=Math.min(iw/Math.max(maxx-minx,.01),ih/Math.max(maxy-miny,.01));
+    const ox=pad+75+(iw-(maxx-minx)*s)/2, oy=pad+(ih-(maxy-miny)*s)/2;
+    const pos={}; keys.forEach((k,i)=>pos[k]=[ox+(xy[i][0]-minx)*s, oy+(xy[i][1]-miny)*s]);
+    let g='';
+    for(let x=40;x<W;x+=60) g+=`<line class="grid" x1="${x}" y1="0" x2="${x}" y2="${H}" opacity=".5"/>`;
+    for(let y=40;y<H;y+=60) g+=`<line class="grid" x1="0" y1="${y}" x2="${W}" y2="${y}" opacity=".5"/>`;
+    let r='';
+    (spec.route||[]).forEach(([a,b,m])=>{const A=pos[a],B=pos[b];if(!A||!B)return;
+      if(m==='air'){const mx=(A[0]+B[0])/2,my=Math.min(A[1],B[1])-40;r+=`<path class="r-air" d="M${A[0]},${A[1]} Q${mx},${my} ${B[0]},${B[1]}"/>`;}
+      else r+=`<line class="r-${m}" x1="${A[0]}" y1="${A[1]}" x2="${B[0]}" y2="${B[1]}"/>`;});
+    // labels with simple collision avoidance
+    const boxes=[];
+    const order=[...keys].sort((a,b)=>pos[a][1]-pos[b][1]);
+    let p='';
+    order.forEach(k=>{const [x,y]=pos[k];const o=(spec.lab||{})[k]||{};
+      const right=o.a?o.a==='start':x<W*0.6;const name=P[k].n;const w=name.length*11.5;
+      let lx=right?x+9:x-9, ly=y+4+(o.dy||0);
+      const bx=()=>right?[lx,ly-11,lx+w,ly+3]:[lx-w,ly-11,lx,ly+3];
+      let tries=0;
+      while(tries<8&&boxes.some(b=>{const c=bx();return !(c[2]<b[0]||c[0]>b[2]||c[3]<b[1]||c[1]>b[3]);})){ly+=(tries%2?-1:1)*14*(tries+1);tries++;}
+      boxes.push(bx());
+      const big=P[k].t==='home';
+      p+=`<a href="${gq(k)}" target="_blank" rel="noopener"><circle cx="${x}" cy="${y}" r="${big?7:5.5}" style="fill:${COLOR[P[k].t]};stroke:var(--bg);stroke-width:2"/>`+
+         `<text x="${lx}" y="${ly}" text-anchor="${right?'start':'end'}"${big?' font-weight="700"':''}>${esc(name)}</text></a>`;});
+    const km=niceKm(110/s), L=km*s;
+    const sc=`<line class="scale" x1="16" y1="${H-16}" x2="${16+L}" y2="${H-16}"/><line class="scale" x1="16" y1="${H-20}" x2="16" y2="${H-12}"/><line class="scale" x1="${16+L}" y1="${H-20}" x2="${16+L}" y2="${H-12}"/><text class="scale-t" x="16" y="${H-24}">${km<1?km*1000+' m':km+' km'}</text>`;
+    const n=`<text class="scale-t" x="${W-18}" y="22" text-anchor="middle">N</text><path d="M${W-18},26 l-5,12 l5,-3 l5,3z" style="fill:var(--muted)"/>`;
+    return `<svg class="map" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(spec.title)}">${g}${r}${p}${sc}${n}</svg>`;
+  }
+
+  // item: [時間, 名稱, 地點key, 標籤(IG/免費/付費/預約/體驗), 價格, 說明, 交通]
+  const I=(t,n,k,tags,price,info,tr)=>({t,n,k,tags:tags||[],price,info,tr});
+  const SAME='same';
+  const DAYS=[
+   {id:'d0910',date:'9/10',dow:'五',cc:'c-air',city:'出發',title:'桃園 → 杜拜',
+    tr:'阿聯酋已訂（兩人 TWD 67,996）：EK367 桃園 T2 23:50 → 杜拜 T3 04:35（8 小時 45 分），轉機 3 小時 35 分，EK179 08:10 → 華沙 12:15',
+    nd:{items:[I('20:50','桃園機場第二航廈報到',null,[],'','電子機票建議 20:50 報到；托運每人 25 kg；21:20 前過完護照查驗、22:50 前到登機門',''),I('23:50','EK367 起飛（A380）',null,[],'','飛 8 小時 45 分，9/11 04:35 抵達杜拜 T3',''),I('04:35','杜拜轉機 3 小時 35 分',null,[],'','同在 T3、不出關不需簽證；跟著 Connections 指標過安檢，07:10 前到登機門',''),I('08:10','EK179 起飛（777-300ER）',null,[],'','飛 6 小時 05 分，12:15 抵達華沙 Terminal A','')]},dr:SAME},
+   {id:'d0911',date:'9/11',dow:'六',cc:'c-pl',city:'華沙',title:'抵達華沙・市場採買・《地。》書店與舊城夕陽',
+    tr:'機場→住處：計程車 35–50 PLN、約 20–30 分（建議 iTaxi／Bolt）；或 SKM S2 到 Śródmieście 約 20 分（75 分鐘票 4.40 PLN）',
+    nd:{items:[
+      I('12:15','抵達華沙蕭邦機場 Terminal A','waw',[],'','EK179；申根第一站在這裡入境；之後德國、奧地利邊境偶有抽查，護照隨身帶；入境後搭計程車到住處','計程車約 20–30 分'),
+      I('14:00','入住 Mennica Residence','home',[],'已訂','9/5 前可免費取消',''),
+      I('15:00','米羅夫斯卡市場 Hala Mirowska','mirowska',['IG','免費'],'免費','1901 年紅磚市場與花攤，牆上保留起義彈痕；週六開到 18:00、週日公休','住處步行約 5–8 分'),
+      I('16:00','Rossmann 買 Ziaja 保養品','rossm',['購物','伴手禮'],'估 10–40 PLN／件','就在米羅夫斯卡市場旁，週六 07:30–21:30；Ziaja 羊乳、可可脂系列在藥妝店最好買。想看完整系列可去 Złote Tarasy 商場 +1 樓的 Ziaja 品牌店（Złota 59，週六開到 22:00）。明天週日全部休息','米羅夫斯卡市場旁'),
+      I('16:30','Biedronka 超市採買 3 天份','bied',['體驗'],'估 80–120 PLN（兩人）','住處步行約 4 分；買蛋、肉、麵包、牛奶、優格、蔬果，至少買到 9/13 早上（明天週日超市休）；先拿回公寓冰好再出門；週一至六 06:00–23:30。米羅夫斯卡市場攤位也能買新鮮肉、蛋、蔬菜，週六開到 18:00','步行約 4 分'),
+      I('17:30','Empik 書店買《地。》波蘭文版','empik',['購物'],'每冊定價 39.99 zł','波蘭文版書名《Ziemia i jej obroty》，Waneko 出版，共 4 冊（ISBN 第 1 冊 9788383890579）。明天週日波蘭商店依法休息，今天是華沙唯一能買的時間；出發前在 Empik 官網查門市庫存。克拉科夫 ATOM Comics 也有賣','公車或計程車約 10 分'),
+      I('18:00','華沙哥白尼雕像','kopwaw',['IG','免費'],'免費','Krakowskie Przedmieście 路上、史塔西宮前的哥白尼坐像，手持天球儀，基座寫著「NICOLAO COPERNICO GRATA PATRIA」（感恩的祖國獻給哥白尼）；Threads 上那張朝聖照就是這裡，可以拿剛買的書一起拍','步行'),
+      I('18:20','沿王道走到舊城市集廣場','oldtown',['IG','免費'],'免費','彩色立面廣場與美人魚像','步行約 15 分'),
+      I('19:00','城堡廣場夕陽 → 舊城晚餐','castle',['IG','免費'],'免費','9 月約 19:00 日落，彩色立面轉金色；累了就搭計程車回公寓','步行')],
+     tips:['抵達日不建議取車，帶行李搭計程車最省力。','原本 9/13 的華沙書店與舊城行程移到今天傍晚；普拉加老街因 9/13 改排球日已刪除。','文化科學宮觀景台移到 9/12 傍晚（選配）。']},dr:SAME,
+    map:{title:'華沙：住處、超市、書店與舊城',pts:['waw','home','mirowska','rossm','bied','ziaja','empik','kopwaw','oldtown','castle'],route:[['waw','home','car'],['home','mirowska','walk'],['mirowska','bied','walk'],['home','empik','car'],['empik','kopwaw','walk'],['kopwaw','castle','walk'],['castle','oldtown','walk']]}},
+   {id:'d0912',date:'9/12',dow:'日',cc:'c-pl',city:'華沙',title:'蕭邦露天音樂會＋芬蘭木屋村＋免費渡輪',
+    tr:'M2 到 Świętokrzyska 轉 M1 到 Pl. Unii Lubelskiej，步行約 10 分；建議今天起用 ZTM 24 小時票 15 PLN',
+    nd:{items:[
+      I('11:15','提早到蕭邦紀念碑佔位','chopin',['IG'],'','音樂會 12:00 與 16:00（往年 5–9 月每週日、免費；2027 檔期待公布），提早 30–45 分佔紀念碑正面位置','地鐵＋步行約 35 分'),
+      I('12:00','蕭邦露天音樂會','chopin',['IG','免費','體驗'],'免費','玫瑰花圃與紀念碑前的鋼琴演奏，坐在草地上和華沙人一起聽，蜜月必拍',''),
+      I('（選配）','水上宮殿 Palace on the Isle','isle',['IG','付費'],'60 PLN','只想拍外觀就免費：宮殿倒影從湖邊拍最好','公園內步行 10 分'),
+      I('14:30','芬蘭木屋村 Osiedle Jazdów','jazdow',['IG','免費','體驗'],'免費','1945 年從芬蘭運來的木造屋聚落（蘇聯向芬蘭取得的戰爭賠償，轉給波蘭重建用），原本約 90 棟，現在留下的小屋住著少數居民，其餘改成社區養蜂場、傳統音樂之家、食物分享站等在地團體；請放輕腳步、別進私人院子','沿烏亞茲多夫公園往北步行約 20 分'),
+      I('16:30','搭免費渡輪橫渡維斯瓦河','ferry',['IG','免費','體驗'],'免費','河上渡輪 W2「Pliszka」來往國家體育場與波尼亞托夫斯基橋，9 月週末行駛（2027 班表待公布）；像當地人一樣週末過河，可牽腳踏車上船','公車或步行到橋下碼頭'),
+      I('（選配）17:45','文化科學宮 30 樓觀景台','pkin',['IG','付費'],'25 PLN','10:00–20:00，可在 bilety.pkin.pl 購票；渡輪下船後搭公車過去，看完再去吃晚餐','公車約 15 分'),
+      I('19:00','Hala Koszyki 晚餐','koszyki',['IG'],'','1909 年市場建築改成的美食廳，週日照常營業','公車約 15 分')],
+     tips:['波蘭週日超市休息（米羅夫斯卡市場也休）；臨時缺東西可去住處同棟的 Żabka（週日 10:00–21:00）或 Żelazna 街的 Lewiatan（週日 09:00–22:00）。','渡輪只在夏季每天、9 月週末行駛，天候不佳會停駛；沒開就走波尼亞托夫斯基橋過河。']},
+    dr:{note:'不建議開車：週日路邊停車雖免費，但音樂會當天瓦津基周邊幾乎找不到車位。行程同「不自駕」。'},
+    map:{title:'華沙：瓦津基公園 → 芬蘭木屋村 → 渡輪',pts:['home','chopin','isle','jazdow','ferry','pkin','koszyki'],route:[['home','chopin','rail'],['chopin','isle','walk'],['chopin','jazdow','walk'],['jazdow','ferry','car'],['ferry','pkin','car'],['pkin','koszyki','walk']]}},
+   {id:'d0913',date:'9/13',dow:'一',cc:'c-pl',city:'排球',title:'排球日：日本男排世錦賽（城市與日期待抽籤）',
+    tr:'2027 男排世錦賽分組城市：格但斯克、卡托維治、羅茲、奧爾什丁（華沙不是賽區）。從華沙中央車站搭火車：羅茲約 1.5 小時、卡托維治約 2.5 小時、奧爾什丁約 2.5 小時、格但斯克約 3 小時（皆為估計，2027 班表以 PKP 為準）',
+    nd:{items:[
+      I('上午','華沙 → 比賽城市','wcen',['預約'],'票價待查','依日本隊賽程與場館決定班次；PKP Intercity 開賣後盡早訂位','住處步行 15 分'),
+      I('比賽','日本男排應援','wcen',['體驗','付費','預約'],'門票待售','帶日本球員照片、手幅；場館與開賽時間待抽籤公布（媒體推測 2027 春季）',''),
+      I('賽後','回華沙・Biedronka 補貨','bied',[],'估 50–80 PLN（兩人）','補 9/14–9/15 的早餐；Biedronka 週一至六營業到 23:30。晚場比賽若趕不上末班車，就在比賽城市住一晚','步行約 4 分')],
+     tips:['排球與克拉科夫一天一個。預設 9/13 排球、9/14 克拉科夫，因為恰爾托雷斯基博物館週二免費、週一休館。','若日本隊比賽排在 9/14，就兩天對調：克拉科夫改週一，博物館要拿掉，其餘點照常（Collegium Maius 與 ATOM Comics 週一都有開）。','若比賽在卡托維治，離克拉科夫只要約 1 小時，可以考慮在克拉科夫住一晚，兩天都不用回華沙。']},
+    dr:{note:'市區與城際都搭火車，行程同「不自駕」。'},
+    map:{title:'華沙出發',pts:['home','wcen','bied'],route:[['home','wcen','walk']]}},
+   {id:'d0914',date:'9/14',dow:'二',cc:'c-pl',city:'克拉科夫',title:'《地。》朝聖：克拉科夫・哥白尼的母校',
+    tr:'華沙中央車站 → 克拉科夫 Kraków Główny：EIP Pendolino 直達約 2 小時 24 分（2026 年 06:40→09:04，188 PLN 起）；回程 2026 年 16:47→19:20，末班約 19:49。2027 班次以 PKP 為準',
+    nd:{items:[
+      I('06:40','EIP Pendolino 往克拉科夫','wcen',['預約'],'188 PLN 起／人（2026）','車上買咖啡當早餐；晚一班 07:40 EIC 約 10:11 到','住處步行 15 分'),
+      I('09:15','聖佛羅里安門・恰爾托雷斯基博物館領票','czart',['預約'],'週二免費（限量）','週二免費入場但要在當天到售票處領限量的指定時段票，一開門就去，領 10:45 前後的時段（先去漫畫店買書）；其他日子全票 65 PLN','車站步行約 10 分'),
+      I('10:00','先買書：ATOM Comics 漫畫店','atom',['購物','IG'],'估 40 PLN／本','Threads 上朝聖者拿波蘭文版《地。》（Ziemia i jej obroty，Uoto 著）在店門口拍照的店。ul. Lubicz 3/5，週一至五 10:00–18:00、週六到 16:00、週日休；漫畫、日漫、輕小說都有。買到後在店門口拍同角度，再帶著書去朝聖。沒貨的話用 9/13 在華沙 Empik 買的那本','從博物館步行約 10 分'),
+      I('10:45','恰爾托雷斯基博物館','czart',['IG','體驗'],'週二免費','鎮館之寶是達文西《抱銀貂的女子》，還有林布蘭的風景畫；Threads 上說博物館的兒童活動手冊裡藏著寶可夢，可以在館內找找看。週一休館','步行'),
+      I('11:55','中央市集廣場・聖瑪利亞教堂','krkrynek',['IG'],'教堂門票待查','歐洲最大的中世紀廣場之一，紡織會館與哥德式教堂；整點鐘樓上會吹號角','步行 5 分'),
+      I('（邊走邊吃）','街邊圈餅 Obwarzanek 當午餐','krkrynek',['體驗'],'','克拉科夫名物，推車上買，邊走邊吃','步行'),
+      I('12:15','亞捷隆大學 Collegium Maius 中庭','cmaius',['IG','免費'],'中庭免費','哥白尼求學、阿爾貝特・布魯傑夫斯基任教的大學最古老建築；中庭時鐘 09:00–17:00 每兩小時有木偶隨音樂遊行','步行 5 分'),
+      I('（選配）13:00','Collegium Maius 英文延伸導覽（含科學儀器）','cmaius',['體驗','付費','預約'],'31 PLN／人（2026 全票）','週一至五 13:00 的英文延伸導覽，含主展區與科學儀器收藏：哥白尼上過課的講堂、中世紀天文儀器、現存最古老畫有美洲的地球儀；最貼近《地。》，先在 bilety.uj.edu.pl 預約。導覽長度待查（估 1 小時多）','步行'),
+      I('14:15','普蘭蒂公園的哥白尼雕像','kopkrk',['IG','免費'],'免費','1900 年的哥白尼像，原本立在 Collegium Maius 中庭，1953 年移到公園','步行 2 分'),
+      I('14:30','瓦維爾城堡山','wawel',['IG','免費'],'山上免費、內部另購票','波蘭歷代國王的城堡與主教座堂，從城牆俯瞰維斯瓦河','步行約 15 分'),
+      I('15:45','Sklep Witaminka 買手工牛奶糖 Krówka','witaminka',['購物','伴手禮'],'秤重散裝；手工款約 149 zł／kg（Threads 照片）','Threads 推薦：外層薄脆、入口即化、帶一點羊奶香的手工牛奶糖；各口味可以先各拿一顆試。地址 Szpitalna 11，在老城往車站的路上','步行'),
+      I('16:47','EIP 回華沙','krkbf',['預約'],'188 PLN 起／人（2026）','約 19:20 到華沙；想在克拉科夫吃晚餐可改搭晚一點的班次（末班約 19:49）','車站步行 5 分')],
+     tips:['《地。—關於地球的運動—》最終章設定在 1468 年的波蘭王國，主角阿爾貝特・布魯傑夫斯基是真實人物，後來成為哥白尼的老師，就在這所大學任教；前面幾章的「P 王國」是虛構的。','Collegium Maius 一般導覽 10:00–12:30 每半小時一梯（26 PLN）、自由參觀 13:30–17:00（17 PLN）；含科學儀器的英文延伸導覽只有 13:00。中庭 13:00 整點有木偶時鐘表演，導覽前可先看。','若日本男排在卡托維治比賽，卡托維治到克拉科夫約 1 小時，可以考慮合併。','《地。》波蘭文版 9/11 傍晚在華沙 Empik 先買；ATOM Comics 是第二個購買點和拍照點。']},
+    dr:SAME,
+    map:{title:'克拉科夫老城',pts:['krkbf','atom','witaminka','czart','krkrynek','mariacki','cmaius','kopkrk','wawel'],route:[['krkbf','czart','walk'],['czart','atom','walk'],['atom','czart','walk'],['czart','krkrynek','walk'],['krkrynek','cmaius','walk'],['cmaius','wawel','walk'],['wawel','witaminka','walk'],['witaminka','krkbf','walk']]},
+    map2:{title:'華沙 → 克拉科夫',pts:['wcen','krkbf'],route:[['wcen','krkbf','rail']]}},
+   {id:'d0915',date:'9/15',dow:'三',cc:'c-pl',city:'弗羅茲瓦夫',title:'弗羅茲瓦夫：小矮人老城＋點燈人',
+    refs:[['攻略：Becca Daily 點燈人出現時間與路線','https://beccadaily.com/p8642/']],
+    tr:'華沙退房，搭 PKP Intercity EIC 到 Wrocław Główny，約 3 小時 35–45 分；車站到老城電車約 10 分。點燈人每天黃昏在大教堂島手動點亮 103 盞瓦斯街燈，全年無休',
+    nd:{items:[
+      I('08:00','華沙退房・搭 EIC 往弗羅茲瓦夫','wcen',['預約'],'票價待查','PKP Intercity 官網或 App 購票，需訂位；車上有 WARS 餐車','住處步行 15 分'),
+      I('12:00','抵達弗羅茲瓦夫・寄放行李','wrocbf',[],'','Wrocław Główny 車站本身是粉紅色的城堡式建築，很好拍；沿路走進老城就開始找小矮人','電車或計程車約 10 分到飯店'),
+      I('12:45','Konspira 戰爭主題餐廳午餐','konspira',['IG','體驗'],'估 50–70 PLN／人','傳統波蘭料理，店內佈置成二戰地下反抗組織的祕密據點（Becca Daily 推薦）','步行'),
+      I('14:00','市集廣場、舊市政廳','rynek',['IG','免費'],'免費','彩色山牆屋與哥德式市政廳','步行'),
+      I('14:45','懺悔者之橋（嘆息橋）','mostek',['IG','付費'],'門票待查','聖瑪利亞抹大拉教堂兩座塔之間的高空小橋，可俯瞰老城屋頂','步行'),
+      I('15:30','找小矮人雕像・逛紀念品店','rynek',['IG','免費','體驗'],'免費','老城藏了數百個青銅小矮人，可以下載地圖邊走邊找','步行'),
+      I('16:30','Hala Targowa 老市場・沙島散步','hala',['體驗','免費'],'免費','1908 年的鋼筋混凝土市場；過橋往大教堂島方向走','步行'),
+      I('17:30','入住 The Bridge Wrocław','wrochome',[],'已訂','15:00 起可入住，就在大教堂島上','步行'),
+      I('18:45','主教堂前等點燈人','katedra',['IG','免費','體驗'],'免費','點燈人沒有固定時刻表，依日落出現，起點在主教堂（聖約翰大教堂）前；9 月中日落約 19:00，前一天用手機天氣 App 查日落，提早約 10 分鐘到就好','步行'),
+      I('19:00','跟著點燈人走一圈','tumski',['IG','體驗'],'免費','穿黑色長斗篷、拿長竿逐盞點亮 103 盞瓦斯燈，整個體驗約 1 小時；可以跟在後面拍，也可以在教堂前等他繞回來','步行'),
+      I('20:00','大教堂島夜景・晚餐','tumski',['IG'],'','點燈後的圖姆斯基橋與大教堂最美','步行')],
+     tips:['點燈人攻略參考 Becca Daily：現場人很多，相機或錄影先準備好；清晨他會再走一次把燈熄掉，9/16 早上可以再看一次。','排球：日本隊比賽日期公布後再調整；若剛好 9/15 在卡托維治，比賽後搭火車約 2.5 小時（估）到弗羅茲瓦夫，但會趕不上黃昏點燈。']},dr:SAME,
+    map:{title:'弗羅茲瓦夫：老城到大教堂島',pts:['wrocbf','konspira','rynek','mostek','hala','wrochome','katedra','tumski'],route:[['wrocbf','rynek','car'],['konspira','rynek','walk'],['rynek','mostek','walk'],['mostek','hala','walk'],['hala','tumski','walk'],['tumski','katedra','walk']]},
+    map2:{title:'華沙 → 弗羅茲瓦夫 → 柏林',pts:['wcen','wrocbf','bhf'],route:[['wcen','wrocbf','rail'],['wrocbf','bhf','rail']]}},
+   {id:'d0916',date:'9/16',dow:'四',cc:'c-de',city:'柏林',title:'弗羅茲瓦夫 → 柏林・國會大廈夕陽',
+    tr:'弗羅茲瓦夫有直達柏林的 PKP Intercity 列車（2026 年每天 3 班白天車，經法蘭克福（奧得河）約 4 小時；部分班次終點是 Berlin-Lichtenberg），2027 班表以 DB／PKP 為準',
+    nd:{items:[
+      I('08:00','大教堂島清晨散步','tumski',['IG','免費'],'免費','早上點燈人會再來把燈熄掉；清晨人少最好拍','步行'),
+      I('09:15','Fiore Caffe 早餐（鹽廣場 Plac Solny）','fiore',['美食','IG'],'估 60–90 PLN（兩人）','Plac Solny 11，週四 08:00–18:00；Google 4.7 分。招牌是韓式早餐三明治（評論推 10 號）、紅蘿蔔蛋糕拿鐵、鹹焦糖布朗尼。有評論說上餐要等 30 分以上、10 點後客滿，建議早點到，10:30 前離開趕火車','大教堂島步行約 15 分（估）'),
+      I('11:00 前後','退房（12:00 前）・IC 往柏林（例：Wawel）','wrocbf',['預約'],'票價待查','2026 年班表推算約 11:00 出發、15:00 前後抵達柏林中央車站（估）','飯店搭計程車或電車'),
+      I('15:30','抵達柏林中央車站・入住 ROMY','romy',[],'已訂','車站步行 300 m；柏林只住 1 晚',''),
+      I('（選配）','漢堡車站美術館','hbahnhof',['IG','付費'],'€16','週四開到 20:00；舊火車站大廳很好拍，累了就先休息','飯店旁步行'),
+      I('18:45','國會大廈屋頂露台看日落','reich',['IG','免費','預約'],'免費','圓頂 2027/8/23–11/19 關閉，屋頂露台照常開放。須事先在聯邦議院官網登記兩人姓名與生日，帶護照正本；每 15 分鐘一梯，最後入場 21:45','步行約 15 分'),
+      I('20:00','夜訪布蘭登堡門','brand',['IG','免費'],'免費','國會大廈走過去 5 分鐘，城門夜間點燈','步行'),
+      I('20:45','Markthalle Neun Street Food Thursday','m9',['IG','體驗'],'免費入場','週四 17:00–22:00，鐵骨老市場裡的美食市集','U-Bahn 約 25 分')],
+     tips:['柏林只住 1 晚：今晚看國會大廈與布蘭登堡門，明早參加圍牆導覽後就搭 ICE 南下。','若班次終點是 Berlin-Lichtenberg，轉 S-Bahn 約 20 分到中央車站（估）。']},dr:SAME,
+    map:{title:'柏林：中央車站周邊',pts:['bhf','romy','hbahnhof','reich','brand','m9'],route:[['bhf','romy','walk'],['romy','hbahnhof','walk'],['romy','reich','walk'],['reich','brand','walk'],['brand','m9','rail']]}},
+   {id:'d0917',date:'9/17',dow:'五',cc:'c-de',city:'柏林→弗賴辛',title:'圍牆中文導覽 → ICE 南下弗賴辛',
+    tr:'ROMY 退房後行李寄放飯店；圍牆紀念館搭電車 M10 約 15 分直達中央車站；ICE 柏林→慕尼黑約 4–4.5 小時，再轉 RE 約 25 分到弗賴辛',
+    nd:{items:[
+      I('08:45','ROMY 退房・寄放行李','romy',[],'','中央車站旁，導覽結束回來拿',''),
+      I('09:45','圍牆紀念館訪客中心集合','wallmem',['預約'],'','集合點：Visitor Center, Bernauer Straße 119；先在對面文獻中心觀景台拍圍牆全景（免費）','S-Bahn 到 Nordbahnhof'),
+      I('10:00','圍牆基金會導覽「建牆後的貝爾瑙爾街」（中文導覽員）','wallmem',['體驗','付費','預約'],'€80（官網未寫是整團或每人，待確認）','約 1 小時；須先填官網預約申請表、語言選 Chinese，週一不開放；中文導覽員能否排到要等基金會回覆','步行'),
+      I('11:15','戶外展區：死亡地帶、瞭望塔、和解教堂','wallmem',['IG','免費'],'免費','戶外展區每天 8:00–22:00，看 45 分鐘左右','步行'),
+      I('12:00','訪客中心商店：買圍牆碎片紀念品','wallmem',['購物'],'硬幣大小碎片約 €4（2014 年報導價）','圍牆基金會自己的商店，媒體送驗時這裡的碎片是真品；市區觀光店、路邊攤有假貨','步行'),
+      I('12:15','回中央車站取行李・買午餐','bhf',[],'','','電車 M10 約 15 分'),
+      I('13:00 前後','ICE 往慕尼黑','bhf',['預約'],'Sparpreis 參考 €49.99 起','約 4–4.5 小時，班次以 DB 為準；Sparpreis 綁車次，訂位後別錯過','中央車站'),
+      I('17:30','Angermaier Trachten 挑 Dirndl','angermaier',['購物','IG'],'入門款 Dirndl 約 €40–80，加襯衫、圍裙約 €80–190（整套估）','1948 年創立的老字號，價格公道；離中央車站最近的是 Landsberger Str. 101–103 店，電車幾站，營業時間出發前確認。若已打烊，改去車站內的 Almwelt（每天開到 20:00）','電車約 10 分'),
+      I('（備案）','中央車站 Almwelt','almwelt',['購物'],'','車站 S-Bahn 層，每天 08:00–20:00（含週日），男女款都有','車站內'),      I('19:00','慕尼黑中央車站 → 弗賴辛','mhbf',[],'Deutschlandticket 涵蓋','RE 約 25 分',''),
+      I('19:30','入住弗賴辛公寓（第一段住到 9/20）・超市採買','fhome',[],'已訂','弗賴辛分三段訂共 5 晚，外宿日行李寄放公寓或放車上；先買到 9/19 的份（9/19 週日超市全休）','車站步行 15 分'),
+      I('20:15','Weihenstephan 啤酒餐廳','weih',['體驗'],'','世界最古老釀酒廠的餐廳，建議訂位','')],
+     tips:['圍牆導覽申請表請填：團體類型 Adults、人數 2、語言 Chinese，並寫上備選時段；若中文導覽員只有下午場，ICE 改搭傍晚的班次。','想去博物館島：改搭傍晚的 ICE，下午看新博物館（€14），晚上 10 點前後才會到弗賴辛。']},
+    dr:SAME,
+    map:{title:'柏林：圍牆紀念館到中央車站',pts:['romy','bhf','wallmem'],route:[['romy','wallmem','rail'],['wallmem','bhf','rail']]},
+    map2:{title:'慕尼黑中央車站到弗賴辛',pts:['mhbf','fbf','fhome','weih','mucair'],route:[['mhbf','fbf','rail'],['fbf','fhome','walk'],['fhome','weih','walk']]}},
+   {id:'d0918',date:'9/18',dow:'六',cc:'c-de',city:'楚格峰',title:'德國最高峰楚格峰＋艾布湖',
+    tr:'弗賴辛 RE 約 25 分到慕尼黑中央車站，轉 RB 約 1 小時 20 分到加爾米施－帕滕基興（Deutschlandticket 涵蓋）；車站旁就是楚格峰齒軌鐵路站。9/18 中午啤酒節開幕，慕尼黑中央車站人很多',
+    nd:{items:[
+      I('07:00','弗賴辛 → 慕尼黑 → 加爾米施','gap',[],'Deutschlandticket 涵蓋','合計約 2 小時（估），班次以 DB 為準',''),
+      I('09:15','楚格峰齒軌鐵路上山','gap',['IG','付費','體驗'],'楚格峰來回 €78（2026 夏季）','齒軌鐵路爬到 Zugspitzplatt 冰河高原，再轉冰河纜車上山頂；車程約 75 分（估）','車站旁'),
+      I('11:00','楚格峰山頂 2,962 m','zugsp',['IG','免費'],'含在楚格峰票','德國最高點，金色十字架與四國山景觀景台；山頂氣溫可能接近 0°C，帶外套','冰河纜車'),
+      I('13:30','搭楚格峰纜車下到艾布湖','eibsee',['IG'],'含在楚格峰票','9 月纜車 08:30–16:45；整面玻璃車廂，下降約 1,950 m','纜車約 10 分'),
+      I('14:00','艾布湖湖畔散步','eibsee',['IG','免費'],'免費','翡翠色湖水配楚格峰倒影；環湖步道約 7 km，走一段就好','步行'),
+      I('16:00','艾布湖 → 加爾米施 → 弗賴辛','gap',[],'齒軌鐵路含在票內；火車 Deutschlandticket','約 2.5 小時（估）；週六超市多半營業到 20:00–22:00，明天週日全休，記得先買','')],
+     tips:['天氣不好上山看不到景，出發前一晚看 zugspitze.de 的即時影像；天氣差改成慕尼黑王宮＋皇家啤酒屋，或去啤酒節開幕日。','楚格峰票也可改買 MVV 加爾米施夏季票（€94.50，含慕尼黑來回火車），但已經有 Deutschlandticket 就單買楚格峰票較省。']},
+    dr:SAME,
+    map:{title:'加爾米施：楚格峰與艾布湖',pts:['gap','zugsp','eibsee'],route:[['gap','zugsp','rail'],['zugsp','eibsee','car'],['eibsee','gap','rail']]},
+    map2:{title:'弗賴辛到加爾米施',pts:['fhome','mhbf','gap'],route:[['fhome','mhbf','rail'],['mhbf','gap','rail']]}},
+   {id:'d0919',date:'9/19',dow:'日',cc:'c-de',city:'慕尼黑',title:'啤酒節傳統服裝大遊行＋啤酒節主場',
+    tr:'遊行 10:00 從 Maximilianstraße 的馬克西米利安二世紀念碑出發，全長近 7 km 走到特雷莎草坪',
+    nd:{items:[
+      I('09:00','卡位看傳統服裝與射手大遊行','parade',['IG','免費','體驗'],'路邊免費；看台座位另售（muenchenticket.de）','啤酒節第一個週日才有，數千人穿傳統服裝、馬車、樂隊遊行，非常有德國感','S-Bahn 到 Isartor'),
+      I('13:30','啤酒節帳篷','wiesn',['體驗','付費'],'每 Maß 約 €15–16（2027 預估）','週日人很多，遊行結束後湧入，盡早入場；部分帳篷只收現金','U4／U5'),
+      I('18:30','巴伐利亞雕像看夕陽','bavaria',['IG','付費'],'€5','啤酒節期間開到 20:00、最後入場 19:30','會場旁')],
+     tips:['德國週日商店休息。明天早上 07:30 要取車，今晚別喝太晚。']},
+    dr:{note:'今天喝酒，不開車。行程同「不自駕」。'},
+    map:{title:'慕尼黑：遊行路線起點到啤酒節',pts:['parade','marien','mhbf','wiesn','bavaria'],route:[['parade','marien','walk'],['marien','wiesn','walk']]}},
+   {id:'d0920',date:'9/20',dow:'一',cc:'c-de',city:'巴伐利亞',title:'新天鵝堡 → 入住哈利波特飯店',
+    tr:'自駕 5 天：今天早上在慕尼黑機場取車，9/24 傍晚在機場還車。新天鵝堡請訂 10:00–11:00 場次；哈利波特飯店截至 2026/10 尚未開放訂房',
+    nd:{items:[
+      I('07:30','弗賴辛 → 慕尼黑 → 菲森','fuessen',[],'Deutschlandticket 涵蓋','區域火車約 2.5–3 小時（估）',''),
+      I('11:00','新天鵝堡（線上預約時段）','neusch',['IG','付費','預約'],'€21＋€2.50','只能線上預約、售完為止；先上瑪麗安橋拍全景','公車 73／78'),
+      I('14:30','菲森 → 君茨堡',null,[],'','約 2.5–3 小時、需轉車（估），以 DB 時刻為準',''),
+      I('18:00','入住哈利波特飯店','hphotel',['IG','體驗'],'房價未公布','君茨堡車站搭樂高樂園接駁車','')]},
+    dr:{items:[
+      I('07:30','慕尼黑機場取車（租到 9/24）','mucair',['自駕'],'小車約 €37／天（平均，9 月待查）','離弗賴辛約 5 km；訂車時勾選「開往奧地利」',''),
+      I('10:00','新天鵝堡（訂 10:00–11:00 場次）','neusch',['IG','付費','預約'],'€21＋€2.50；停車 6 小時 €12','約 2 小時（估）；先上瑪麗安橋再入城','開車'),
+      I('13:30','（選配）菲森老城午餐','fuessen',['IG'],'','','開車 10 分'),
+      I('15:30','開往君茨堡',null,[],'','約 1 小時 45 分（估），走 A7',''),
+      I('17:30','入住哈利波特飯店','hphotel',['IG','體驗'],'房價未公布','停車可事先線上預訂；晚上體驗飯店活動（依官方預告）','')],
+     tips:['Weihenstephan 啤酒廠英文導覽只有週二、週三 10:00，新排法排不進去；9/17 晚上和 9/25 早午餐還是會去它的啤酒餐廳。']},
+    map:{title:'弗賴辛 → 新天鵝堡 → 君茨堡',pts:['fhome','mucair','neusch','fuessen','hphotel'],route:[['mucair','neusch','car'],['neusch','hphotel','car']]}},
+   {id:'d0921',date:'9/21',dow:'二',cc:'c-de',city:'巴伐利亞',title:'《進擊的巨人》諾德林根＋羅騰堡',
+    tr:'自駕：君茨堡 → 諾德林根約 1 小時（估）；晚上回弗賴辛，明天往國王湖',
+    nd:{items:[
+      I('09:00','樂高樂園哈利波特區（若開放）','hphotel',['體驗','付費'],'樂園門票另計','依官方開放情況',''),
+      I('11:30','君茨堡 → 諾德林根','noerd',[],'區域火車可用 Deutschlandticket','經 Donauwörth 轉車（估 1.5 小時）',''),
+      I('13:00','諾德林根城牆步道','noerd',['IG','免費'],'免費','有屋頂的城牆走道繞一圈約 45 分，對照《進擊的巨人》城牆','步行'),
+      I('14:30','丹尼爾塔','noerd',['IG','付費'],'門票待查','350 階，俯瞰正圓形城牆與紅屋頂','步行'),
+      I('17:00','回弗賴辛',null,[],'','約 2.5 小時（估）','')]},
+    dr:{items:[
+      I('10:00','君茨堡出發','hphotel',['自駕'],'','',''),
+      I('11:00','諾德林根城牆步道＋丹尼爾塔','noerd',['IG','付費'],'丹尼爾塔門票待查','城牆步道免費','開車約 1 小時'),
+      I('14:30','羅騰堡・普倫萊因','ploenlein',['IG','免費'],'免費','德國最經典的中世紀小鎮角度；城牆步道免費','開車約 1 小時'),
+      I('（或）','丁克斯比爾','dinkels',['IG'],'','人比羅騰堡少的彩色木造屋老城，二選一','開車約 35 分'),
+      I('17:00','開回弗賴辛（車停公寓）',null,[],'','約 2 小時 15 分（估）','')]},
+    map:{title:'諾德林根與浪漫大道',pts:['hphotel','noerd','dinkels','rothenburg','fhome'],route:[['hphotel','noerd','car'],['noerd','rothenburg','car'],['rothenburg','fhome','car']]}},
+   {id:'d0922',date:'9/22',dow:'三',cc:'c-de',city:'國王湖',title:'國王湖＋藍紹教堂 → 哈修塔特',
+    tr:'國王湖遊船 9/15 起為秋季班表：第一班約 08:30、末班約 16:15（2026 年資料）；國王湖到哈修塔特約 1 小時 45 分（估）。Weisses Lamm 入住時間 15:00–18:00，晚到要先通知飯店',
+    nd:{items:[
+      I('06:30','弗賴辛 → 貝希特斯加登','bgd',[],'Deutschlandticket 涵蓋','約 3 小時（估），在 Freilassing 轉車',''),
+      I('09:45','國王湖遊船・聖巴爾多祿茂教堂','bartho',['IG','付費','體驗'],'來回 €23.40','公車 840／841／843 到國王湖；單程船程約 35 分',''),
+      I('13:00','貝希特斯加登 → 薩爾斯堡 → 哈修塔特','hallbf',[],'奧地利段另購票','公車到薩爾斯堡，再轉火車到哈修塔特車站、渡輪約 10 分進鎮，約 3.5 小時（估）；18:00 前要入住',''),
+      I('17:00','入住 Weisses Lamm・湖畔黃昏','obhome',['IG'],'已訂','','渡輪＋步行')]},
+    dr:{items:[
+      I('07:00','弗賴辛出發','fhome',['自駕'],'','約 2 小時到國王湖（估）',''),
+      I('09:00','國王湖遊船・聖巴爾多祿茂教堂','bartho',['IG','付費','體驗'],'來回 €23.40；停車收費','單程約 35 分；船員吹小號示範回音',''),
+      I('13:00','藍紹聖塞巴斯蒂安教堂','ramsau',['IG','免費'],'免費','畫家角落小橋，教堂與阿爾卑斯同框','開車約 25 分'),
+      I('（選配）','魔法森林＋辛特湖','zauber',['IG','免費'],'免費','青苔巨石森林步道；時間夠再去','開車約 10 分'),
+      I('15:00','開往哈修塔特','obhome',['自駕'],'奧地利通行證 1 日 €9.60／10 日 €12.80（2026）','約 1 小時 45 分（估）；ASFINAG App 購買數位通行證立即生效',''),
+      I('17:00','入住 Weisses Lamm・湖畔黃昏','obhome',['IG'],'已訂','鎮內有車輛管制，出發前先 email 飯店確認停車方式','')]},
+    map:{title:'國王湖 → 哈修塔特',pts:['fhome','koenig','bartho','ramsau','salzburg','obhome'],route:[['fhome','koenig','car'],['koenig','bartho','car'],['koenig','ramsau','car'],['ramsau','obhome','car']]}},
+   {id:'d0923',date:'9/23',dow:'四',cc:'c-de',city:'哈修塔特',title:'哈修塔特一整天：清晨明信片角度・鹽礦與 Skywalk',
+    tr:'住在鎮上，全天步行；鹽礦纜車站在鎮南端，步行約 10 分（估）',
+    nd:{items:[
+      I('07:00','明信片觀景點（趁人少）','hallpost',['IG','免費'],'免費','從市集廣場往北約 50 m 是經典角度；早上旅行團還沒到，湖面也比較平靜','飯店步行'),
+      I('08:00','飯店早餐・湖畔散步','obhome',[],'','',''),
+      I('09:00','鹽礦纜車＋Skywalk 世界遺產觀景台','skywalk',['IG','付費'],'纜車來回 €29（2026）','9 月 09:00–16:00；觀景台在山上站旁','步行到纜車站'),
+      I('（選配）','哈修塔特鹽礦導覽','skywalk',['體驗','付費'],'鹽礦＋纜車聯票 €49','世界最古老的鹽礦，有礦工溜滑梯','山上站'),
+      I('12:30','Rührwerk 現烤奶油捲 Schaumrolle','ruehr',['美食','IG'],'估 €4–6／個','Seestraße 179，鎮中心湖邊小店，每天 10:00–18:00；招牌是現烤 Schaumrolle（奶油捲），也有蝴蝶餅、莓果麵包。常要排隊，網友說原本想分著吃結果一個人就吃完，建議一人一個','從纜車站步行約 8 分（估）'),
+      I('13:00','湖畔午餐・老城散步','hallstatt',['IG'],'','下午旅行團多，逛巷弄、新教教堂前的湖岸','步行'),
+      I('14:30','伴手禮：蜂蜜店＋超市香料鹽＋紀念幣','adeg',['購物','伴手禮'],'香料鹽、蜂蜜尚未查到價格','三家都在 Seestraße 上，離 Rührwerk 幾步路：① Hallstatt Honey and Tea House（Seestraße 166）可試吃，網友推薰衣草蜂蜜（罐裡有整支薰衣草），評論說店員不喜歡客人亂摸商品。② ADEG MarktGschäftl 超市（Seestraße 169，週一至五 07:00–19:00、週六到 17:00、週日休）買試管裝香料鹽：Feuerschlucker Salz（紅色辣味）、Kräuterbutter Salz（綠色香草），順便買奧地利汽水 Almdudler。網友說的「入口處超市」推測是這家（鎮上唯一的超市），到現場確認。③ Hallstatt 風景紀念幣轉幣機：網友說不貴，位置未查到，備好硬幣。鎮上部分店家只收現金','步行'),
+      I('（選配）','湖上遊船繞一圈','hallstatt',['IG','付費'],'€18','約 50 分；9 月從鎮上碼頭 11:00、13:00、14:00、15:00 出發，天候不佳會停航',''),
+      I('18:30','傍晚湖景・回飯店','obhome',['IG'],'','旅行團離開後鎮上安靜下來，是第二個拍照時段','')],
+     tips:['住在鎮內，清晨和傍晚旅行團不在的時段都能拍到人少的哈修塔特。']},
+    dr:{note:'今天不開車，車停在飯店指定的停車處，全天步行。',base:true},
+    map:{title:'哈修塔特鎮上',pts:['obhome','hallstatt','hallpost','skywalk','ruehr','honig','adeg'],route:[['obhome','hallpost','walk'],['hallstatt','skywalk','walk']]}},
+   {id:'d0924',date:'9/24',dow:'五',cc:'c-de',city:'哈修塔特',title:'達赫斯坦 5fingers 觀景台 → 回弗賴辛',
+    tr:'達赫斯坦纜車山下站在湖對岸的奧伯特勞恩，從哈修塔特開車約 10 分（估）；奧伯特勞恩到慕尼黑機場約 3 小時（估）。Weisses Lamm 退房 08:00–11:00',
+    nd:{items:[
+      I('08:00','退房 → 渡輪＋火車到奧伯特勞恩','krippen',[],'渡輪 €4','行李多的話可先寄放飯店再回來拿；渡輪與火車班次以官網為準',''),
+      I('09:00','達赫斯坦纜車上 Krippenstein','krippen',['IG','付費'],'全景票 €46.70（2026，含 1–3 段纜車來回）','天氣好才值得上去，出發前看山上即時影像',''),
+      I('10:00','5fingers 觀景台','fingers',['IG','免費'],'含在纜車票','五根手指造型的懸空平台，腳下是 400 m 深的崖壁，正對哈修塔特湖','山上站步行約 20–30 分（估）'),
+      I('（選配）','達赫斯坦巨型冰洞','krippen',['體驗','付費'],'All in One 票 €66.20（含冰洞與猛獁洞導覽）','在中間站 Schönbergalm 現場登記導覽；洞內約 0°C，帶外套','中間站'),
+      I('13:00','奧伯特勞恩 → 薩爾斯堡 → 慕尼黑 → 弗賴辛','fhome',[],'奧地利段另購票','火車約 4.5 小時（估），在 Attnang-Puchheim 與薩爾斯堡轉車','')]},
+    dr:{items:[
+      I('08:00','退房・開到奧伯特勞恩','krippen',['自駕'],'','約 10 分（估）',''),
+      I('08:30','達赫斯坦纜車上 Krippenstein','krippen',['IG','付費'],'全景票 €46.70（2026）','天氣好才值得上去',''),
+      I('09:30','5fingers 觀景台','fingers',['IG','免費'],'含在纜車票','懸空平台正對哈修塔特湖','山上站步行約 20–30 分（估）'),
+      I('（選配）','達赫斯坦巨型冰洞','krippen',['體驗','付費'],'All in One 票 €66.20','洞內約 0°C，帶外套','中間站'),
+      I('13:00','開回慕尼黑機場還車','mucair',['自駕'],'','約 3 小時（估）；想順路就停薩爾斯堡 1–2 小時',''),
+      I('17:30','回弗賴辛整理行李','fhome',[],'','明天搭機','635 公車或計程車')]},
+    map:{title:'哈修塔特 → 達赫斯坦纜車',pts:['obhome','hallbf','krippen','fingers'],route:[['obhome','krippen','car'],['krippen','fingers','car']]},
+    map2:{title:'奧伯特勞恩 → 慕尼黑機場',pts:['krippen','salzburg','mucair','fhome'],route:[['krippen','salzburg','car'],['salzburg','mucair','car'],['mucair','fhome','car']]}},
+   {id:'d0925',date:'9/25',dow:'六',cc:'c-air',city:'回程',title:'弗賴辛 → 慕尼黑機場',
+    tr:'車已在 9/24 還；弗賴辛車站搭 635 號公車約 20 分到機場；EK050 慕尼黑 T1 15:40 起飛（電子機票建議 11:40 報到）',
+    nd:{items:[
+      I('09:30','主教座堂山早晨散步','domberg',['IG','免費'],'免費','',''),
+      I('10:30','Weihenstephan 早午餐','weih',['體驗'],'','',''),
+      I('12:00','到機場第一航廈（搭 635 公車）','mucair',[],'','電子機票建議 11:40 報到，12:00 前後到即可；14:10 前過完護照查驗（申根出境）、14:40 前到登機門',''),
+      I('15:40','EK050 起飛（A380）',null,[],'','飛 6 小時，23:40 抵達杜拜 T3',''),
+      I('23:40','杜拜轉機 4 小時 05 分',null,[],'','同在 T3、不出關；可在休息區或付費貴賓室小睡，02:45 前到登機門','')]},
+    dr:SAME,
+    map:{title:'弗賴辛到慕尼黑機場',pts:['fbf','fhome','domberg','weih','mucair'],route:[['fbf','mucair','car']]}},
+   {id:'d0926',date:'9/26',dow:'日',cc:'c-tw',city:'抵台',title:'杜拜 → 桃園',
+    tr:'EK366 杜拜 T3 03:45 → 桃園 T2 16:15（A380，8 小時 30 分）',
+    nd:{items:[I('03:45','EK366 起飛',null,[],'','',''),I('16:15','抵達桃園第二航廈',null,[],'','建議 9/27（一）請假休息，9/28（二）教師節放假','')]},dr:SAME}
+  ];
+
+  // ===== 餐飲建議（價格皆為估計，每人） =====
+  const M=(m,n,q,p,e,cur,info,cook)=>({m,n,q,p,e,cur,info,cook:!!cook});
+  const MEALS={
+    d0910:[M('晚餐','出發前在家或桃園機場吃；EK367 機上供餐',null,'機上含餐',0,'EUR','')],
+    d0911:[M('早餐','EK 機上早餐',null,'機上含餐',0,'PLN',''),
+      M('午餐','Hala Gwardii 美食廳（住處旁老市場）','Hala Gwardii Warszawa','估 40–60 PLN',50,'PLN','放好行李走過去就到，多攤位可分著吃'),
+      M('晚餐','自煮：用剛買的肉、蛋、蔬菜煮晚餐','Biedronka, Grzybowska 32, Warszawa','估 30 PLN',30,'PLN','公寓有廚房、微波爐；明天週日超市休，記得多買',true),
+      M('（或）','牛奶吧 Bar Mleczny Prasowy','Bar Prasowy Marszałkowska 10/16 Warszawa','估 25–40 PLN',0,'PLN','平價波蘭家常菜（湯、餃子、炸豬排），晚上不會開太晚')],
+    d0912:[M('早餐','自煮（前一天買的麵包、優格、水果）',null,'估 15 PLN',15,'PLN','',true),
+      M('午餐','瓦津基公園野餐（前一天超市買好）',null,'估 20 PLN',20,'PLN','聽完音樂會在草地上吃，像當地人一樣',true),
+      M('點心','E.Wedel 巧克力飲品店（老字號熱巧克力）','Pijalnia Czekolady E.Wedel Szpitalna 8 Warszawa','估 25–35 PLN',30,'PLN','1851 年創立的巧克力品牌，店內很好拍'),
+      M('晚餐','Hala Koszyki 美食市集','Hala Koszyki Warszawa','估 50–70 PLN',60,'PLN','週日照常營業；餐廳選擇多')],
+    d0913:[M('早餐','自煮（9/11 買的食材）',null,'估 15 PLN',15,'PLN','',true),
+      M('午餐','車上或比賽城市簡餐',null,'估 40–60 PLN',50,'PLN','依比賽時間調整'),
+      M('晚餐','比賽城市或回華沙後簡單吃',null,'估 50–70 PLN',60,'PLN','')],
+    d0914:[M('早餐','Pendolino 車上咖啡＋自備麵包',null,'估 20 PLN',20,'PLN','06:40 的火車'),
+      M('午餐','克拉科夫圈餅 Obwarzanek＋老城小餐館',null,'估 40–60 PLN',50,'PLN','圈餅幾 PLN 就有'),
+      M('晚餐','回華沙後 Żabka 熱食或公寓簡單煮',null,'估 25 PLN',25,'PLN','約 19:20 回到華沙',true)],
+    d0915:[M('早餐','自煮清冰箱（今天退房）',null,'估 10 PLN',10,'PLN','剩下的食材今天用完',true),
+      M('午餐','Konspira 戰爭主題餐廳','Konspira Restauracja Wrocław','估 50–70 PLN',60,'PLN','波蘭傳統料理，Becca Daily 推薦'),
+      M('晚餐','大教堂島附近或老城餐廳',null,'估 60–90 PLN',75,'PLN','看完點燈再吃')],
+    d0916:[M('早餐','The Bridge 飯店早餐（房價已含）',null,'已含',0,'PLN',''),
+      M('午餐','IC 火車上簡單吃',null,'估 40 PLN',40,'PLN','先在車站買三明治較保險'),
+      M('晚餐','Markthalle Neun 週四街頭美食','Markthalle Neun Berlin','估 €15–20',18,'EUR','17:00–22:00，多國小吃一攤一攤吃')],
+    d0917:[M('早餐','ROMY 早餐或中央車站麵包店','Berlin Hauptbahnhof bakery','估 €8',8,'EUR',''),
+      M('午餐','中央車站買三明治、椒鹽卷餅帶上 ICE',null,'估 €10',10,'EUR','ICE 也有餐車，價格較高'),
+      M('晚餐','Bräustüberl Weihenstephan 啤酒餐廳','Bräustüberl Weihenstephan Freising','估 €25–35',30,'EUR','世界最古老釀酒廠的餐廳；豬腳、烤豬配小麥啤酒，建議訂位'),
+      M('採買','REWE／EDEKA 採買到 9/19 的份',null,'估 €12',0,'EUR','週日德國超市全休，到弗賴辛先買好')],
+    d0918:[M('早餐','自煮＋帶車上吃的三明治',null,'估 €5',5,'EUR','07:00 出發',true),
+      M('午餐','楚格峰山頂餐廳（自助式）',null,'估 €18–22',20,'EUR','山上價格偏高，也可以帶麵包上山'),
+      M('點心','艾布湖畔咖啡＋蛋糕',null,'估 €8',8,'EUR',''),
+      M('晚餐','自煮',null,'估 €8',8,'EUR','回弗賴辛先買到 9/19 的份',true)],
+    d0919:[M('早餐','自煮（前一天買好）',null,'估 €5',5,'EUR','',true),
+      M('午餐','啤酒節帳篷：半隻烤雞＋1 Maß 啤酒','Oktoberfest Theresienwiese','估 €35',35,'EUR','1 Maß 約 €15–16（2027 預估），烤雞另計；部分帳篷只收現金'),
+      M('晚餐','回公寓簡單吃',null,'估 €5',5,'EUR','中午吃喝很多，晚上清淡就好',true)],
+    d0920:[M('早餐','自煮＋帶路上吃的麵包',null,'估 €5',5,'EUR','07:30 取車',true),
+      M('午餐','菲森老城或新天鵝堡山下餐廳',null,'估 €15–18',16,'EUR',''),
+      M('晚餐','哈利波特飯店餐廳（菜單未公布）','LEGOLAND Deutschland Resort Günzburg','待查',null,'EUR','房價與餐飲方案都還沒公布，可能含早晚餐')],
+    d0921:[M('早餐','哈利波特飯店早餐（依房型）',null,'待查',null,'EUR',''),
+      M('午餐','諾德林根老城餐廳','Nördlingen Marktplatz Restaurant','估 €15–20',18,'EUR','聖喬治教堂周邊餐廳多'),
+      M('點心','羅騰堡雪球餅 Schneeball','Schneeballen Rothenburg ob der Tauber','估 €3–5',4,'EUR',''),
+      M('晚餐','自煮：回弗賴辛路上超市採買',null,'估 €8',8,'EUR','明天很早出發，順便買明天的早餐和三明治',true)],
+    d0922:[M('早餐','自煮＋帶三明治',null,'估 €5',5,'EUR','07:00 出發',true),
+      M('午餐','聖巴爾多祿茂教堂旁餐廳：燻鱒魚／紅點鮭','Historische Gaststätte St. Bartholomä','估 €18–25',22,'EUR','國王湖招牌是現燻的魚，坐在湖邊吃'),
+      M('晚餐','Weisses Lamm 餐廳或湖畔餐廳','Weisses Lamm Hallstatt','估 €25–30',28,'EUR','小鎮餐廳晚上較早打烊，入住時先問飯店或訂位')],
+    d0923:[M('早餐','飯店早餐（依房型）或湖邊麵包店',null,'估 €10',10,'EUR','07:00 先拍明信片角度再吃'),
+      M('午餐','哈修塔特湖畔餐廳：湖魚料理','Hallstatt restaurant lakeside','估 €25–35',30,'EUR','座位少，中午前先到或先訂位'),
+      M('晚餐','鎮上小店或超市熟食',null,'估 €15',15,'EUR','')],
+    d0924:[M('早餐','住宿早餐（依房型）',null,'估 €10',10,'EUR',''),
+      M('午餐','Krippenstein 山上餐廳',null,'估 €15–20',18,'EUR','下山後就開車，午餐在山上吃最省時間'),
+      M('晚餐','自煮：把剩下的食材用完',null,'估 €8',8,'EUR','最後一晚',true)],
+    d0925:[M('早餐','自煮（清冰箱）',null,'估 €3',3,'EUR','',true),
+      M('早午餐','Weihenstephan 白香腸早午餐','Bräustüberl Weihenstephan Freising','估 €15',15,'EUR','出發去機場前最後一份巴伐利亞味'),
+      M('晚餐','EK050 機上餐',null,'機上含餐',0,'EUR','')],
+    d0926:[M('全天','機上餐',null,'機上含餐',0,'EUR','')]
+  };
+
+  // ===== 活動預算（每人；EUR／PLN） =====
+  // st: ok 官方價（多為 2026）、chk 價格已知但計價方式待確認、est 估、tbd 待查／未公布；opt 選配不計入小計
+  const A=(d,n,pp,cur,st,note,opt,grp)=>({d,n,pp,cur,st,note:note||'',opt:!!opt,grp:grp||'act'});
+  const ACTS=[
+    A('9/12','文化科學宮 30 樓觀景台',25,'PLN','ok','',true),
+    A('9/12','蕭邦露天音樂會',0,'PLN','ok','往年免費；2027 檔期待公布'),
+    A('9/12','水上宮殿',60,'PLN','ok','',true),
+    A('9/12','芬蘭木屋村',0,'PLN','ok'),
+    A('9/12','維斯瓦河渡輪',0,'PLN','ok','免費'),
+    A('9/13','男排世錦賽門票',null,'PLN','tbd','售票未公布'),
+    A('9/13','華沙 ⇄ 比賽城市火車',null,'PLN','tbd','依抽籤城市'),
+    A('9/14','Collegium Maius 英文延伸導覽（含科學儀器）',31,'PLN','ok','2026 全票；週一至五 13:00，bilety.uj.edu.pl 預約',true),
+    A('9/14','恰爾托雷斯基博物館',0,'PLN','ok','週二免費（限量，當天到售票處領票）；平日全票 65 PLN'),
+    A('9/14','聖瑪利亞教堂',null,'PLN','tbd','門票待查'),
+    A('9/14','華沙 ⇄ 克拉科夫 Pendolino 來回',376,'PLN','est','2026 年起價單程 188 PLN；早買可能更便宜'),
+    A('待定','男排世錦賽日本隊門票',null,'PLN','tbd','票價、抽籤未公布'),
+    A('9/15','弗羅茲瓦夫點燈人、小矮人、市集廣場',0,'PLN','ok','免費'),
+    A('9/15','聖約翰大教堂登塔',null,'PLN','tbd','門票待查',true),
+    A('9/15','懺悔者之橋',null,'PLN','tbd','門票待查'),
+    A('9/16','漢堡車站美術館',16,'EUR','ok','',true),
+    A('9/16','國會大廈屋頂露台',0,'EUR','ok','須事先登記；圓頂 8/23–11/19 關閉'),
+    A('9/17','圍牆基金會中文導覽',40,'EUR','chk','官網 €80；若是整團價每人約 €40，若是每人價則 €80'),
+    A('9/18','楚格峰來回（齒軌鐵路＋冰河纜車＋楚格峰纜車）',78,'EUR','ok','2026 夏季價；含慕尼黑來回火車的 MVV 夏季票 €94.50'),
+    A('9/19','啤酒節大遊行',0,'EUR','ok','路邊免費；看台座位另售（價格待查）'),
+    A('9/19','巴伐利亞雕像',5,'EUR','ok'),
+    A('9/19','啤酒節入場',0,'EUR','ok','啤酒、烤雞列在餐費'),
+    A('9/20','新天鵝堡（門票＋預約費）',23.5,'EUR','ok'),
+    A('9/20','哈利波特飯店住宿',null,'EUR','tbd','未開放訂房（列在住宿）',true),
+    A('9/21','丹尼爾塔',null,'EUR','tbd','門票待查'),
+    A('9/22','國王湖遊船來回',23.4,'EUR','ok','到 Salet 來回 €29.80'),
+    A('9/23','哈修塔特鹽礦纜車來回（Skywalk 觀景台在山上站）',29,'EUR','ok','2026 年價；9 月 09:00–16:00'),
+    A('9/23','哈修塔特鹽礦導覽',20,'EUR','ok','聯票 €49 減纜車 €29',true),
+    A('9/23','湖上遊船繞一圈',18,'EUR','ok','約 50 分（資料未標年份）',true),
+    A('9/24','達赫斯坦全景票（纜車 1–3 段，含 5fingers）',46.7,'EUR','ok','2026 年價'),
+    A('9/24','達赫斯坦冰洞＋猛獁洞（升級 All in One）',19.5,'EUR','ok','All in One €66.20 減全景票',true),
+    A('9/20–24','租車 5 天（小車，兩人分攤）',92.5,'EUR','est','平均約 €37／天；9 月實價、保險、油錢另計','', 'car'),
+    A('9/20','新天鵝堡停車 6 小時（兩人分攤）',6,'EUR','ok','€12／車',false,'car'),
+    A('9/22','奧地利高速公路通行證 10 日（兩人分攤）',6.4,'EUR','ok','€12.80／車（2026）',false,'car'),
+    A('9/22','國王湖停車',null,'EUR','tbd','費率見 koenigssee.de',false,'car'),
+    A('9/22–24','哈修塔特停車（依飯店安排）',null,'EUR','tbd','向 Weisses Lamm 確認',false,'car')
+  ];
+  const RATE={EUR:36.91,PLN:9.18};
+  window.__HM={MEALS,ACTS,RATE};
+
+
+  const SV='<svg class="dv-ic" viewBox="0 0 96 72" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+  const DICON={
+    plane:SV+'<path d="M8 56 C 30 50, 50 40, 60 30" stroke-dasharray="2 7"/><path d="M48 32 l18-4 l12-14 h6 l-5 14 l14 2 v4 l-14 2 l5 14 h-6 l-12-14 l-18-4z" fill="#A8D3E6"/><circle cx="20" cy="20" r="9" fill="#F6D27A"/></svg>',
+    pkin:SV+'<rect x="22" y="44" width="52" height="24" fill="#FFFCF6"/><rect x="32" y="26" width="32" height="18" fill="#FFFCF6"/><rect x="41" y="12" width="14" height="14" fill="#F2A497"/><path d="M48 12 V2"/><path d="M30 54 h6 M45 54 h6 M60 54 h6" stroke-width="2.4"/><path d="M4 68 h88"/></svg>',
+    piano:SV+'<rect x="8" y="30" width="80" height="34" rx="4" fill="#FFFCF6"/><path d="M24 30 v34 M40 30 v34 M56 30 v34 M72 30 v34" stroke-width="2.4"/><path d="M19 30 h8 v18 h-8z M35 30 h8 v18 h-8z M67 30 h8 v18 h-8z" fill="#3E3A39"/><path d="M62 18 v-12 l10 3 v12" /><circle cx="58" cy="19" r="4" fill="#F2A497"/><circle cx="68" cy="22" r="4" fill="#F2A497"/></svg>',
+    ball:SV+'<circle cx="48" cy="32" r="22" fill="#FFFCF6"/><path d="M48 10 c-8 12-8 32 0 44 M28 24 c14 3 26 13 32 26 M68 20 c-14 6-24 16-28 32" stroke-width="2.6"/><path d="M10 68 h76" /><path d="M20 62 c6-4 10-4 16 0 M60 62 c6-4 10-4 16 0" stroke-width="2.4"/></svg>',
+    gate:SV+'<rect x="10" y="22" width="76" height="10" fill="#F6D27A"/><path d="M30 22 l18-10 l18 10" fill="#F6D27A"/><path d="M16 32 v34 M32 32 v34 M64 32 v34 M80 32 v34" stroke-width="5"/><path d="M4 68 h88"/><path d="M44 12 v-6 h8" stroke-width="2.4"/></svg>',
+    beer:SV+'<path d="M26 22 h34 v38 a5 5 0 0 1-5 5 H31 a5 5 0 0 1-5-5z" fill="#F6D27A"/><path d="M60 30 h8 a5 5 0 0 1 5 5 v12 a5 5 0 0 1-5 5 h-8"/><path d="M23 24 c0-8 8-11 13-7 c4-7 15-7 18 0 c7-3 12 3 9 9z" fill="#FFFCF6"/><path d="M36 36 v20 M48 36 v20" stroke-width="2.4"/><path d="M80 18 l6-6 M84 26 h8" stroke-width="2.4"/></svg>',
+    castle:SV+'<path d="M4 70 Q48 40 92 70z" fill="#B9DAA5"/><rect x="36" y="30" width="26" height="24" fill="#FFFCF6"/><rect x="24" y="22" width="12" height="32" fill="#FFFCF6"/><rect x="62" y="26" width="10" height="28" fill="#FFFCF6"/><path d="M22 23 l8-16 l8 16z M60 27 l7-13 l7 13z M41 31 l8-14 l8 14z" fill="#A8D3E6"/><path d="M46 54 v-9 a3 3 0 0 1 6 0 v9"/></svg>',
+    town:SV+'<circle cx="48" cy="40" r="28" fill="#B9DAA5"/><circle cx="48" cy="40" r="20" fill="#FFFCF6"/><path d="M36 44 l6-8 l6 8 v10 h-12z M50 44 l6-8 l6 8 v10 h-12z" fill="#F2A497" stroke-width="2.4"/><rect x="44" y="18" width="8" height="22" fill="#F6D27A" stroke-width="2.4"/><path d="M44 18 l4-8 l4 8" stroke-width="2.4"/></svg>',
+    alp:SV+'<path d="M4 68 L40 12 L56 34 L66 24 L92 68 z" fill="#B9DAA5"/><path d="M30 28 l10-16 l9 14 l-9 4z" fill="#FFFCF6" stroke-width="2.4"/><path d="M40 12 V2 M36 5 h8" stroke-width="2.4"/><path d="M60 46 h22 M64 40 v12" stroke-width="2.4"/><rect x="58" y="50" width="10" height="8" rx="2" fill="#F2A497" stroke-width="2.4"/></svg>',
+    lamp:SV+'<path d="M48 70 V30" stroke-width="4"/><path d="M36 30 h24 l-4-14 h-16z" fill="#F6D27A"/><path d="M44 16 l4-8 l4 8"/><path d="M20 70 h56"/><path d="M70 12 l12 -6 M74 20 h10" stroke-width="2.4"/><path d="M14 40 c4-10 14-10 14 0 v28 h-14z" fill="#3E3A39"/><path d="M10 40 h22" stroke-width="2.4"/><path d="M28 46 L46 22" stroke-width="2.4"/></svg>',
+    lake:SV+'<path d="M2 46 L28 14 L44 32 L62 10 L94 46 z" fill="#B9DAA5"/><path d="M22 22 l6-8 l5 6 M56 18 l6-8 l7 9" stroke-width="2.4" fill="#FFFCF6"/><rect x="0" y="46" width="96" height="26" fill="#A8D3E6" stroke="none"/><path d="M2 46 h92"/><path d="M14 58 c6-4 12 4 18 0 M56 64 c6-4 12 4 18 0" stroke-width="2.4"/><path d="M40 54 h22 l-5 7 h-13z" fill="#F2A497" stroke-width="2.4"/></svg>'
+  };
+  const DAYIC={d0910:'plane',d0911:'pkin',d0912:'piano',d0913:'ball',d0914:'town',d0915:'lamp',d0916:'gate',d0917:'gate',d0918:'alp',d0919:'beer',d0920:'castle',d0921:'town',d0922:'lake',d0923:'lake',d0924:'lake',d0925:'plane',d0926:'plane'};
+  const TAG={'購物':'tg-shop','伴手禮':'tg-shop',IG:'tg-ig','免費':'tg-free','付費':'tg-paid','預約':'tg-book','體驗':'tg-exp','自駕':'tg-car'};
+  const icon='<svg viewBox="0 0 12 12"><path d="M6 1a3.5 3.5 0 0 0-3.5 3.5C2.5 7.3 6 11 6 11s3.5-3.7 3.5-6.5A3.5 3.5 0 0 0 6 1zm0 4.8a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z" style="fill:currentColor"/></svg>';
+  function items(list){return `<ol class="tl">${list.map(it=>`<li>
+      <span class="tl-t num">${esc(it.t)}</span>
+      <div class="tl-b">
+        <div class="tl-h"><strong>${it.k?`<a href="${gq(it.k)}" target="_blank" rel="noopener">${esc(it.n)}</a>`:esc(it.n)}</strong>${it.tags.map(t=>`<span class="tg ${TAG[t]||''}">${esc(t)}</span>`).join('')}${it.price?`<span class="price num">${esc(it.price)}</span>`:''}</div>
+        ${it.info?`<p class="small">${esc(it.info)}</p>`:''}
+        ${it.tr?`<p class="small muted">交通：${esc(it.tr)}</p>`:''}
+      </div></li>`).join('')}</ol>`;}
+  function meals(id){const L=MEALS[id];if(!L)return '';
+    return `<div class="meals"><h4>三餐建議 <span class="small muted">（每人估價）</span></h4><ul>${L.map(x=>`<li><span class="ml-m">${esc(x.m)}</span><div><div class="tl-h"><strong>${x.q?`<a href="${'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(x.q)}" target="_blank" rel="noopener">${esc(x.n)}</a>`:esc(x.n)}</strong>${x.cook?'<span class="tg tg-cook">自煮</span>':''}<span class="price num">${esc(x.p)}</span></div>${x.info?`<p class="small muted">${esc(x.info)}</p>`:''}</div></li>`).join('')}</ul></div>`;}
+  const DRIVE=new Set(['d0920','d0921','d0922','d0923','d0924']);
+  const strip=document.getElementById('daystrip');
+  strip.innerHTML=DAYS.map(d=>`<button type="button" class="dchip" id="chip-${d.id}" data-id="${d.id}"><span class="dc-d num">${d.date}</span><span class="dc-w">${d.dow}${DRIVE.has(d.id)?'・自駕':''}</span><span class="dc-c ${d.cc}">${d.city}</span></button>`).join('');
+  function render(id){
+    const d=DAYS.find(x=>x.id===id)||DAYS[1];
+    document.querySelectorAll('.dchip').forEach(b=>b.setAttribute('aria-pressed',b.dataset.id===d.id?'true':'false'));
+    const mode=DRIVE.has(d.id)?'dr':'nd';
+    let body='';
+    if(mode==='dr'){
+      if(d.dr===SAME){body=items(d.nd.items);}
+      else{body=(d.dr.note?`<p class="note">${esc(d.dr.note)}</p>`:'')+((d.dr.base||!d.dr.items)?items(d.nd.items):'')+(d.dr.items?items(d.dr.items):'');}
+    }else body=items(d.nd.items);
+    const tips=(mode==='dr'&&d.dr&&d.dr!==SAME&&d.dr.tips)?d.dr.tips:(d.nd.tips||[]);
+    const maps=[d.map,d.map2].filter(Boolean).map(m=>`<div class="mapbox">${drawMap(m)}<span class="cap">${esc(m.title)}・點地點開啟 Google 地圖（直線相對位置）</span></div>`).join('');
+    const shown=mode==='dr'&&d.dr&&d.dr.items?[...(d.dr.base?d.nd.items:[]),...d.dr.items]:d.nd.items;
+    const locs=[...new Set(shown.map(i=>i.k).filter(Boolean))];
+    const route=locs.length>1?`<a class="gbtn route" href="https://www.google.com/maps/dir/${locs.map(k=>encodeURIComponent(P[k].q)).join('/')}" target="_blank" rel="noopener">${icon}在 Google 地圖開啟當日全部地點路線</a>`:'';
+    document.getElementById('dayview').innerHTML=`
+      <div class="dv-head">${DICON[DAYIC[d.id]||'plane']}<div class="ht"><h3>${esc(d.title)}</h3><div class="meta"><span class="num">${d.date}（${d.dow}）</span><span class="city ${d.cc}">${d.city}</span></div></div></div>
+      ${d.tr?`<p class="dv-tr small">${esc(d.tr)}</p>`:''}
+      <div class="dv-grid${maps?'':' nomap'}">
+        <div class="dv-main">${body}${tips.length?`<ul class="tips small">${tips.map(t=>`<li>${esc(t)}</li>`).join('')}</ul>`:''}${meals(d.id)}<div class="gbtns">${route}${(d.refs||[]).map(r=>`<a class="gbtn" href="${esc(r[1])}" target="_blank" rel="noopener">${esc(r[0])}</a>`).join('')}</div></div>
+        ${maps?`<div class="dv-maps">${maps}</div>`:''}
+      </div>`;
+  }
+  let cur=(location.hash||'').replace('#','');
+  if(!DAYS.some(d=>d.id===cur)){cur='';try{cur=localStorage.getItem('hm-day')||'';}catch(e){}}
+  if(!DAYS.some(d=>d.id===cur))cur='d0911';
+  strip.addEventListener('click',e=>{const b=e.target.closest('.dchip');if(!b)return;cur=b.dataset.id;try{localStorage.setItem('hm-day',cur);}catch(e){}render(cur);const v=document.getElementById('dayview');v.classList.remove('boing');void v.offsetWidth;v.classList.add('boing');b.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});});
+  render(cur);
+  window.__HM.DAYS_META=DAYS.map(d=>({id:d.id,date:d.date,city:d.city}));
+  const sel=document.getElementById('chip-'+cur); if(sel) strip.scrollLeft=Math.max(0,sel.offsetLeft-40);
+})();
+
+
+(function(){
+  const {MEALS,ACTS,RATE,DAYS_META}=window.__HM;
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const f=n=>Math.round(n).toLocaleString('en-US');
+  const sym=c=>c==='EUR'?'€':'';
+  const unit=c=>c==='PLN'?' PLN':'';
+  const ST={ok:['s-done','官方價'],chk:['s-chk','待確認'],est:['s-wait','估'],tbd:['s-todo','待查']};
+  function rows(list,id){let tot=0;
+    const h=list.map(a=>{const nt=a.pp!=null?a.pp*RATE[a.cur]*2:null;if(nt!=null&&!a.opt)tot+=nt;
+      const st=ST[a.st];
+      return `<tr><td class="num">${esc(a.d)}</td><td>${esc(a.n)}${a.opt?' <span class="small muted">（選配）</span>':''}</td><td class="r num">${a.pp==null?'—':a.pp===0?'免費':sym(a.cur)+a.pp+unit(a.cur)}</td><td class="r num">${nt==null?'—':nt===0?'0':f(nt)}</td><td><span class="pill ${st[0]}">${st[1]}</span></td><td class="small muted">${esc(a.note)}</td></tr>`;}).join('');
+    document.getElementById(id).innerHTML=h+`<tr class="tot"><td></td><td>小計（不含待查、選配）</td><td></td><td class="r num">${f(tot)}</td><td></td><td></td></tr>`;return tot;}
+  const tA=rows(ACTS.filter(a=>a.grp==='act'),'act-rows');
+  const tC=rows(ACTS.filter(a=>a.grp==='car'),'car-rows');
+  let tM=0;
+  document.getElementById('meal-rows').innerHTML=DAYS_META.map(d=>{const L=MEALS[d.id]||[];let pp={EUR:0,PLN:0},tbd=false,cook=0;
+    L.forEach(x=>{if(x.e==null)tbd=true;else pp[x.cur]+=x.e;if(x.cook)cook++;});
+    const nt=(pp.EUR*RATE.EUR+pp.PLN*RATE.PLN)*2;tM+=nt;
+    const ppTxt=[pp.PLN?pp.PLN+' PLN':'',pp.EUR?'€'+pp.EUR:''].filter(Boolean).join(' ＋ ')||'機上含餐';
+    return `<tr><td class="num">${d.date}</td><td>${esc(d.city)}</td><td class="r num">${ppTxt}${tbd?' ＋ 待查':''}</td><td class="r num">${nt?f(nt):'0'}</td><td>${cook||'—'}</td></tr>`;}).join('')
+    +`<tr class="tot"><td></td><td>合計</td><td></td><td class="r num">${f(tM)}</td><td></td></tr>`;
+  document.getElementById('bud-act').textContent='≈ '+f(tA);
+  document.getElementById('bud-car').textContent='≈ '+f(tC);
+  document.getElementById('bud-meal').textContent='≈ '+f(tM);
+})();
+
+(function(){
+  function tot(){const f=n=>Math.round(n).toLocaleString('en-US');const C={fly:'機票',stay:'住宿',move:'交通',act:'門票與活動',food:'餐飲'};const sum={};let t=0;
+    document.querySelectorAll('#budget-detail tr[data-cat]').forEach(tr=>{const td=tr.querySelector('td.r');const m=td.textContent.replace(/,/g,'').match(/\d{3,}/);const v=m?+m[0]:0;sum[tr.dataset.cat]=(sum[tr.dataset.cat]||0)+v;t+=v;});
+    document.getElementById('cat-rows').innerHTML=Object.keys(C).map(k=>`<tr><td>${C[k]}</td><td class="r num">≈ ${f(sum[k]||0)}</td><td class="r num">≈ ${f((sum[k]||0)/2)}</td><td class="r num">${t?Math.round((sum[k]||0)/t*100):0}%</td></tr>`).join('')+`<tr class="tot"><td>合計</td><td class="r num">≈ ${f(t)}</td><td class="r num">≈ ${f(t/2)}</td><td class="r num">100%</td></tr>`;
+    document.getElementById('bud-total').textContent='≈ '+f(t);document.getElementById('bud-pp').textContent='≈ '+f(t/2);const sp=document.getElementById('stat-pp');if(sp)sp.textContent=Math.round(t/2/1000)/10+' 萬';}
+  tot();const w=document.getElementById('budget-warsaw');if(w)new MutationObserver(tot).observe(w,{childList:true,characterData:true,subtree:true});
+})();
+
+(function(){
+  // countdown
+  try{
+    const dep=new Date('2027-09-10T23:50:00+08:00');
+    const days=Math.ceil((dep-Date.now())/86400000);
+    document.getElementById('countdown').textContent = days>0 ? days+' 天' : '出發囉';
+  }catch(e){}
+
+  const STATUS={done:['s-done','已完成'],todo:['s-todo','待處理'],wait:['s-wait','等待公布'],new:['s-new','有新進展']};
+  const ICON={volleyball:'i-ball',chopin:'i-piano',oktoberfest:'i-beer',train:'i-train',flight:'i-plane',lodging:'i-bed'};
+  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const safeUrl=u=>/^https:\/\//.test(u||'')?u:'#';
+  const fmt=n=>typeof n==='number'?n.toLocaleString('en-US'):esc(n);
+
+  function renderTracking(docs){
+    const list=document.getElementById('track-list');
+    if(!docs.length){list.innerHTML='<div class="empty" style="grid-column:1/-1">目前沒有追蹤項目。請 Claude 新增後會顯示在這裡。</div>';document.getElementById('stat-track').textContent='0';return;}
+    const rows=docs.map(d=>d.data()).sort((a,b)=>(a.order??99)-(b.order??99));
+    document.getElementById('stat-track').textContent=rows.filter(r=>r.status!=='done').length+' 項';
+    let latest='';
+    list.innerHTML=rows.map(r=>{
+      const st=STATUS[r.status]||STATUS.wait;
+      if((r.lastChecked||'')>latest) latest=r.lastChecked;
+      const links=(r.links||[]).map(l=>`<a href="${esc(safeUrl(l.url))}" target="_blank" rel="noopener">${esc(l.label)}</a>`).join('');
+      return `<article class="card">
+        <div class="top"><div class="cat"><svg><use href="#${ICON[r.category]||'i-plane'}"/></svg><h3>${esc(r.title)}</h3></div><span class="pill ${st[0]}">${esc(r.statusText||st[1])}</span></div>
+        <p class="small">${esc(r.summary)}</p>
+        <div class="meta">${r.lastChecked?`<span>上次查核 ${esc(r.lastChecked)}</span>`:''}${r.nextCheck?`<span>下次 ${esc(r.nextCheck)}</span>`:''}${r.deadline?`<span class="warn">期限 ${esc(r.deadline)}</span>`:''}</div>
+        ${links?`<div class="links">${links}</div>`:''}
+      </article>`;}).join('');
+    document.getElementById('last-update').textContent=latest||'—';
+  }
+
+  function renderBookings(docs){
+    const rows=docs.map(d=>d.data());
+    let nights=0;
+    ['warsaw','wroclaw','berlin','munich','hallstatt'].forEach(city=>{
+      const box=document.getElementById('booked-'+city);
+      const mine=rows.filter(r=>r.city===city);
+      box.innerHTML=mine.map(r=>{
+        nights+=Number(r.nights)||0;
+        return `<div class="booked-box">
+          <div class="lodge-head"><svg width="20" height="20"><use href="#i-bed"/></svg><strong>${r.url?`<a href="${esc(safeUrl(r.url))}" target="_blank" rel="noopener">${esc(r.name)}</a>`:esc(r.name)}</strong><span class="small muted">${esc(r.room||'')}</span></div>
+          <div class="row num"><span>${esc(r.checkin)} → ${esc(r.checkout)}・${esc(r.nights)} 晚</span><span>總價 ${esc(r.priceText||('NT$'+fmt(r.totalTwd)))}</span>${r.ref?`<span>確認碼 ${esc(r.ref)}</span>`:''}</div>
+          <div class="row"><span class="s-done">免費取消至 ${esc(r.cancelBy||'—')}</span>${r.fee?`<span>${esc(r.fee)}</span>`:''}${r.payBy?`<span>付款 ${esc(r.payBy)}</span>`:''}</div>
+          ${r.breakdown?`<div class="row small muted">${esc(r.breakdown)}</div>`:''}${r.access?`<div class="row small">${esc(r.access)}</div>`:''}${r.contact?`<div class="row small">${esc(r.contact)}</div>`:''}
+          ${r.note?`<p class="note">${esc(r.note)}</p>`:''}
+        </div>`;}).join('');
+      const pill=document.getElementById('pill-'+city);
+      if(mine.length){pill.className='pill s-done';pill.textContent=mine[0].pillText||'已預訂';}
+      const bud=document.getElementById('budget-'+city);if(bud&&mine[0]){bud.textContent=mine[0].budgetText||fmt(mine[0].totalTwd);}
+      const cand=document.getElementById('cand-'+city);if(cand)cand.hidden=mine.length>0;
+      const bst=document.getElementById('bst-'+city);if(bst&&mine.length){bst.className='pill s-done';bst.textContent='已預訂';}
+    });
+    document.getElementById('stat-booked').textContent=nights+' 晚';
+  }
+
+  (async()=>{
+    // GitHub 靜態版：追蹤與訂房資料是 2026/11/06 的快照
+    const wrap=a=>a.map(d=>({data:()=>d}));
+    const DATA={"tracking": [{"category": "lodging", "lastChecked": "2026/11/05", "links": [{"label": "新天鵝堡訂票", "url": "https://www.hohenschwangau.de/en/visitor-information-2-2"}, {"label": "國會大廈圓頂", "url": "https://www.bundestag.de/besuch/kuppel-besuch-245686"}, {"label": "圍牆導覽申請", "url": "https://www.stiftung-berliner-mauer.de/en/form/buchungsanfrage-besucherservice-gbm-en?source_entity_type=node&source_entity_id=246&angebot=1"}, {"label": "傳統服裝遊行", "url": "https://www.oktoberfest.de/informationen/termine/trachten-und-schuetzenzug"}, {"label": "達赫斯坦票價", "url": "https://www.dachstein-salzkammergut.com/en/tickets-offers/tickets-summer/single-tariffs"}], "order": 10, "status": "todo", "statusText": "出發前預約", "summary": "新天鵝堡（只能官方線上商店訂、現場當日票常上午賣完；9/20 建議選 11:30 後場次）、國會大廈登記（9/16；圓頂 2027/8/23–11/19 關閉，屋頂露台照常開放）、圍牆基金會中文導覽（9/17 10:00）、租車 9/20–9/24。完整清單見「預購」分頁。", "title": "需事先預約的門票"}, {"category": "chopin", "lastChecked": "2026/11/2", "links": [{"label": "Warszawa 19115 整修公告", "url": "https://warszawa19115.pl/-/remont-w-muzeum-fryderyka-chopina"}, {"label": "蕭邦博物館（NIFC）", "url": "https://muzeum.nifc.pl/"}], "order": 12, "status": "wait", "statusText": "等待公布", "summary": "2026 全年整修閉館，市府公告 2027 年（蕭邦大賽百週年）重開，確切日期與票價仍未公布。", "title": "蕭邦博物館重新開放"}, {"category": "chopin", "lastChecked": "2026/11/2", "links": [{"label": "瓦津基公園音樂會頁", "url": "https://www.lazienki-krolewskie.pl/en/wydarzenia/koncert-chopinowski"}, {"label": "Warszawa 19115（第 67 季）", "url": "https://warszawa19115.pl/en/-/67.-sezon-koncert%C3%B3w-chopinowskich-w-%C5%81azienkach-kr%C3%B3lewskich"}], "nextCheck": "每週一 09:17", "order": 2, "status": "wait", "summary": "2027 第 68 季檔期仍未公布（最新資訊仍是 2026 第 67 季 7/5–9/27 每週日 12:00、16:00，免費）。行程以 9/12（日）為目標。", "title": "2027 蕭邦露天音樂會檔期"}, {"category": "flight", "lastChecked": "2026/10/21", "links": [{"label": "領事局波蘭頁", "url": "https://www.boca.gov.tw/sp-foof-countrycp-03-62-aa8d5-05-1.html"}, {"label": "德國 §29 FeV", "url": "https://www.gesetze-im-internet.de/fev_2010/__29.html"}], "order": 11, "status": "todo", "statusText": "待確認", "summary": "帶台灣駕照正本＋國際駕照（NT$250、效期 3 年）；德國另備駐德代表處德文駕照證明，費用與效期待確認。不要租波蘭還德國（跨國甲租乙還 1,071 PLN 起）。", "title": "自駕證件（若要租車）"}, {"category": "flight", "lastChecked": "2026/11/05", "links": [{"label": "歐盟 ETIAS 說明", "url": "https://home-affairs.ec.europa.eu/policies/schengen/smart-borders/european-travel-information-authorisation-system_en"}, {"label": "官方申請網站", "url": "https://travel-europe.europa.eu/etias_en"}], "order": 12, "status": "wait", "statusText": "尚未啟用", "summary": "台灣護照免簽入境申根。ETIAS 尚未上路、沒有正式啟用日，最可能 2027 年；費用預計 €20。若 2027/9 前啟用，出發前要先申請。詳見「證件」分頁。", "title": "歐盟 ETIAS 旅行授權"}, {"category": "flight", "lastChecked": "2026/11/04", "links": [{"label": "阿聯酋航空", "url": "https://www.emirates.com/tw/chinese/"}], "order": 6, "status": "done", "statusText": "已訂・待選位", "summary": "已訂阿聯酋，兩人 TWD 67,996。去程 9/10 EK367 桃園 T2 23:50 → 杜拜 04:35，轉機 3 小時 35 分，EK179 08:10 → 華沙 12:15。回程 9/25 EK050 慕尼黑 T1 15:40 → 杜拜 23:40，轉機 4 小時 05 分，EK366 03:45 → 桃園 16:15（9/26）。待辦：官網管理預訂選位、餐點需求。", "title": "國際機票"}, {"category": "lodging", "lastChecked": "2026/11/2", "links": [{"label": "HolidayCheck（10/15）", "url": "https://www.holidaycheck.de/urlaub/deutschland/bayern/guenzburg/inspiration/erstes-offizielles-harry-potter-hotel-deutschland-legoland"}, {"label": "LEGOLAND 官網", "url": "https://www.legoland.de/"}], "order": 3, "status": "wait", "statusText": "未開放訂房", "summary": "截至 2026/11/2 仍未公布開幕日、房價與訂房方式，是否含樂園門票也未知。開放後盡早預訂 9/20（一）一晚。", "title": "哈利波特飯店（樂高樂園德國，君茨堡）9/20 一晚"}, {"category": "lodging", "deadline": "免費取消至 2027/9/13 23:59", "lastChecked": "2026/10/21", "order": 9, "status": "done", "statusText": "已預訂", "summary": "Hotel ROMY by AMANO 小型雙人房，9/16–9/17 一晚，總價 €162.97（約 NT$6,015）。柏林時間 2027/9/13 23:59 前可免費取消，9/14 起取消或未入住收 €151.60。", "title": "柏林住宿"}, {"category": "lodging", "deadline": "免費取消至 2027/8/22 23:59", "lastChecked": "2026/10/21", "links": [], "order": 9, "status": "done", "statusText": "已預訂", "summary": "Weisses Lamm 湖景豪華套房，9/22–9/24 兩晚，€546（約 NT$20,153）。奧地利時間 2027/8/22 23:59 前可免費取消，之後收全額；Booking.com 自動刷卡。入住 15:00–18:00，停車方式待向飯店確認。", "title": "哈修塔特住宿（9/22–9/24 兩晚）"}, {"category": "lodging", "deadline": "已訂部分免費取消至 2027/9/11 23:59", "lastChecked": "2026/10/21", "order": 8, "status": "todo", "statusText": "3 晚已訂・2 晚待訂", "summary": "已訂 Boutique Apartment in Freising 9/17–9/20 三晚，€269.73（約 NT$9,956），2027/9/11 23:59 前可免費取消。還要訂 9/21–9/22、9/24–9/25 各一晚，建議同一間。", "title": "弗賴辛住宿（9/17–9/25）"}, {"category": "lodging", "deadline": "免費取消至 2027/9/5 23:59", "lastChecked": "2026/10/24", "order": 7, "status": "done", "statusText": "已預訂", "summary": "Mennica Residence Deluxe，已改成 9/11–9/15 共 4 晚，總價 1,657.98 zł（約 NT$13,770，含 Genius 9 折與清潔費 180 zł），扣掉 Booking.com 支付的 136.85 zł 後約 NT$12,633。", "title": "華沙住宿（9/11–9/15）"}, {"category": "lodging", "deadline": "免費取消至 2027/9/14 18:00", "lastChecked": "2026/10/24", "links": [{"label": "Booking 弗羅茲瓦夫", "url": "https://www.booking.com/searchresults.zh-tw.html?ss=Wroclaw&checkin=2027-09-15&checkout=2027-09-16&group_adults=2&no_rooms=1&selected_currency=TWD&nflt=fc%3D2"}], "order": 8, "status": "done", "statusText": "已預訂", "summary": "The Bridge Wrocław – MGallery 高級特大雙人床房（含早餐），9/15–9/16 一晚，765 zł（約 NT$7,023），到飯店付款。2027/9/14 18:00 前可免費取消；請先告知飯店抵達時間。", "title": "弗羅茲瓦夫住宿 9/15 一晚"}, {"category": "oktoberfest", "lastChecked": "2026/10/21", "links": [{"label": "muenchen.de", "url": "https://www.muenchen.de/int/fr/evenements/oktoberfest.html"}], "order": 3, "status": "done", "statusText": "日期已確認", "summary": "2027/9/18（六）開幕，10/3 結束。新版行程：9/19（日）10:00 傳統服裝與射手大遊行＋啤酒節主場；9/22 晚上可選配再去。", "title": "慕尼黑啤酒節"}, {"category": "flight", "lastChecked": "2026/10/26", "links": [], "order": 20, "status": "todo", "statusText": "出發前", "summary": "出發前在台灣印好：《地。》朝聖畫面（9/14 克拉科夫）、《進擊的巨人》朝聖畫面（9/21 諾德林根）、日本排球員照片（排球賽應援）。建議 8 月底前印好，裝 L 夾帶上。", "title": "朝聖畫面與排球員照片列印"}, {"category": "train", "lastChecked": "2026/10/21", "links": [{"label": "DB 訂票", "url": "https://int.bahn.de"}], "order": 5, "status": "todo", "statusText": "可購買", "summary": "日期改為 9/17（五）：上午圍牆導覽結束後，搭 13:00 前後的 ICE（約 4–4.5 小時）。先前查到 9/17 早班 08:35 為 €49.99 起，下午班次票價待查。", "title": "柏林 → 慕尼黑 ICE（9/17）"}, {"category": "train", "lastChecked": "2026/10/21", "links": [{"label": "PKP Intercity", "url": "https://www.intercity.pl/en/"}, {"label": "DB 訂票", "url": "https://int.bahn.de"}], "nextCheck": "2027/3/20", "order": 4, "status": "wait", "statusText": "未開賣", "summary": "改成經弗羅茲瓦夫看點燈人：9/15 華沙→弗羅茲瓦夫 EIC 約 3 小時 35–45 分；9/16 弗羅茲瓦夫→柏林 PKP Intercity 直達 IC（2026 年每天 3 班白天車 Odra／Wawel／Galicja，約 4 小時）。兩段都未開賣、票價待查。原本華沙→柏林 EC 不用買了。", "title": "華沙 → 弗羅茲瓦夫（9/15）→ 柏林（9/16）火車"}, {"category": "volleyball", "lastChecked": "2026/11/2", "links": [{"label": "PZPS 抽籤日期公告（10/30）", "url": "https://www.pzps.pl/pl/aktualnosci/4674/mistrzostwa-swiata-siatkarzy-odslaniaja-swoje-logo-znamy-date-losowania-grup"}, {"label": "賽事概況（Wikipedia）", "url": "https://en.wikipedia.org/wiki/2027_FIVB_Men%27s_Volleyball_World_Championship"}, {"label": "Volleyball World", "url": "https://en.volleyballworld.com/volleyball/competitions/men-world-championship/"}], "nextCheck": "每週一 09:17", "order": 1, "status": "new", "statusText": "抽籤日期已公布：12/3", "summary": "波蘭排協 10/30 公布：分組抽籤 2026/12/3 在維利奇卡鹽礦地下 125 公尺舉行（時間未公布）。日本已確定參賽，分組、比賽城市與日期、淘汰賽日程及售票資訊仍未公布。", "title": "男排世錦賽：抽籤與售票"}, {"category": "activity", "lastChecked": "2026/10/21", "links": [{"label": "預約申請表", "url": "https://www.stiftung-berliner-mauer.de/en/form/buchungsanfrage-besucherservice-gbm-en?source_entity_type=node&source_entity_id=246&angebot=1"}, {"label": "導覽介紹", "url": "https://www.stiftung-berliner-mauer.de/en/node/246"}], "order": 4, "status": "todo", "statusText": "待送出申請", "summary": "導覽名稱是「建牆後的貝爾瑙爾街」，約 1 小時，在 Visitor Center（Bernauer Straße 119）集合。官網價格是 €80（標準）／€50（優惠），沒寫是整團還是每人。這個導覽的介紹頁沒有列中文，但預約申請表的語言選單有 Chinese，能不能排到中文導覽員要等基金會回覆。週一不開放；申請表要填團體類型 Adults、人數 2、語言 Chinese，並寫上備選時段。", "title": "柏林圍牆基金會中文導覽 9/17（五）10:00"}], "bookings": [{"breakdown": "房價 €141.68＋加值稅 €9.92＋城市稅 €11.37", "budgetText": "≈ 6,015（€162.97）", "cancelBy": "2027/9/13 23:59（柏林當地時間）", "checkin": "2027/9/16（四）", "checkout": "2027/9/17（五）", "city": "berlin", "fee": "9/14 00:00 起取消或未入住：收 €151.60", "name": "Hotel ROMY by AMANO", "nights": 1, "note": "柏林中央車站步行約 300 m。9/17 退房後行李寄放飯店，圍牆導覽結束回來拿。台幣以歐元 36.91 估算，實際依刷卡匯率。", "priceText": "€162.97（含加值稅、城市稅）", "room": "小型雙人房", "totalTwd": 6015, "url": "https://www.booking.com/hotel/de/romy-by-amano.zh-tw.html"}, {"access": "自助入住，取鑰匙方式與密碼請看確認信。", "breakdown": "房價 €252.08，其餘為稅費；台幣以歐元 36.91 估算，實際依刷卡匯率", "cancelBy": "2027/9/11 23:59（德國時間，入住 5 天前）", "checkin": "2027/9/17（五）15:00 起", "checkout": "2027/9/20（一）11:00 前", "city": "munich", "fee": "9/12 00:00 起取消或未入住：收全額 €269.73", "name": "Boutique Apartment in Freising", "nights": 3, "note": "弗賴辛車站步行約 15 分。9/20 早上 07:30 要去機場取車，退房前把鑰匙依房東指示歸還。另外兩晚（9/21–9/22、9/24–9/25）還沒訂。", "pillText": "3 晚已訂・2 晚待訂", "priceText": "€269.73（約 NT$9,956）", "room": "單臥室公寓・2 位成人", "totalTwd": 9956, "url": "https://www.booking.com/hotel/de/boutique-apartment-in-freisingen.zh-tw.html"}, {"access": "地址 Dr. F. Mortonweg 166, 4830 Hallstatt。入住時間只到 18:00，晚到要先通知飯店；鎮內有車輛管制，出發前先 email 飯店確認停車方式。", "breakdown": "房價 €481.82＋加值稅 €48.18＋城市稅 €16；台幣以歐元 36.91 估算", "budgetText": "≈ 20,153（€546）", "cancelBy": "2027/8/22 23:59（奧地利時間，入住 30 天前）", "checkin": "2027/9/22（三）15:00–18:00", "checkout": "2027/9/24（五）08:00–11:00", "city": "hallstatt", "fee": "8/23 00:00 起取消或未入住：收全額 €546", "name": "Weisses Lamm", "nights": 2, "note": "住在鎮上，清晨和傍晚旅行團不在時都能拍到人少的哈修塔特。Booking 提醒：入住前若收到其他付款要求要回報，不要點付款連結。", "payBy": "Booking.com 自動從信用卡扣款（已安排 €546，目前已付 €0）", "priceText": "€546（約 NT$20,153）", "room": "湖景豪華套房・2 位成人", "totalTwd": 20153, "url": "https://www.booking.com/searchresults.zh-tw.html?ss=Weisses+Lamm+Hallstatt"}, {"breakdown": "公寓 NT$11,366（含 Genius 9 折）＋8% 加值稅 NT$909＋清潔費 180 zł（NT$1,495）；扣掉 Booking.com 支付的 136.85 zł（約 NT$1,137）後約 NT$12,633，實際以刷卡金額為準", "budgetText": "≈ 12,633", "cancelBy": "2027/9/5 23:59（波蘭時間）", "checkin": "2027/9/11（六）16:00–20:00", "checkout": "2027/9/15（三）11:00 前", "city": "warsaw", "fee": "之後取消或未入住：收訂單全額", "name": "Mennica Residence Deluxe", "nights": 4, "note": "已從 5 晚改成 4 晚，9/15 退房後搭火車去弗羅茲瓦夫。地址 11 Waliców（沃拉區），步行 500 m 到 Rondo ONZ 地鐵站；有廚房、微波爐、洗碗機、空調。", "payBy": "Booking.com 自動從信用卡扣款", "priceText": "1,657.98 zł（約 NT$13,770）－Booking.com 支付 136.85 zł", "room": "單房公寓・2 位成人", "totalTwd": 12633, "url": "https://www.booking.com/hotel/pl/mennica-residence-ii.zh-tw.html"}, {"access": "地址 Plac Katedralny 8（大教堂島上，主教座堂旁）；點燈人就從對面的主教堂前開始", "budgetText": "≈ 7,023（765 zł）", "cancelBy": "2027/9/14 18:00（飯店當地時間）", "checkin": "2027/9/15（三）15:00 起", "checkout": "2027/9/16（四）12:00 前", "city": "wroclaw", "fee": "9/14 18:00 起取消或未入住：收全額 765 zł", "name": "The Bridge Wrocław – MGallery", "nights": 1, "note": "房價含早餐。飯店要求事先告知預計抵達時間（約 17:30），可用 Booking 傳訊。台幣以波蘭幣 9.18 估算。", "payBy": "Booking 只用信用卡擔保，實際由飯店收款", "priceText": "765 zł（約 NT$7,023）", "room": "高級特大雙人床房・2 位成人・含早餐", "totalTwd": 7023, "url": "https://www.google.com/maps/search/?api=1&query=The%20Bridge%20Wroclaw%20MGallery%20Plac%20Katedralny%208"}]};
+    renderTracking(wrap(DATA.tracking));
+    renderBookings(wrap(DATA.bookings));
+  })();
+})();
+</script>
+
+<script>
+(function(){
+  const PAGES=['home','days','track','move','stay','car','pack','fly','buy','docs','money'];
+  function show(p,scroll){
+    if(!PAGES.includes(p))p='home';
+    document.querySelectorAll('.page').forEach(el=>{el.hidden=el.dataset.page!==p;});
+    document.querySelectorAll('.links a').forEach(a=>{if(a.dataset.go===p)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
+    const cur=document.querySelector('.links a[aria-current]');if(cur&&cur.scrollIntoView)cur.scrollIntoView({block:'nearest',inline:'nearest'});
+    if(scroll)window.scrollTo({top:0});
+    try{localStorage.setItem('hm-page',p);}catch(e){}
+  }
+  document.addEventListener('click',e=>{const a=e.target.closest('[data-go]');if(!a)return;e.preventDefault();show(a.dataset.go,true);try{history.replaceState(null,'','#'+a.dataset.go);}catch(err){}});
+  let h=(location.hash||'').replace('#','');
+  if(/^d09\d\d$/.test(h))h='days';
+  if(!PAGES.includes(h)){h='home';}
+  show(h,false);
+  // countdown cells
+  const DEP=Date.parse('2027-09-10T23:50:00+08:00'),END=Date.parse('2027-09-26T16:15:00+08:00'),T0=Date.parse('2027-09-10T00:00:00+08:00');
+  const pad=n=>n<10?'0'+n:''+n;
+  function tick(){const now=Date.now(),note=document.getElementById('cd-note'),cells=document.getElementById('cd-cells');
+    if(now<DEP){const s=Math.floor((DEP-now)/1000);
+      document.getElementById('cd-d').textContent=Math.floor(s/86400);document.getElementById('cd-h').textContent=pad(Math.floor(s%86400/3600));
+      document.getElementById('cd-m').textContent=pad(Math.floor(s%3600/60));document.getElementById('cd-s').textContent=pad(s%60);}
+    else if(now<END){note.textContent='旅途中・今天是第 '+(Math.floor((now-T0)/86400000)+1)+' 天';cells.hidden=true;}
+    else{note.textContent='蜜月旅行圓滿結束，歡迎回家';cells.hidden=true;}}
+  tick();setInterval(tick,1000);
+})();
+</script>
+
+<script>
+(function(){
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const G=[
+    {id:'doc',t:'證件與票券',c:'var(--coral)',i:[['護照','效期建議還有 6 個月以上'],['電子機票（阿聯酋）','存在手機並截圖離線備份；杜拜轉機不出機場，不用辦阿聯簽證'],['住宿確認信 4 筆','華沙、柏林、弗賴辛、哈修塔特；PIN 碼只存在信裡'],['旅遊平安險＋海外醫療保單','保單號碼與緊急電話寫在手機備忘錄'],['火車票與預約','華沙→柏林 EC、柏林→慕尼黑 ICE、Deutschlandticket App'],['景點預約 QR','國會大廈圓頂、圍牆導覽、新天鵝堡'],['ETIAS 旅行授權','若 2027/9 前啟用才需要']]},
+    {id:'money',t:'錢與卡',c:'var(--yellow)',i:[['信用卡 2 張以上','分開放；選免海外手續費的卡'],['少量歐元現金','啤酒節部分帳篷只收現金'],['少量波蘭幣 zł','市集攤販、牛奶吧'],['€0.50–1 硬幣','公共廁所、超市推車']]},
+    {id:'drive',t:'自駕（9/20–9/24）',c:'var(--water)',i:[['台灣駕照正本','兩人都開就兩人都帶'],['國際駕照','監理站 NT$250'],['主駕名下信用卡','租車押金'],['手機車架與車充','導航用'],['Google 地圖離線地圖','巴伐利亞、哈修塔特一帶先下載'],['ASFINAG App','9/22 進奧地利前買 10 日通行證']]},
+    {id:'elec',t:'電子用品',c:'var(--green)',i:[['歐規轉接頭（C／F 型雙圓孔）','波蘭、德國、奧地利都是 230V'],['行動電源','阿聯酋航空：每人 1 個、100Wh 以下、需標示容量，只能放隨身；機上不能使用或充電'],['歐洲網卡或 eSIM','三國都能用的方案'],['充電線、多孔充電器',''],['相機、記憶卡、備用電池','高山上冷，電池耗得快']]},
+    {id:'wear',t:'衣物',c:'var(--coral)',i:[['輕羽絨外套','楚格峰、達赫斯坦、清晨的哈修塔特'],['防水防風外套＋摺疊傘','9 月偶有陣雨'],['洋蔥式穿搭：長袖、薄毛衣','早晚約 10°C、白天約 20°C'],['好走的鞋','每天步行多；冰洞與山上要防滑'],['一套拍照用的漂亮衣服','蕭邦音樂會、哈修塔特'],['（選配）巴伐利亞傳統服裝','9/17 在慕尼黑中央車站 Almwelt 買，店家表在這頁下方'],['帽子、手套','山上用'],['睡衣、拖鞋','部分住宿不提供拖鞋']]},
+    {id:'pilg',t:'朝聖小物（出發前在台灣印好）',c:'var(--green)',i:[['《地。》朝聖畫面','9/14 克拉科夫：Collegium Maius 中庭、哥白尼像、星空與天文儀器的場景，加上波蘭文版封面角度（ATOM Comics 門口）'],['《進擊的巨人》朝聖畫面','9/21 諾德林根：城牆、圓形城鎮鳥瞰（丹尼爾塔上對照）、城門'],['日本排球員照片','看排球賽應援用；可印成手幅或小卡'],['L 夾／硬殼資料夾','照片不折到，拍照時拿出來對照']]},
+    {id:'life',t:'生活用品',c:'var(--yellow)',i:[['環保購物袋','波蘭、德國超市塑膠袋要另外付錢'],['保溫瓶／水壺',''],['夾鏈袋、保鮮盒','自煮剩菜、公園野餐'],['牙刷牙膏、盥洗用品','歐洲住宿多半不提供牙刷'],['防曬、太陽眼鏡','高山陽光強'],['個人常備藥','依自己需要準備'],['面紙、濕紙巾','']]}
+  ];
+  const KEY='hm-pack-v1';let done={};
+  try{done=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){done={};}
+  const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(done));}catch(e){}};
+  const box=document.getElementById('pk-groups');if(!box)return;
+  function draw(){let all=0,n=0;
+    box.innerHTML=G.map(g=>{const keys=g.i.map((_,k)=>g.id+':'+k);const c=keys.filter(k=>done[k]).length;all+=keys.length;n+=c;
+      return `<div class="pk-grp"><h3><i style="background:${g.c}"></i>${esc(g.t)}<small>${c} / ${keys.length}</small></h3><ul class="todo">${g.i.map((it,k)=>{const key=g.id+':'+k;return `<li><label><input type="checkbox" id="pk-${g.id}-${k}" data-k="${key}"${done[key]?' checked':''}><span>${esc(it[0])}${it[1]?`<small>${esc(it[1])}</small>`:''}</span></label></li>`;}).join('')}</ul></div>`;}).join('');
+    document.getElementById('pk-count').textContent='已完成 '+n+' / '+all;document.getElementById('pk-bar').style.width=(all?n/all*100:0)+'%';}
+  box.addEventListener('change',e=>{const k=e.target.dataset.k;if(!k)return;done[k]=e.target.checked;save();draw();const el=box.querySelector('[data-k="'+k+'"]');if(el)el.focus();});
+  document.getElementById('pk-reset').addEventListener('click',()=>{done={};save();draw();});
+  draw();
+})();
+</script>
+
+</body>
+</html>
